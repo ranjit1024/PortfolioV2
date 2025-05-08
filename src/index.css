@@ -1,6 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;900&display=swap");
 @import "tailwindcss";
 
-@theme{
-     --font-poppins:'"Mona Sans"',sans-serif
+@theme {
+  --font-poppins: '"Mona Sans"', sans-serif;
+  --animate-wiggle: wiggle 100s ease-in-out infinite;
+  --animate-bounceslow: bounceslow 100s infinite;
+  @keyframes wiggle {
+    
+     0% {
+          rotate: 0;
+        }
+      
+        100% {
+          rotate: 360deg;
+        }
+      
+    
+  }
+  @keyframes bounceslow {
+    0%,
+    0% {
+      transform: translateY(0);
+    }
+    100%: {
+     transform: translateY(42px);
+    }
+  }
 }

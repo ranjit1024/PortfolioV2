@@ -9,12 +9,12 @@ function App() {
   const [database, setdatabase] = useState(false);
   const [devops, setdevops] = useState(false);
   return (
-    <div className=" font-poppins  bg-[#f6f6f8]">
+    <div className=" font-poppins overflow-x-auto bg-[#f6f6f8]">
       <div className="bg-gradient-to-t   to-blue-300 flex flex-col from-[#f6f6f8]">
         <div className=" h-[70vh] items-center  flex  flex-col justify-center">
-          <img src={earth} alt="" className="relative -top-60" />
-          <div className="relative left-100 bottom-120 ">
-            <img src={hotAir} alt="" height={100} width={200} />
+          <img src={earth} alt="" className="relative  -top-60 animate-wiggle" />
+          <div className="relative left-100 bottom-120 animate-bounceslow">
+            <img src={hotAir} alt="" height={100} width={200}  />
           </div>
         </div>
       </div>
@@ -223,7 +223,7 @@ function App() {
         Featured <span className="text-purple-600"> Projects </span>
           </p>
       </div>
-      <div className=" px-18 pt-15  flex h-[100%] bg-[#f6f6f8] font-poppins gap-5 h-100% w-[100%]  ">
+      <div className=" px-18 pt-15  flex  bg-[#f6f6f8] font-poppins gap-5 h-100% w-[100%]  ">
         <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://basusconsulting.com/"/>
 
         <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://basusconsulting.com/"/>
@@ -233,31 +233,31 @@ function App() {
       </div>
     
 
-      <div className=" flex flex-col">
+      <div className=" flex flex-col h-1 ">
 
-      <div className="w-10 h-10 font-poppins border-2  border-blue-500 top-22 rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-blue-200 ">
+      <div className="w-10 h-10 p-2 font-poppins border-2 -top-10 border-blue-500  rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-blue-200 ">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
 </svg>
 
       </div>
-      <div className="flex ">
-        <p className="font-[600] left-20 top-11 relative font-poppins  text-[2.1rem] text-black">
+      <div className="flex">
+        <p className="font-[600] left-20 -top-20  relative font-poppins  text-[2.1rem] text-black">
         Get <span className="text-yellow-600"> In Touch </span>
           </p>
       </div>
 
       </div>
-      <div className="p-20">
+      <div className="px-20 py-10 overflow-x-auto">
         <p className="w-120 text-[3vh] font-500 text-gray-900 font-poppins">Feel free to contact me if you have any questions or suggestions. I am always open to new ideas and opportunities.</p>
         <div className="pt-10 flex  gap-10">
-          <button className="bg-gray-50 border hover:scale-105 duration-75 hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" onClick={()=>{
+          <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" onClick={()=>{
             window.open("https://github.com/ranjit1024")
           }}>
           <img width="25" height="38" src="https://img.icons8.com/fluency/48/github.png" alt="github"/>
           <p>Github</p>
           </button>
-          <button className="bg-gray-50 border hover:scale-105 duration-75 hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" 
+          <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" 
           onClick={()=>{
             window.open('https://x.com/ranjitd18755665')
           }}>
@@ -290,8 +290,8 @@ function ProjectCard({title ,des, link}:{
   des:string,
   link:string
 }){
-  return <div className=" h-100%  ">
-    <div className=" min-w-[29vw]   p-5 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-md transition-all duration-200">
+  return <div className=" h-100 overflow-x-hidden ">
+    <div className="    p-5 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-md transition-all ">
   <div className="flex items-center gap-3 mb-2">
     <div className="bg-gray-100 p-2 rounded-lg">
       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
