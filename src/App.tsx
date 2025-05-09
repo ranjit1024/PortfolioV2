@@ -23,11 +23,11 @@ function App() {
         </div>
       </div>
 
-      <div className="pl-10 h-50  font-inc  ">
-        <p className="font-[700]  pb-2 text-[6rem]">
+      <div className="pl-10 h-50  font-poppins  ">
+        <p className="font-[500]  pb-2 text-[6rem]">
           Good morning, developer{" "}
         </p>
-        <p className="text-[1.3rem] font-[600] text-gray-900">
+        <p className="text-[1.3rem] font-[500] text-gray-900">
           My name is Ranjit das,{" "}
           <span className="font-medium text-blue-500">
             I am a Full stack developer
@@ -80,7 +80,7 @@ function App() {
             <li
               className={`rounded-md hover:scale-[102%] border-1 border-gray-200    hover:cursor-pointer px-10 py-1 text-[1.1rem] ${
                 frontEnd
-                  ? "bg-white  shadow-sm shadow-blue-300 border-1 border-blue-600/50"
+                  ? "bg-white  shadow-sm shadow-blue-200 border-1 border-blue-600/50"
                   : null
               }`}
               onClick={(e) => {
@@ -206,7 +206,7 @@ function App() {
 
       <div>
 
-      <div className="w-10 h-10 font-poppins border-2  border-blue-500 top-22 rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-blue-200 ">
+      <div className="w-10 h-10 font-poppins border-2  border-blue-500 top-22 rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-purple-200 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -239,7 +239,7 @@ function App() {
 
       <div className=" flex flex-col h-1   ">
 
-      <div className="w-10 h-10 p-2 font-poppins border-2  -top-10 border-blue-500  rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-blue-200 ">
+      <div className="w-10 h-10 p-2 font-poppins border-2  -top-10 border-blue-500  rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-yellow-200 ">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
 </svg>
