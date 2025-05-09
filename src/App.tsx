@@ -228,10 +228,10 @@ function App() {
           </p>
       </div>
       <div className=" px-18 pt-15  flex  bg-[#f6f6f8] font-poppins gap-5 h-100% w-[100%]  ">
-        <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://basusconsulting.com/" code="https://github.com/ranjit1024/personal-project"/>
+        <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="http://44.203.187.243:3000/" code="https://github.com/ranjit1024/E-wallet"/>
 
         <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://blog-2f8v.vercel.app/" code="https://github.com/ranjit1024/blog"/>
-        <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="http://44.203.187.243:3000/" code="https://github.com/ranjit1024/E-wallet"/>
+        <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://basusconsulting.com/" code="https://github.com/ranjit1024/personal-project"/>
 
       </div>
       </div>
