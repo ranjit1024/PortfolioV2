@@ -269,7 +269,7 @@ function App() {
             window.open('https://x.com/ranjitd18755665')
           }}>
           <img width="25" height="96" src="https://img.icons8.com/color/96/twitterx--v1.png" alt="twitterx--v1"/>
-          <p>Twiter</p>
+          <p>Twitter</p>
           </button>
           <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" 
           onClick={()=>{
