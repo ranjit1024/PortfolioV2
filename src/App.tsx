@@ -24,7 +24,7 @@ function App() {
       </div>
 
       <div className="pl-10 h-50  font-poppins  ">
-        <p className="font-[500]  pb-2 text-[6rem]">
+        <p className="font-[500]  pb-2 text-[5.5rem]">
           Good morning, developer{" "}
         </p>
         <p className="text-[1.3rem] font-[500] text-gray-900">
