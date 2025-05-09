@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import earth from "./assets/back.webp";
 import hotAir from "./assets/hovver.webp";
+import fotter from "./assets/fotter.webp";
 
 function App() {
   const [frontEnd, setFrontEnd] = useState(true);
@@ -9,21 +10,24 @@ function App() {
   const [database, setdatabase] = useState(false);
   const [devops, setdevops] = useState(false);
   return (
-    <div className=" font-poppins overflow-x-auto bg-[#f6f6f8]">
-      <div className="bg-gradient-to-t   to-blue-300 flex flex-col from-[#f6f6f8]">
+    <div className=" font-poppins overflow-x-auto overflow-y-hidden bg-[#f6f6f8]">
+      <div className="bg-gradient-to-t overflow-x-hidden overflow-hidden relative to-blue-300 flex flex-col from-[#f6f6f8]">
         <div className=" h-[70vh] items-center  flex  flex-col justify-center">
-          <img src={earth} alt="" className="relative  -top-60 animate-wiggle" />
-          <div className="relative left-100 bottom-120 animate-bounceslow">
-            <img src={hotAir} alt="" height={100} width={200}  />
+          <div className="overflow-hidden">
+
+          <img src={earth} alt="" className="absolute -top-160 animate-wiggle left-35 align-middle " />
+          </div>
+          <div className="absolute left-230 bottom-13 animate-bounceslow ">
+            <img src={hotAir} alt="" height={100} width={170} className=""  />
           </div>
         </div>
       </div>
 
-      <div className="pl-10 h-50  font-poppins  ">
-        <p className="font-[600] font-mono pb-4 text-[4rem]">
+      <div className="pl-10 h-50  font-inc  ">
+        <p className="font-[700]  pb-2 text-[6rem]">
           Good morning, developer{" "}
         </p>
-        <p className="text-xl font-[500] text-gray-800">
+        <p className="text-[1.3rem] font-[600] text-gray-900">
           My name is Ranjit das,{" "}
           <span className="font-medium text-blue-500">
             I am a Full stack developer
@@ -34,7 +38,7 @@ function App() {
         </p>
       </div>
 
-      <div className="relative flex flex-col justify-center ">
+      <div className="relative flex pt-10  flex-col justify-center ">
         <div className="flex items-center ">
           <div className="  w-10 h-10 border-2 border-blue-500 left-22 top-6 rounded-full   relative bg-white flex items-center justify-center shadow-xl shadow-blue-200">
             <svg
@@ -143,7 +147,7 @@ function App() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="white"
-              className="size-8 opacity-80 absolute right-20 text-center margin-auto"
+              className="size-8 opacity-80 absolute right-21 text-center top-4 margin-auto"
             >
               <path
                 strokeLinecap="round"
@@ -224,31 +228,34 @@ function App() {
           </p>
       </div>
       <div className=" px-18 pt-15  flex  bg-[#f6f6f8] font-poppins gap-5 h-100% w-[100%]  ">
-        <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://basusconsulting.com/"/>
+        <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://basusconsulting.com/" code="https://github.com/ranjit1024/personal-project"/>
 
-        <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://basusconsulting.com/"/>
-        <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="http://44.203.187.243:3000/"/>
+        <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://blog-2f8v.vercel.app/" code="https://github.com/ranjit1024/blog"/>
+        <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="http://44.203.187.243:3000/" code="https://github.com/ranjit1024/E-wallet"/>
 
       </div>
       </div>
     
 
-      <div className=" flex flex-col h-1 ">
+      <div className=" flex flex-col h-1   ">
 
-      <div className="w-10 h-10 p-2 font-poppins border-2 -top-10 border-blue-500  rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-blue-200 ">
+      <div className="w-10 h-10 p-2 font-poppins border-2  -top-10 border-blue-500  rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-blue-200 ">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
 </svg>
 
       </div>
-      <div className="flex">
+
+      <div className="flex ">
         <p className="font-[600] left-20 -top-20  relative font-poppins  text-[2.1rem] text-black">
         Get <span className="text-yellow-600"> In Touch </span>
           </p>
       </div>
-
       </div>
-      <div className="px-20 py-10 overflow-x-auto">
+      
+
+      
+      <div className="px-20 py-10 ">
         <p className="w-120 text-[3vh] font-500 text-gray-900 font-poppins">Feel free to contact me if you have any questions or suggestions. I am always open to new ideas and opportunities.</p>
         <div className="pt-10 flex  gap-10">
           <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" onClick={()=>{
@@ -264,13 +271,30 @@ function App() {
           <img width="25" height="96" src="https://img.icons8.com/color/96/twitterx--v1.png" alt="twitterx--v1"/>
           <p>Twiter</p>
           </button>
+          <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" 
+          onClick={()=>{
+            window.open('https://mail.google.com/mail/u/0/#inbox?compose=new')
+          }}>
+         <img width="25" height="96" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail-new"/>
+          <p>ranjitdas2048@gmail.com</p>
+          </button>
      
        
         </div>
+      
       </div>
-      
+        
+      <div className="pt-10 object-cover relative">
+        <div>
 
-      
+        <p className="absolute top-100 left-50 text-gray-100 text-shadow-red-900 font-semibold shadow-pink-900" style={{
+          
+
+          textShadow:'1px 1px 1px 10px rgba(255,255,255,1) '
+        }}>inspired by bsodium.fr </p>
+        <img src={fotter} alt="" />
+        </div>
+      </div>
       
 
     </div>
@@ -285,13 +309,14 @@ function LanguagesAndFreamworks({ src }: { src: string }) {
   );
 }
 
-function ProjectCard({title ,des, link}:{
+function ProjectCard({title ,des, link, code}:{
   title:string,
   des:string,
-  link:string
+  link:string,
+  code:string
 }){
-  return <div className=" h-100 overflow-x-hidden ">
-    <div className="    p-5 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-md transition-all ">
+  return <div className=" h-100 w-[100%] ">
+    <div className="p-5 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-md transition-all ">
   <div className="flex items-center gap-3 mb-2">
     <div className="bg-gray-100 p-2 rounded-lg">
       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -309,7 +334,9 @@ function ProjectCard({title ,des, link}:{
 
   <div className="flex items-center justify-between text-sm text-gray-500">
     
-    <div className="text-purple-600 font-semibold cursor-pointer">{`{ }`} Code</div>
+    <div className="text-purple-600 font-semibold cursor-pointer" onClick={()=>{
+      window.open(code)
+    }}>{`{ }`} Code</div>
     <button onClick={()=>{
       window.open(link)
     }} className="bg-purple-600 px-4 py-2 rounded-2xl text-white hover:cursor-pointer"> visit website</button>

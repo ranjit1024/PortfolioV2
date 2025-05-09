@@ -1,29 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-poppins: '"Mona Sans"', sans-serif;
-  --animate-wiggle: wiggle 100s ease-in-out infinite;
-  --animate-bounceslow: bounceslow 100s infinite;
+  --font-inc: "Inconsolata", sans-serif;
+  --animate-wiggle: wiggle 100s linear infinite;
+  --animate-bounceslow: bounceslow 8s  linear infinite;
   @keyframes wiggle {
-    
-     0% {
-          rotate: 0;
-        }
-      
+        
         100% {
           rotate: 360deg;
         }
       
-    
+
   }
   @keyframes bounceslow {
-    0%,
-    0% {
-      transform: translateY(0);
+    0%, 100% {
+      transform: translateY(-10%);
+      /* animation-timing-function: cubic-bezier(0.8, 0, 1, 1); */
     }
-    100%: {
-     transform: translateY(42px);
+    50% {
+      transform: none;
+      /* animation-timing-function: cubic-bezier(0, 0, 0.2, 1); */
     }
   }
 }
