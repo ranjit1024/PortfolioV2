@@ -40,7 +40,7 @@ function App() {
 
       <div className="relative flex pt-10  flex-col justify-center ">
         <div className="flex items-center ">
-          <div className="  w-10 h-10 border-2 max-md:left-3 border-blue-500 left-22 top-6 rounded-full   relative bg-white flex items-center justify-center shadow-xl shadow-blue-200">
+          <div className="  w-10 h-10 border-2 max-md:left-3 border-blue-500 left-22 top-6 rounded-full   relative bg-white flex items-center justify-center shadow-sm shadow-blue-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -55,7 +55,7 @@ function App() {
             </svg>
           </div>
 
-          <p className="font-[600] left-25 max-md:left-5 top-6   relative font-poppins  text-[2.1rem] text-blue-600">
+          <p className="font-[600] left-25  max-md:left-7 top-6   relative font-poppins  text-[2.1rem] text-blue-600">
             <span className="text-gray-900">Tech</span> Stack
           </p>
         </div>
@@ -76,7 +76,7 @@ function App() {
             console.log("fsdf");
           }}
         >
-          <ul className="flex  font-poppins  max-md:w-[100vw]  w-[100%] max-md:grow-0 font-medium flex-wrap">
+          <ul className="flex  font-poppins justify-evenly  max-md:w-[100vw] max-md:p-1 max-md:gap-4  w-[100%] font-medium flex-wrap">
             <li
               className={`rounded-md hover:scale-[102%] border-1 border-gray-200    hover:cursor-pointer px-10 py-1 text-[1.1rem]  ${
                 frontEnd
@@ -96,7 +96,7 @@ function App() {
               Front-End
             </li>
             <li
-              className={`rounded-md border-1 hover:scale-[102%]    hover:cursor-pointer border-gray-200  px-9 py-1 text-[1.1rem] ${
+              className={`rounded-md border-1 hover:scale-[102%]     hover:cursor-pointer border-gray-200  px-9 py-1 text-[1.1rem] ${
                 Backend
                   ? "bg-white  shadow-sm shadow-blue-300 border-1 border-blue-600/50"
                   : null
@@ -128,7 +128,7 @@ function App() {
             <li
               className={`rounded-md border-1 hover:scale-[102%]   hover:cursor-pointer border-gray-200  px-10 py-1 text-[1.1rem] ${
                 devops
-                  ? "bg-white  shadow-sm shadow-blue-300 border-1 border-blue-600/50"
+                  ? "bg-white  shadow-xl shadow-blue-200 border-1 border-blue-600/50"
                   : null
               }`}
               onClick={() => {
@@ -160,7 +160,7 @@ function App() {
 
           <div>
             {Backend ? (
-              <div className="flex py-10 px-8 gap-5 max-md:flex-wrap ">
+              <div className="flex py-10 px-8 gap-5 max-md:flex-wrap items-center justify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/nodejs.png" />
                 <LanguagesAndFreamworks src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/express-js.png" />
@@ -170,7 +170,7 @@ function App() {
 
           <div>
             {database ? (
-              <div className="flex py-10 max-md:w-[100vw]  max-md:grow-0 px-8 gap-5 ">
+              <div className="flex py-10 max-md:w-[100vw]  max-md:grow-0 px-8 gap-5 items-center justify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/postgreesql.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/prisma-orm.png" />
               </div>
@@ -178,7 +178,7 @@ function App() {
 
             <div>
               {devops ? (
-                <div className="flex py-10 px-8 max-md:w-[100vw] max-md:grow-0 max-md:flex-wrap gap-5 ">
+                <div className="flex py-10 px-8 max-md:w-[100vw] max-md:grow-0 max-md:flex-wrap gap-5 items-center justify-center">
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/git.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/github--v1.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/fluency/48/docker.png" />
@@ -193,7 +193,7 @@ function App() {
 
       <div>
 
-      <div className="w-10 h-10 font-poppins border-2  border-blue-500 top-22 rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-purple-200 ">
+      <div className="w-10 h-10 font-poppins border-2  border-purple-500 top-22 rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-purple-200 max-md:left-2 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -210,11 +210,11 @@ function App() {
         </svg>
       </div>
       <div className="flex ">
-        <p className="font-[600] left-20 top-11 relative font-poppins  text-[2.1rem] text-black">
+        <p className="font-[600] left-20 top-11 relative font-poppins max-md:left-17 text-[2.1rem] text-black">
         Featured <span className="text-purple-600"> Projects </span>
           </p>
       </div>
-      <div className=" px-18 pt-15  flex  bg-[#f6f6f8] font-poppins gap-5 h-100% w-[100%]  ">
+      <div className=" px-18 pt-15 max-md:px-1  flex max-md:flex-wrap  bg-[#f6f6f8] font-poppins  h-100% w-[100%]  ">
         <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="https://ewallet.10xdev.shop/" code="https://github.com/ranjit1024/E-wallet"/>
 
         <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://blog-2f8v.vercel.app/" code="https://github.com/ranjit1024/blog"/>
@@ -224,17 +224,17 @@ function App() {
       </div>
     
 
-      <div className=" flex flex-col h-1   ">
+      <div className=" flex flex-col h-1    ">
 
-      <div className="w-10 h-10 p-2 font-poppins border-2  -top-10 border-blue-500  rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-yellow-200 ">
+      <div className="w-10 h-10 p-2 font-poppins border-2  top-16 border-yellow-500  rounded-full max-md:left-2 left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-yellow-200 ">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
 </svg>
 
       </div>
 
-      <div className="flex ">
-        <p className="font-[600] left-20 -top-20  relative font-poppins  text-[2.1rem] text-black">
+      <div className="flex pt-30  ">
+        <p className="font-[600] left-20 -top-25  relative font-poppins  text-[2.1rem] max-md:left-17 text-black">
         Get <span className="text-yellow-600"> In Touch </span>
           </p>
       </div>
@@ -242,9 +242,9 @@ function App() {
       
 
       
-      <div className="px-20 py-10 ">
-        <p className="w-120 text-[3vh] font-500 text-gray-900 font-poppins">Feel free to contact me if you have any questions or suggestions. I am always open to new ideas and opportunities.</p>
-        <div className="pt-10 flex  gap-10">
+      <div className="px-20 py-35 max-md:px-15 ">
+        <p className="w-120 max-md:w-[80vw] text-[3vh] font-500 text-gray-900 font-poppins">Feel free to contact me if you have any questions or suggestions. I am always open to new ideas and opportunities.</p>
+        <div className="pt-10 flex flex-wrap  gap-10">
           <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" onClick={()=>{
             window.open("https://github.com/ranjit1024")
           }}>
@@ -258,7 +258,7 @@ function App() {
           <img width="25" height="96" src="https://img.icons8.com/color/96/twitterx--v1.png" alt="twitterx--v1"/>
           <p>Twitter</p>
           </button>
-          <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" 
+          <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl max-md:pr-10 px-5 text-lg p-2  " 
           onClick={()=>{
             window.open('https://mail.google.com/mail/u/0/#inbox?compose=new')
           }}>
@@ -302,7 +302,7 @@ function ProjectCard({title ,des, link, code}:{
   link:string,
   code:string
 }){
-  return <div className=" h-100 w-[100%] ">
+  return <div className=" mb-5">
     <div className="p-5 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-md transition-all ">
   <div className="flex items-center gap-3 mb-2">
     <div className="bg-gray-100 p-2 rounded-lg">
