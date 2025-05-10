@@ -210,11 +210,11 @@ function App() {
         </svg>
       </div>
       <div className="flex ">
-        <p className="font-[600] left-20 top-11 relative font-poppins max-md:left-17 text-[2.1rem] text-black">
+        <p className="font-[600] pb-10 left-20 top-11 relative font-poppins max-md:left-17 text-[2.1rem] text-black">
         Featured <span className="text-purple-600"> Projects </span>
           </p>
       </div>
-      <div className=" px-18 pt-15 max-md:px-1  flex max-md:flex-wrap  bg-[#f6f6f8] font-poppins  h-100% w-[100%]  ">
+      <div className=" px-18 pt-15 max-md:px-5  flex max-md:flex-wrap gap-5  bg-[#f6f6f8] font-poppins  h-100% w-[100%]  ">
         <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="https://ewallet.10xdev.shop/" code="https://github.com/ranjit1024/E-wallet"/>
 
         <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://blog-2f8v.vercel.app/" code="https://github.com/ranjit1024/blog"/>
