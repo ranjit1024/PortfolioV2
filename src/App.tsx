@@ -10,12 +10,12 @@ function App() {
   const [database, setdatabase] = useState(false);
   const [devops, setdevops] = useState(false);
   return (
-    <div className=" font-poppins overflow-x-auto overflow-y-hidden bg-[#f6f6f8]">
-      <div className="bg-gradient-to-t overflow-x-hidden overflow-hidden relative to-blue-300 flex flex-col from-[#f6f6f8]">
+    <div className=" font-poppins overflow-x-auto overflow-y-hidden bg-[#f6f6f8] max-md:w-[100vw]">
+      <div className="bg-gradient-to-t overflow-x-hidden overflow-hidden relative max-lg:h-[30vh] to-blue-300 flex flex-col from-[#f6f6f8]">
         <div className=" h-[70vh] items-center  flex  flex-col justify-center">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden ">
 
-          <img src={earth} alt="" className="absolute -top-160 animate-wiggle left-35 align-middle " />
+          <img src={earth} alt="" className="absolute -top-160 animate-wiggle left-35 align-middle max-md:size-40  " />
           </div>
           <div className="absolute left-230 bottom-13 animate-bounceslow ">
             <img src={hotAir} alt="" height={100} width={170} className=""  />
@@ -23,11 +23,11 @@ function App() {
         </div>
       </div>
 
-      <div className="pl-10 h-50  font-poppins  ">
-        <p className="font-[500]  pb-2 text-[5.5rem]">
+      <div className="pl-10 h-50  font-poppins max-md:h-100 max-md:pl-5 max-md:mb-10">
+        <p className="font-[500]  pb-2 text-[5.5rem] max-md:text-[4.5rem]">
           Good morning, developer{" "}
         </p>
-        <p className="text-[1.3rem] font-[500] text-gray-900">
+        <p className="text-[1.3rem] font-[500] text-gray-900 ">
           My name is Ranjit das,{" "}
           <span className="font-medium text-blue-500">
             I am a Full stack developer
@@ -40,7 +40,7 @@ function App() {
 
       <div className="relative flex pt-10  flex-col justify-center ">
         <div className="flex items-center ">
-          <div className="  w-10 h-10 border-2 border-blue-500 left-22 top-6 rounded-full   relative bg-white flex items-center justify-center shadow-xl shadow-blue-200">
+          <div className="  w-10 h-10 border-2 max-md:left-3 border-blue-500 left-22 top-6 rounded-full   relative bg-white flex items-center justify-center shadow-xl shadow-blue-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -55,30 +55,30 @@ function App() {
             </svg>
           </div>
 
-          <p className="font-[600] left-25 top-6   relative font-poppins  text-[2.1rem] text-blue-600">
+          <p className="font-[600] left-25 max-md:left-5 top-6   relative font-poppins  text-[2.1rem] text-blue-600">
             <span className="text-gray-900">Tech</span> Stack
           </p>
         </div>
         <div
-          className="left-10 h-12 w-12 border-blue-600 border-l-2 border-t-2 relative  rounded-tl-[80%]"
+          className="left-10 h-12 w-12 border-blue-600 border-l-2 border-t-2 relative  max-md:hidden rounded-tl-[80%]"
           style={{}}
         ></div>
       </div>
 
-      <div className="bg-[#f6f6f8] relative px-20 py-3 ">
+      <div className="bg-[#f6f6f8] relative px-20 max-md:px-2  py-3 max-md:mt-10 0">
         <div
-          className="left-10 h-200 w-0.5 top-0  bg-blue-600 absolute  r"
+          className="left-10 max-md:hidden h-200 w-0.5 top-0  bg-blue-600 absolute  r"
           style={{}}
         ></div>
         <div
-          className="bg-gray-50 border-1 border-gray-200  pb-5 rounded-md shadow-sm"
+          className="bg-gray-50 border-1 border-gray-200 max-md:flex max-md:flex-col   pb-5 rounded-md shadow-sm"
           onClick={() => {
             console.log("fsdf");
           }}
         >
-          <ul className="flex  font-poppins   font-medium">
+          <ul className="flex  font-poppins  max-md:w-[100vw]  w-[100%] max-md:grow-0 font-medium flex-wrap">
             <li
-              className={`rounded-md hover:scale-[102%] border-1 border-gray-200    hover:cursor-pointer px-10 py-1 text-[1.1rem] ${
+              className={`rounded-md hover:scale-[102%] border-1 border-gray-200    hover:cursor-pointer px-10 py-1 text-[1.1rem]  ${
                 frontEnd
                   ? "bg-white  shadow-sm shadow-blue-200 border-1 border-blue-600/50"
                   : null
@@ -96,7 +96,7 @@ function App() {
               Front-End
             </li>
             <li
-              className={`rounded-md border-1 hover:scale-[102%]   hover:cursor-pointer border-gray-200  px-10 py-1 text-[1.1rem] ${
+              className={`rounded-md border-1 hover:scale-[102%]    hover:cursor-pointer border-gray-200  px-9 py-1 text-[1.1rem] ${
                 Backend
                   ? "bg-white  shadow-sm shadow-blue-300 border-1 border-blue-600/50"
                   : null
@@ -144,7 +144,7 @@ function App() {
           </ul>
           <div>
             {frontEnd ? (
-              <div className="flex py-10 px-8 gap-5 ">
+              <div className="flex py-10 px-8  gap-5 max-md:flex-wrap items-center justify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/html-5--v1.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/css3.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/ios/100/javascript--v1.png" />
@@ -160,7 +160,7 @@ function App() {
 
           <div>
             {Backend ? (
-              <div className="flex py-10 px-8 gap-5 ">
+              <div className="flex py-10 px-8 gap-5 max-md:flex-wrap ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/nodejs.png" />
                 <LanguagesAndFreamworks src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/express-js.png" />
@@ -170,7 +170,7 @@ function App() {
 
           <div>
             {database ? (
-              <div className="flex py-10 px-8 gap-5 ">
+              <div className="flex py-10 max-md:w-[100vw]  max-md:grow-0 px-8 gap-5 ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/postgreesql.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/prisma-orm.png" />
               </div>
@@ -178,7 +178,7 @@ function App() {
 
             <div>
               {devops ? (
-                <div className="flex py-10 px-8 gap-5 ">
+                <div className="flex py-10 px-8 max-md:w-[100vw] max-md:grow-0 max-md:flex-wrap gap-5 ">
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/git.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/github--v1.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/fluency/48/docker.png" />
