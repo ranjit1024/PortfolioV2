@@ -181,6 +181,7 @@ function App() {
                 <div className="flex py-10 px-8 gap-5 ">
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/git.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/github--v1.png" />
+                  <LanguagesAndFreamworks src="https://img.icons8.com/fluency/48/docker.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/amazon-web-services.png" />
                 </div>
               ) : null}
