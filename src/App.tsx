@@ -144,7 +144,7 @@ function App() {
           </ul>
           <div>
             {frontEnd ? (
-              <div className="flex py-10 px-8  gap-5 max-md:flex-wrap items-center justify-center ">
+              <div className="flex py-10 px-8  gap-5 max-md:flex-wrap items-center max-md:justify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/html-5--v1.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/css3.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/ios/100/javascript--v1.png" />
@@ -160,7 +160,7 @@ function App() {
 
           <div>
             {Backend ? (
-              <div className="flex py-10 px-8 gap-5 max-md:flex-wrap items-center justify-center ">
+              <div className="flex py-10 px-8 gap-5 max-md:flex-wrap items-center max-md:justify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/nodejs.png" />
                 <LanguagesAndFreamworks src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/express-js.png" />
@@ -170,7 +170,7 @@ function App() {
 
           <div>
             {database ? (
-              <div className="flex py-10 max-md:w-[100vw]  max-md:grow-0 px-8 gap-5 items-center justify-center ">
+              <div className="flex py-10 max-md:w-[100vw]  max-md:grow-0 px-8 gap-5 items-center max-md:justify-centerjustify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/postgreesql.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/prisma-orm.png" />
               </div>
@@ -178,7 +178,7 @@ function App() {
 
             <div>
               {devops ? (
-                <div className="flex py-10 px-8 max-md:w-[100vw] max-md:grow-0 max-md:flex-wrap gap-5 items-center justify-center">
+                <div className="flex py-10 px-8 max-md:justify-center max-md:w-[100vw] max-md:grow-0 max-md:flex-wrap gap-5 items-center ">
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/git.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/github--v1.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/fluency/48/docker.png" />
