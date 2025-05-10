@@ -12,12 +12,14 @@ function App() {
   return (
     <div className=" font-poppins overflow-x-auto overflow-y-hidden bg-[#f6f6f8] max-md:w-[100vw]">
       <div className="bg-gradient-to-t h-[75vh] max-md:h-[40vh]  overflow-x-hidden  overflow-hidden relative  to-blue-300 flex flex-col from-[#f6f6f8] ">
-        <div className=" items-center flex h-full relative -top-90 justify-center translate-x-30 max-xl:translate-x-5 max-md:-top-30 max-md:translate-x-1">
+        <div className=" items-center flex h-full relative -top-90 justify-center max-xl:translate-x-5 max-md:-top-30 max-md:translate-x-1">
 
 
           <img src={earth} alt="" className="  animate-wiggle left-35 align-middle max-md:-translate-x-1  "  />
-            <img src={hotAir} alt="" height={90} width={170} className="max-md:w-20 ab  
-            -bottom-80 right-30 max-xl:-bottom-60 absolute  max-md:-bottom-20 max-md:right-10 "  />
+          <div className="absolute translate-y-[220%] translate-x-[100%] w-100 max-md:size-30 max-xl:translate-y-[190%] max-md:translate-y-[100%] ">
+
+            <img src={hotAir} alt="" height={90} width={170} className="max-md:w-30"  />
+          </div>
           
 
         </div>
