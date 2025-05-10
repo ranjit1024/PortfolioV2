@@ -11,7 +11,7 @@ function App() {
   const [devops, setdevops] = useState(false);
   return (
     <div className=" font-poppins overflow-x-auto overflow-y-hidden bg-[#f6f6f8] max-md:w-[100vw]">
-      <div className="bg-gradient-to-t overflow-x-hidden overflow-hidden relative max-lg:h-[30vh] to-blue-300 flex flex-col from-[#f6f6f8]">
+      <div className="bg-gradient-to-t overflow-x-hidden mb-10 overflow-hidden relative max-lg:h-[30vh] to-blue-300 flex flex-col from-[#f6f6f8]">
         <div className=" h-[70vh] items-center  flex  flex-col justify-center">
           <div className="overflow-hidden ">
 
@@ -65,7 +65,7 @@ function App() {
         ></div>
       </div>
 
-      <div className="bg-[#f6f6f8] relative px-20 max-md:px-2  py-3 max-md:mt-10 0">
+      <div className="bg-[#f6f6f8] relative px-20 max-md:px-4  py-3 max-md:mt-10 0">
         <div
           className="left-10 max-md:hidden h-200 w-0.5 top-0  bg-blue-600 absolute  r"
           style={{}}
@@ -242,7 +242,7 @@ function App() {
       
 
       
-      <div className="px-20 py-35 max-md:px-15 ">
+      <div className="px-20 py-35 max-md:px-5 ">
         <p className="w-120 max-md:w-[80vw] text-[3vh] font-500 text-gray-900 font-poppins">Feel free to contact me if you have any questions or suggestions. I am always open to new ideas and opportunities.</p>
         <div className="pt-10 flex flex-wrap  gap-10">
           <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" onClick={()=>{
