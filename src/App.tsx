@@ -76,7 +76,7 @@ function App() {
             console.log("fsdf");
           }}
         >
-          <ul className="flex  font-poppins justify-evenly  max-md:w-[100vw] max-md:p-1 max-md:gap-4  w-[100%] font-medium flex-wrap">
+          <ul className="flex  font-poppins max-md:justify-evenly  max-md:w-[100vw] max-md:p-1 max-md:gap-4  w-[100%] font-medium max-md:flex-wrap">
             <li
               className={`rounded-md hover:scale-[102%] border-1 border-gray-200    hover:cursor-pointer px-10 py-1 text-[1.1rem]  ${
                 frontEnd
@@ -128,7 +128,7 @@ function App() {
             <li
               className={`rounded-md border-1 hover:scale-[102%]   hover:cursor-pointer border-gray-200  px-10 py-1 text-[1.1rem] ${
                 devops
-                  ? "bg-white  shadow-xl shadow-blue-200 border-1 border-blue-600/50"
+                  ? "bg-white  shadow-md shadow-blue-200 border-1 border-blue-600/50"
                   : null
               }`}
               onClick={() => {
