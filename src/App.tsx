@@ -12,14 +12,14 @@ function App() {
   return (
     <div className=" font-poppins overflow-x-auto overflow-y-hidden bg-[#f6f6f8] max-md:w-[100vw]">
       <div className="bg-gradient-to-t overflow-x-hidden mb-10 overflow-hidden relative max-lg:h-[30vh] to-blue-300 flex flex-col from-[#f6f6f8]">
-        <div className=" h-[70vh] items-center  flex  flex-col justify-center">
+        <div className=" h-[70vh] w-[100vw] items-center  flex  flex-col justify-center">
           <div className="overflow-hidden ">
 
           <img src={earth} alt="" className="absolute -top-160 max-md:-top-40 max-md:left-5 animate-wiggle left-35 align-middle max-md:size-80 " />
+            <img src={hotAir} alt="" height={90} width={170} className="max-md:w-20 absolute right-60"  />
           </div>
-          <div className="absolute left-230 max-md:left-60 max-md:-bottom-1 bottom-13 animate-bounceslow ">
-            <img src={hotAir} alt="" height={90} width={170} className="max-md:w-20"  />
-          </div>
+  
+        
         </div>
       </div>
 
