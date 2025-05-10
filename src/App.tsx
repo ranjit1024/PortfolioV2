@@ -11,19 +11,19 @@ function App() {
   const [devops, setdevops] = useState(false);
   return (
     <div className=" font-poppins overflow-x-auto overflow-y-hidden bg-[#f6f6f8] max-md:w-[100vw]">
-      <div className="bg-gradient-to-t overflow-x-hidden mb-10 overflow-hidden relative max-lg:h-[30vh] to-blue-300 flex flex-col from-[#f6f6f8]">
-        <div className=" h-[70vh] w-[100vw] items-center  flex  flex-col justify-center">
-          <div className="overflow-hidden ">
+      <div className="bg-gradient-to-t h-[75vh] max-md:h-[40vh]  overflow-x-hidden  overflow-hidden relative  to-blue-300 flex flex-col from-[#f6f6f8] ">
+        <div className=" items-center flex h-full relative -top-90 justify-center translate-x-30 max-xl:translate-x-5 max-md:-top-30 max-md:translate-x-1">
 
-          <img src={earth} alt="" className="absolute -top-160 max-md:-top-40 max-md:left-5 animate-wiggle left-35 align-middle max-md:size-80 " />
-            <img src={hotAir} alt="" height={90} width={170} className="max-md:w-20 absolute right-60"  />
-          </div>
-  
-        
+
+          <img src={earth} alt="" className="  animate-wiggle left-35 align-middle max-md:-translate-x-1  "  />
+            <img src={hotAir} alt="" height={90} width={170} className="max-md:w-20 ab  
+            -bottom-80 right-30 max-xl:-bottom-60 absolute  max-md:-bottom-20 max-md:right-10 "  />
+          
+
         </div>
       </div>
 
-      <div className="pl-10 h-50  font-poppins max-md:h-100 max-md:pl-5 max-md:mb-10">
+      <div className="pl-10 h-50  font-poppins max-md:h-100 max-md:pl-5 max-md:mb-10 max-xl:mb-30">
         <p className="font-[500]  pb-2 text-[5.5rem] max-md:text-[4.5rem]">
           Good morning, developer{" "}
         </p>
@@ -67,7 +67,7 @@ function App() {
 
       <div className="bg-[#f6f6f8] relative px-20 max-md:px-4  py-3 max-md:mt-10 0">
         <div
-          className="left-10 max-md:hidden h-200 w-0.5 top-0  bg-blue-600 absolute  r"
+          className="left-10 max-md:hidden h-200 w-0.5 top-0 max-xl:h-360 bg-blue-600 absolute  r"
           style={{}}
         ></div>
         <div
@@ -144,7 +144,7 @@ function App() {
           </ul>
           <div>
             {frontEnd ? (
-              <div className="flex py-10 px-8  gap-5 max-md:flex-wrap items-center max-md:justify-center ">
+              <div className="flex py-10 px-8  gap-5 max-xl:flex-wrap items-center max-md:justify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/html-5--v1.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/css3.png" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/ios/100/javascript--v1.png" />
@@ -214,7 +214,7 @@ function App() {
         Featured <span className="text-purple-600"> Projects </span>
           </p>
       </div>
-      <div className=" px-18 pt-15 max-md:px-5  flex max-md:flex-wrap gap-5  bg-[#f6f6f8] font-poppins  h-100% w-[100%]  ">
+      <div className=" px-18 pt-15 max-md:px-5  flex max-xl:flex-wrap gap-5  bg-[#f6f6f8] font-poppins  h-100% w-[100%]  ">
         <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="https://ewallet.10xdev.shop/" code="https://github.com/ranjit1024/E-wallet"/>
 
         <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://blog-2f8v.vercel.app/" code="https://github.com/ranjit1024/blog"/>
