@@ -15,10 +15,10 @@ function App() {
         <div className=" h-[70vh] items-center  flex  flex-col justify-center">
           <div className="overflow-hidden ">
 
-          <img src={earth} alt="" className="absolute -top-160 animate-wiggle left-35 align-middle max-md:size-40  " />
+          <img src={earth} alt="" className="absolute -top-160 max-md:-top-40 max-md:left-5 animate-wiggle left-35 align-middle max-md:size-80 " />
           </div>
-          <div className="absolute left-230 bottom-13 animate-bounceslow ">
-            <img src={hotAir} alt="" height={100} width={170} className=""  />
+          <div className="absolute left-230 max-md:left-60 max-md:-bottom-1 bottom-13 animate-bounceslow ">
+            <img src={hotAir} alt="" height={90} width={170} className="max-md:w-20"  />
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@ function App() {
             console.log("fsdf");
           }}
         >
-          <ul className="flex  font-poppins max-md:justify-evenly  max-md:w-[100vw] max-md:p-1 max-md:gap-4  w-[100%] font-medium max-md:flex-wrap">
+          <ul className="flex w-[100%] font-poppins max-md:justify-evenly  max-md:w-[90vw] max-md:p-1 max-md:gap-4   font-medium max-md:flex-wrap">
             <li
               className={`rounded-md hover:scale-[102%] border-1 border-gray-200    hover:cursor-pointer px-10 py-1 text-[1.1rem]  ${
                 frontEnd
