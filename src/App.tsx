@@ -166,6 +166,7 @@ function App() {
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/nodejs.png" />
                 <LanguagesAndFreamworks src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/express-js.png" />
+                <LanguagesAndFreamworks src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/WebSocket_colored_logo.svg/250px-WebSocket_colored_logo.svg.png" />
               </div>
             ) : null}
           </div>
@@ -185,6 +186,7 @@ function App() {
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/github--v1.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/fluency/48/docker.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/amazon-web-services.png" />
+                  <LanguagesAndFreamworks src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAABUoTg0hRIRysVXsNZg21ojLCOSsljUElA&s" />
                 </div>
               ) : null}
             </div>
