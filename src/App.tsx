@@ -164,6 +164,7 @@ function App() {
             {Backend ? (
               <div className="flex py-10 px-8 gap-5 max-md:flex-wrap items-center max-md:justify-center ">
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/nodejs.png" />
+                <LanguagesAndFreamworks src="https://hono.dev/favicon.ico" />
                 <LanguagesAndFreamworks src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/express-js.png" />
                 <LanguagesAndFreamworks src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/WebSocket_colored_logo.svg/250px-WebSocket_colored_logo.svg.png" />
@@ -186,7 +187,7 @@ function App() {
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/github--v1.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/fluency/48/docker.png" />
                   <LanguagesAndFreamworks src="https://img.icons8.com/color/96/amazon-web-services.png" />
-                  <LanguagesAndFreamworks src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAABUoTg0hRIRysVXsNZg21ojLCOSsljUElA&s" />
+                  
                 </div>
               ) : null}
             </div>
@@ -292,10 +293,10 @@ function App() {
   );
 }
 
-function LanguagesAndFreamworks({ src }: { src: string }) {
+function LanguagesAndFreamworks({ src, height="96",width="64" }: { src: string, height?:string,width?:string }) {
   return (
     <div className="p-5 flex text-center  gap-10 font-poppins justify-center bg-gradient-to-bl to-gray-50 from-gray-100 shadow-sm rounded-3xl ">
-      <img width="64" height="96" src={src} alt="html-5--v1" />
+      <img width={width} height={height} src={src} alt="html-5--v1" />
     </div>
   );
 }
