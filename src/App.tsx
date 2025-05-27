@@ -35,8 +35,8 @@ function App() {
             I am a Full stack developer
           </span>
           , primarily focused on building{" "}
-          <span className="text-blue-800">user-friendly</span> ui and scalable
-          systems.{" "}
+          <span className="text-blue-800">user-friendly</span> ui and <span className="text-green-800 font-md">scalable
+          systems.</span>{" "}
         </p>
       </div>
 
@@ -69,7 +69,7 @@ function App() {
 
       <div className="bg-[#f6f6f8] relative px-20 max-md:px-4  py-3 max-md:mt-10 0">
         <div
-          className="left-10 max-md:hidden h-200 w-0.5 top-0 max-xl:h-360 bg-blue-600 absolute  r"
+          className="left-10 max-md:hidden h-240 w-0.5 top-0 max-xl:h-360 bg-blue-600 absolute  r"
           style={{}}
         ></div>
         <div
@@ -156,6 +156,7 @@ function App() {
 
                 <LanguagesAndFreamworks src="https://framerusercontent.com/images/3aQX5dnH5Yqgsn98QXKF2ZXxIE.png" />
                 <LanguagesAndFreamworks src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" />
+                <LanguagesAndFreamworks src="https://img.icons8.com/fluency/48/typescript--v1.png" />
               </div>
             ) : null}
           </div>
@@ -167,7 +168,7 @@ function App() {
                 <LanguagesAndFreamworks src="https://hono.dev/favicon.ico" />
                 <LanguagesAndFreamworks src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" />
                 <LanguagesAndFreamworks src="https://img.icons8.com/color/96/express-js.png" />
-                <LanguagesAndFreamworks src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/WebSocket_colored_logo.svg/250px-WebSocket_colored_logo.svg.png" />
+                <LanguagesAndFreamworks  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/WebSocket_colored_logo.svg/250px-WebSocket_colored_logo.svg.png" />
               </div>
             ) : null}
           </div>
@@ -196,9 +197,9 @@ function App() {
       </div>
 
 
-      <div>
+      <div className="flex flex-col w-[100vw]">
 
-      <div className="w-10 h-10 font-poppins border-2  border-purple-500 top-14 rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-purple-200 max-md:left-2 ">
+      <div className="w-10 h-10 font-poppins border-2  border-purple-500 top-5 rounded-full left-5  relative bg-[#f6f6f8] flex items-center justify-center shadow-xl shadow-purple-200 max-md:left-2 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -214,14 +215,15 @@ function App() {
           />
         </svg>
       </div>
-      <div className="flex ">
-        <p className="font-[600] pb-10 left-20 top-3 relative font-poppins max-md:left-17 text-[2.1rem] text-black">
+      <div className="flex flex-wrap w-[100vw]">
+        <p className="font-[600]  left-20 -top-5 relative font-poppins max-md:left-17 text-[2.1rem] text-black">
         Featured <span className="text-purple-600"> Projects </span>
           </p>
       </div>
-      <div className=" px-18 pt-5 max-md:px-5  flex max-xl:flex-wrap gap-2 max-md:gap-0   bg-[#f6f6f8] font-poppins  h-100% w-[100%]  ">
+      <div className=" px-18 pt-5 max-md:px-5  flex   max-xl:flex-wrap gap-2 max-md:gap-0   bg-[#f6f6f8] font-poppins  h-[100%] flex-wrap  w-full  items-center  ">
         <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="https://ewallet.10xdev.shop/" code="https://github.com/ranjit1024/E-wallet"/>
 
+        <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://habit-tracker-beta-lovat.vercel.app/" code="https://github.com/ranjit1024/personal-project"/>
         <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://blog-2f8v.vercel.app/" code="https://github.com/ranjit1024/blog"/>
         <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://basusconsulting.com/" code="https://github.com/ranjit1024/personal-project"/>
 
@@ -307,9 +309,8 @@ function ProjectCard({title ,des, link, code}:{
   link:string,
   code:string
 }){
-  return <div className=" mb-5">
-    <div className="p-5 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-md transition-all ">
-  <div className="flex items-center gap-3 mb-2">
+  return <div className="p-5 rounded-xl shadow-sm w-[30%]  bg-white border border-gray-200 hover:shadow-md   transition-all ">
+  <div className="flex items-center gap-3 mb-2 w-full ">
     <div className="bg-gray-100 p-2 rounded-lg">
       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
@@ -319,7 +320,7 @@ function ProjectCard({title ,des, link, code}:{
   </div>
 
   <p className="text-sm text-indigo-500 mb-2">&lt;/&gt; TypeScript</p>
-  <p  className="text-gray-600 text-sm mb-4 h-[9vh]">
+  <p  className="text-gray-600 text-sm mb-4 h-[9vh] ">
   {/* */}
   {des}
   </p>
@@ -335,6 +336,6 @@ function ProjectCard({title ,des, link, code}:{
   </div>
 </div>
  
-  </div>
+
 }
 export default App;
