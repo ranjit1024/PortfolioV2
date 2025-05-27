@@ -220,7 +220,7 @@ function App() {
         Featured <span className="text-purple-600"> Projects </span>
           </p>
       </div>
-      <div className=" px-18 pt-5 max-md:px-5  flex   max-xl:flex-wrap gap-8 max-md:gap-0   bg-[#f6f6f8] font-poppins  h-[100%] flex-wrap  w-full  items-center  ">
+      <div className=" px-18 pt-5 max-md:px-5  flex   max-xl:flex-wrap  gap-8 max-md:gap-4   bg-[#f6f6f8] font-poppins  h-[100%] flex-wrap  w-full  items-center  ">
         <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="https://ewallet.10xdev.shop/" code="https://github.com/ranjit1024/E-wallet"/>
 
         <ProjectCard title="BASU'S CONSULTING" des=" A Landing page that shows which service they provide for consulting firms,and helps to get dream for for candidate." link="https://habit-tracker-beta-lovat.vercel.app/" code="https://github.com/ranjit1024/personal-project"/>
@@ -241,7 +241,7 @@ function App() {
       </div>
 
       <div className="flex pt-20  ">
-        <p className="font-[600] left-20 -top-19 max-md:-top-20  relative font-poppins  text-[2.1rem] max-md:left-17 text-black">
+        <p className="font-[600] left-20  -top-19 max-md:-top-20  relative font-poppins  text-[2.1rem] max-md:left-15 text-black">
         Get <span className="text-yellow-600"> In Touch </span>
           </p>
       </div>
@@ -249,7 +249,7 @@ function App() {
       
 
       
-      <div className="px-20 py-27 max-md:px-7 max-md:py-30 ">
+      <div className="px-20 py-27 max-md:px-12 max-md:py-30 ">
         <p className="w-120 max-md:w-[80vw] text-[3vh] font-500 text-gray-900 font-poppins">Feel free to contact me if you have any questions or suggestions. I am always open to new ideas and opportunities.</p>
         <div className="pt-10 max-md:pt-5 flex flex-wrap  gap-10 max-md:gap-5">
           <button className="bg-gray-50 border hover:scale-105  hover:cursor-pointer border-gray-300 flex items-center gap-3 rounded-2xl px-5 text-lg p-2" onClick={()=>{
@@ -309,7 +309,7 @@ function ProjectCard({title ,des, link, code}:{
   link:string,
   code:string
 }){
-  return <div className="p-5 rounded-xl shadow-sm w-[30%]  bg-white border border-gray-200 hover:shadow-md   transition-all ">
+  return <div className="p-5 rounded-xl shadow-sm w-[30%]  max-md:w-[100%] bg-white border border-gray-200 hover:shadow-md   transition-all ">
   <div className="flex items-center gap-3 mb-2 w-full ">
     <div className="bg-gray-100 p-2 rounded-lg">
       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
