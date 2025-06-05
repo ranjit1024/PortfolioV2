@@ -69,7 +69,7 @@ function App() {
 
       <div className="bg-[#f6f6f8] relative px-20 max-md:px-4  py-3 max-md:mt-10 0">
         <div
-          className="left-10 max-md:hidden h-240 w-0.5 top-0 max-xl:h-360 bg-blue-600 absolute  r"
+          className="left-10 max-md:hidden h-172 w-0.5 top-0 max-xl:h-360 bg-blue-600 absolute  r"
           style={{}}
         ></div>
         <div
