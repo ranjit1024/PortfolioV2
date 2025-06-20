@@ -221,7 +221,7 @@ function App() {
           </p>
       </div>
       <div className=" px-18 pt-5 max-md:px-5  flex   max-xl:flex-wrap  gap-8 max-md:gap-4   bg-[#f6f6f8] font-poppins  h-[100%] flex-wrap  w-full  items-center  ">
-        <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="https://ewallet.10xdev.shop/" code="https://github.com/ranjit1024/E-wallet"/>
+        <ProjectCard title="E-WALLET" des="A simple E-Wallet website where you can store, send , receive money using same wallet and through bank" link="https://ewallet.ranjitdasproject.space/" code="https://github.com/ranjit1024/E-wallet"/>
 
       
         <ProjectCard title="SHORT BLOG" des="A simple blogging where you can sign in and write their blog in short which is easy to read and precise " link="https://blog-2f8v.vercel.app/" code="https://github.com/ranjit1024/blog"/>
