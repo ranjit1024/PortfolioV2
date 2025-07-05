@@ -109,11 +109,11 @@ function App() {
           <div id="about" className=" about mt-35 pl-5 flex justify-center flex-col ">
             <div className="flex items-center ">
               <p className="text-white">
-                <span className="mx-2  text-secondery text-[2rem] font-">
+                <span className="mx-2  text-secondery text-[1.6rem] font-">
                   #1.
                 </span>
 
-                <span className="text-[2rem] font-bold">
+                <span className="text-[1.6rem] text-gray-300 font-bold">
                   About Me
                 </span>
               </p>
@@ -177,11 +177,11 @@ function App() {
           <div id="skill" className=" about  mt-35 pl-5 flex justify-center flex-col ">
             <div className="flex items-center ">
               <p className="text-white">
-                <span className="mx-2  text-secondery text-[2rem] font-">
+                <span className="mx-2  text-secondery text-[1.6rem] font-">
                   #2.
                 </span>
 
-                <span className="text-[2rem] font-bold">skills & Technologies</span>
+                <span className="text-[1.6rem] font-bold">skills & Technologies</span>
               </p>
               <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl"></div>
             </div>
@@ -189,7 +189,7 @@ function App() {
               <div className="flex flex-col">
 
               
-              <p className="ml-1 mb-3 font-normal text-[1.2rem]">Font-end:</p>
+              <p className="ml-1 mb-3 font-normal text-[1.2rem]">Front-end:</p>
               <div className="flex gap-4">
               <Badge skill="html"></Badge>
               <Badge skill="css"></Badge>
@@ -235,6 +235,22 @@ function App() {
               </div>
               </div>
           </div>
+
+          <div id="proj" className=" about  mt-35 pl-5 flex justify-center flex-col ">
+            <div className="flex items-center ">
+              <p className="text-white">
+                <span className="mx-2  text-secondery text-[1.6rem] font-">
+                  #2.
+                </span>
+
+                <span className="text-[1.6rem] font-bold text-gray-300">Some Things I’ve Built</span>
+              </p>
+              <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl"></div>
+            </div>
+           <div className="mt-10 ml-2">
+            <Projects/>
+           </div>
+          </div>
         </div>
 
         <div className="w-[100%] h-[100%] bg-primary">
@@ -258,4 +274,9 @@ function Badge({skill}:{
   </div> 
 }
 
+function Projects(){
+  return <div>
+klhn
+  </div>
+}
 export default App;
