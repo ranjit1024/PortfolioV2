@@ -1,7 +1,7 @@
 import "./App.css";
 import logo from "./assets/Group 2.png";
-import { Github, LifeBuoy, SquareArrowOutUpRight, Triangle } from "lucide-react";
-import first from "./assets/revisly.png";
+import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
+
 function App() {
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
