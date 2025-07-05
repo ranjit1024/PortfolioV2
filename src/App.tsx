@@ -245,7 +245,9 @@ function App() {
 
                 <span className="text-[1.6rem] font-bold text-gray-300">Some Things I’ve Built</span>
               </p>
-              <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl"></div>
+              <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl">
+              <Projects/>
+              </div>
             </div>
           
             
