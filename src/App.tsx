@@ -1,11 +1,11 @@
-
 import "./App.css";
-import logo from "../public/Group 2.png";
+import logo from "./assets/Group 2.png";
+import { Triangle } from "lucide-react";
 function App() {
   return (
-    <div className="bg-primary h-100 text-white font-mona">
-      <div className="  py-3 px-10 w-[100vw]  fixed   bg-primary  items-center">
-        <header className="w-[100%] flex justify-between items-center  z-10  top-0">
+    <div className="bg-primary h-100 text-white font-mona scroll-smooth">
+      <div className="  py-3 px-10 w-[100vw]  fixed z-10  bg-primary  items-center">
+        <header className="w-[100%] flex justify-between items-center    top-0">
           <div>
             {" "}
             <img src={logo} height={50} width={45} />
@@ -13,7 +13,7 @@ function App() {
           <ul className="flex gap-8">
             <li className="font-[250] text-[15px] hover:cursor-pointer hover:text-secondery ">
               <span className="ml-1 text-secondery">#1 </span>
-              <a href="#about">About</a>
+              <a href="#about" className="transition">About</a>
             </li>
             <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
               <span className="ml-1 text-secondery">#2 </span>
@@ -86,8 +86,8 @@ function App() {
           </div>
         </div>
 
-        <div className="flex text-white flex-col w-[100%] mt-20 bg-primary pl-10 ">
-          <div className="flex mt-20 justify-center flex-col">
+        <div className="flex text-white mt-20 p-10 h-[100] flex-col w-[100%]  bg-primary  ">
+          <div className="flex  justify-center flex-col  ">
             <p className="text-secondery font-normal text-md font-pop ml-2 -mt-3 ">
               Hi, &nbsp; My name &nbsp; is &nbsp; ,
             </p>
@@ -99,33 +99,29 @@ function App() {
               <p className="text-[5rem] font-bold text-gray-400 -mt-3">
                 I Build things for web.{" "}
               </p>
-              <p className="w-[70%] mt-2 text-gray-400 text-md font-medium">
+              <p className="w-[70%] mt-2 text-gray-400 text-[1.05rem]  leading-7">
                 I'm a full stack developer focused on delivering intuitive user
                 experiences and building robust, scalable backend systems.
-                Currently, I'm working on{" "}
-                <span className="text-secondery font-medium hover:cursor-pointer hover:underline">
-                  Revisly
-                </span>{" "}
-                — an AI-powered revision system designed to help students revise
-                smarter, not harder.
               </p>
             </div>
           </div>
 
-          <div id="about" className=" about mt-35 px-5 flex justify-center flex-col ">
+          <div id="about" className=" about mt-35 pl-5 flex justify-center flex-col ">
             <div className="flex items-center ">
               <p className="text-white">
                 <span className="mx-2  text-secondery text-[2rem] font-">
                   #1.
                 </span>
 
-                <span className="text-[2rem] font-bold">About Me</span>
+                <span className="text-[2rem] font-bold">
+                  About Me
+                </span>
               </p>
               <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl"></div>
             </div>
-            <div className="mt-8 ml-2 grid grid-cols-[60%_40%] w-[100%]">
-              <div className="text-start w-[90%]">
-                <p className=" text-gray-400 text-[1.1rem] font-medium">
+            <div className="mt-8 ml-2 grid grid-cols-[60%_40%] gap-5  w-[100%]">
+              <div className=" w-[90%]">
+                <p className=" text-gray-400 text-[1.1rem] leading-8 ">
                   I'm Ranjit Das, a <span className="text-secondery"> full-stack developer</span> focused on building
                   clean, scalable, and user-centric digital products. I don’t
                   follow hobbies-my passion is solving real-world problems
@@ -133,11 +129,111 @@ function App() {
                   crafting seamless user experiences or architecting robust
                   backends, I build with clarity, purpose, and impact.
                 </p>
+
+                <p className="mt-4 text-gray-400 text-[1.1rem]">Here are a few technologies I’ve been working with recently:</p>
+                <div className="flex gap-14" >
+                <ul className="mt-5 flex flex-col gap-3">
+                  <li className="flex items-center gap-1">
+                    <Triangle className="size-2 rotate-90 text-secondery"/>
+                    <p className="text-sm text-gray-300 font-light">Javascript (es6)</p>
+                  </li>
+                  <li className="flex items-center gap-1">
+                    <Triangle className="size-2 rotate-90 text-secondery"/>
+                    <p className="text-sm text-gray-300 font-light">React.js</p>
+                  </li>
+                  <li className="flex items-center gap-1">
+                    <Triangle className="size-2 rotate-90 text-secondery"/>
+                    <p className="text-sm text-gray-300 font-light">Hono.js</p>
+                  </li>
+                </ul>
+                <ul className="mt-5 flex flex-col gap-3">
+                  <li className="flex items-center gap-1">
+                    <Triangle className="size-2 rotate-90 text-secondery"/>
+                    <p className="text-sm text-gray-300 font-light">Typescript</p>
+                  </li>
+                  <li className="flex items-center gap-1">
+                    <Triangle className="size-2 rotate-90 text-secondery"/>
+                    <p className="text-sm text-gray-300 font-light">Postgress</p>
+                  </li>
+                  <li className="flex items-center gap-1">
+                    <Triangle className="size-2 rotate-90 text-secondery"/>
+                    <p className="text-sm text-gray-300 font-light">Express.js</p>
+                  </li>
+                </ul>
+                </div>
               </div>
-              <div>
+              <div className="h-[100%] w-[100%] -z-0 border-2 border-secondery relative rounded-md ">
+
+              <div className="h-[100%] w-[100%] relative left-4  bottom-4 z-2  ">
+              <div className=" bg-[url(./assets/profile.png)]   bg-center bg-cover  h-full rounded-md bg-blend-difference bg-secondery/30  bg-no-repeat ">
+              </div>
+
+              </div>
                 
-              </div>
+              </div> 
             </div>
+          </div>
+
+          <div id="skill" className=" about  mt-35 pl-5 flex justify-center flex-col ">
+            <div className="flex items-center ">
+              <p className="text-white">
+                <span className="mx-2  text-secondery text-[2rem] font-">
+                  #2.
+                </span>
+
+                <span className="text-[2rem] font-bold">skills & Technologies</span>
+              </p>
+              <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl"></div>
+            </div>
+            <div className="pt-10 ml-2 flex-col   shadow rounded-2xl flex gap-9  text-white ">
+              <div className="flex flex-col">
+
+              
+              <p className="ml-1 mb-3 font-normal text-[1.2rem]">Font-end:</p>
+              <div className="flex gap-4">
+              <Badge skill="html"></Badge>
+              <Badge skill="css"></Badge>
+              <Badge skill="javascript"></Badge>
+              <Badge skill="Typescript"></Badge>
+              <Badge skill="React.js"></Badge>
+              <Badge skill="Next.js"></Badge>
+              <Badge skill="TailwindCss"></Badge>
+              <Badge skill="Framer"></Badge>
+              <Badge skill="Framer"></Badge>
+              </div>
+              </div>
+
+              <div className="flex flex-col">
+
+              
+              <p className="ml-1 mb-3 font-[500] text-[1.2rem]">Back-end:</p>
+              <div className="flex gap-4">
+              <Badge skill="Express.js"></Badge>
+              <Badge skill="Hone.js"></Badge>
+              <Badge skill="Postgress"></Badge>
+              <Badge skill="Prisma"></Badge>
+              <Badge skill="websocket"></Badge>
+              <Badge skill="Mongo"></Badge>
+              
+              </div>
+              </div>
+              <div className="flex flex-col">
+
+              
+              <p className="ml-1 mb-3 font-[500] text-[1.2rem]">Tools and Devops:</p>
+              <div className="flex gap-4">
+              <Badge skill="Git"></Badge>
+              <Badge skill="GitHub"></Badge>
+              <Badge skill="Docker"></Badge>
+              <Badge skill="Docker Hub"></Badge>
+              <Badge skill="Docker Compose"></Badge>
+              <Badge skill="CI/CD"></Badge>
+              <Badge skill="AWS"></Badge>
+            
+              
+              </div>
+              </div>
+              </div>
           </div>
         </div>
 
@@ -152,6 +248,14 @@ function App() {
       </div>
     </div>
   );
+}
+
+function Badge({skill}:{
+  skill:string
+}){
+  return <div className="bg-secondery/30 border border-secondery text-white rounded-2xl flex w-fit px-3 text-[0.9rem] font-medium  ">
+    {skill}
+  </div> 
 }
 
 export default App;
