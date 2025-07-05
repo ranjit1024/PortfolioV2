@@ -4,7 +4,7 @@ import { Triangle } from "lucide-react";
 function App() {
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
-      <div className="  py-3 px-10 w-[100vw]  fixed z-10  bg-primary  items-center">
+      <div className="  py-3 px-10 w-[100vw]  fixed z-10  bg-primary   items-center">
         <header className="w-[100%] flex justify-between items-center    top-0">
           <div>
             {" "}
@@ -27,7 +27,7 @@ function App() {
         </header>
       </div>
       <div className="grid grid-cols-[10%_80%_10%] h-[100%]">
-        <div className="w-[100%] h-[100%] bg-primary">
+        <div className="w-[100%] h-[100%] mt-20 bg-primary">
           <div className="h-[100%] fixed top-[59vh] w-[7%]   ">
             <div className="flex justify-center items-center flex-col gap-5">
               <div className="hover:text-secondery hover:cursor-pointer">
@@ -86,7 +86,7 @@ function App() {
           </div>
         </div>
 
-        <div className="flex text-white mt-20 p-10 h-[100] flex-col w-[100%]  bg-primary  ">
+        <div className="flex text-white mt-20 p-10 h-[100%] flex-col w-[100%]  bg-primary  ">
           <div className="flex  justify-center flex-col  ">
             <p className="text-secondery font-normal text-md font-pop ml-2 -mt-3 ">
               Hi, &nbsp; My name &nbsp; is &nbsp; ,
@@ -236,24 +236,24 @@ function App() {
               </div>
           </div>
 
-          <div id="proj" className=" about  mt-35 pl-5 flex justify-center flex-col ">
-            <div className="flex items-center ">
+          <div id="proj" className="   mt-35 bg-primary   pl-5 flex justify-center flex-col ">
+            <div className="flex items-center  ">
               <p className="text-white">
-                <span className="mx-2  text-secondery text-[1.6rem] font-">
-                  #2.
+                <span className="mx-2  text-secondery text-[1.6rem] ">
+                  #3.
                 </span>
 
                 <span className="text-[1.6rem] font-bold text-gray-300">Some Things I’ve Built</span>
               </p>
               <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl"></div>
             </div>
-           <div className="mt-10 ml-2">
-            <Projects/>
-           </div>
+          
+            
+           
           </div>
         </div>
 
-        <div className="w-[100%] h-[100%] bg-primary">
+        <div className="w-[100%] h-[100%] mt-20 bg-primary">
           <div className=" fixed top-[70vh] w-[13%] flex justify-center items-center flex-col">
             <p className="rotate-90 mb-10 text-gray-50/80 ">
               ranjitdas@gmail.com
@@ -275,7 +275,7 @@ function Badge({skill}:{
 }
 
 function Projects(){
-  return <div>
+  return <div className="h-[100%] bg-primary">
 klhn
   </div>
 }
