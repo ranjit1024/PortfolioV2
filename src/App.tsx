@@ -1,11 +1,30 @@
 import "./App.css";
 import logo from "./assets/Group 2.png";
 import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
+import { motion } from "motion/react";
 function App() {
+   const handleGoToAbout = (e:any) => {
+    e.preventDefault(); // stop default anchor behavior
+    const section = document.getElementById("about");
+   // 'auto' = no scroll animation
+  };
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
       <div className="  py-3 px-10 w-[100vw]  fixed z-10  bg-primary   items-center">
-        <header className="w-[100%] flex justify-between items-center    top-0">
+        <motion.header 
+        initial={{
+          y:-20,
+          opacity:0
+        }}
+        animate={{
+          y:0,
+          opacity:1
+        }}
+        transition={{
+          ease:'easeIn',
+          duration:0.6
+        }}
+        className="w-[100%] flex justify-between items-center    top-0">
           <div>
             {" "}
             <img src={logo} height={50} width={45} />
@@ -13,7 +32,7 @@ function App() {
           <ul className="flex gap-8">
             <li className="font-[250] text-[15px] hover:cursor-pointer hover:text-secondery ">
               <span className="ml-1 text-secondery">#1 </span>
-              <a href="#about" className="transition">
+              <a href="#about" onClick={handleGoToAbout} className="transition">
                 About
               </a>
             </li>
@@ -26,11 +45,27 @@ function App() {
               <span>Projects</span>
             </li>
           </ul>
-        </header>
+        </motion.header>
+
       </div>
       <div className="grid grid-cols-[10%_80%_10%] h-[100%]">
-        <div className="w-[100%] h-[100%] mt-20 bg-primary">
-          <div className="h-[100%] fixed top-[59vh] w-[7%]   ">
+        <div 
+       
+        className="w-[100%] h-[100%] mt-20 bg-primary">
+          <motion.div 
+                 initial={{
+          x:-20,
+          opacity:0
+        }}
+        animate={{
+          x:0,
+          opacity:1
+        }}
+        transition={{
+          ease:'easeIn',
+          duration:0.6
+        }}
+          className="h-[100%] fixed top-[59vh] w-[7%]   ">
             <div className="flex justify-center items-center flex-col gap-5">
               <div className="hover:text-secondery hover:cursor-pointer">
                 <svg
@@ -85,11 +120,25 @@ function App() {
               </div>
               <div className="p-[0.5px] mt-2 bg-white/50 h-100"></div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="flex  text-white p-8 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
-          <div className="flex  justify-center flex-col   ">
+        <div className="flex scroll-smooth text-white p-8 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
+          <motion.div 
+                           initial={{
+          y:20,
+          opacity:0
+        }}
+        animate={{
+          y:0,
+          opacity:1
+        }}
+        transition={{
+          ease:'easeIn',
+          duration:0.6,
+          delay:0.8
+        }}
+          className="flex  justify-center flex-col   ">
             <p className="text-secondery font-normal text-md font-pop ml-2 -mt-3 ">
               Hi, &nbsp; My name &nbsp; is &nbsp; ,
             </p>
@@ -106,7 +155,7 @@ function App() {
                 experiences and building robust, scalable backend systems.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           <div
             id="about"
@@ -276,12 +325,26 @@ function App() {
         </div>
 
         <div className="w-[100%] h-[100%] mt-20 bg-primary">
-          <div className=" fixed top-[70vh] w-[13%] flex justify-center items-center flex-col">
+          <motion.div 
+                           initial={{
+          x:20,
+          opacity:0
+        }}
+        animate={{
+          x:0,
+          opacity:1
+        }}
+        transition={{
+          ease:'easeIn',
+          duration:0.6,
+          delay:0.3
+        }}
+          className=" fixed top-[70vh] w-[13%] flex justify-center items-center flex-col">
             <p className="rotate-90 mb-10 text-gray-50/80 ">
               ranjitdas@gmail.com
             </p>
             <div className="p-[0.5px] mt-10 bg-white/50 h-20"></div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
@@ -302,7 +365,7 @@ function Project1() {
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
-      <div className="flex flex-col h-100  justify-center items-end">
+      <div className="flex flex-col h-100  justify-center items-end mr-2">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           Revisly
@@ -372,7 +435,7 @@ function Project3() {
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/first.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
-      <div className="flex flex-col h-100 justify-center items-end">
+      <div className="flex flex-col h-100 justify-center items-end mr-2">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           basusconsulting
