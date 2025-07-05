@@ -3,11 +3,7 @@ import logo from "./assets/Group 2.png";
 import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
 import { motion } from "motion/react";
 function App() {
-   const handleGoToAbout = (e:any) => {
-    e.preventDefault(); // stop default anchor behavior
-    const section = document.getElementById("about");
-   // 'auto' = no scroll animation
-  };
+ 
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
       <div className="  py-3 px-10 w-[100vw]  fixed z-10  bg-primary   items-center">
@@ -32,7 +28,7 @@ function App() {
           <ul className="flex gap-8">
             <li className="font-[250] text-[15px] hover:cursor-pointer hover:text-secondery ">
               <span className="ml-1 text-secondery">#1 </span>
-              <a href="#about" onClick={handleGoToAbout} className="transition">
+              <a href="#about"  className="transition">
                 About
               </a>
             </li>
