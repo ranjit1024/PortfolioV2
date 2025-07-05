@@ -1,7 +1,6 @@
 import "./App.css";
 import logo from "./assets/Group 2.png";
 import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
-
 function App() {
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
@@ -89,7 +88,7 @@ function App() {
           </div>
         </div>
 
-        <div className="flex  text-white p-10 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
+        <div className="flex  text-white p-8 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
           <div className="flex  justify-center flex-col   ">
             <p className="text-secondery font-normal text-md font-pop ml-2 -mt-3 ">
               Hi, &nbsp; My name &nbsp; is &nbsp; ,
@@ -303,12 +302,12 @@ function Project1() {
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
-      <div className="flex flex-col h-100 justify-center items-end">
+      <div className="flex flex-col h-100  justify-center items-end">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           Revisly
         </p>
-        <div className="mt-5 bg-[#162040] py-5 px-5 w-[180%] rounded-md shadow leading-6 text-gray-300 shadow-[#162040] ">
+        <div className="mt-5 bg-[#162040] py-5 px-5 w-[180%] rounded-md shadow leading-7 text-gray-400 shadow-[#162040] ">
           An AI-powered tool designed for smarter, faster revision.
 It automatically generates subject-specific notes using AI, and also lets you upload your own notes for personalized learning.
         <p className="mt-2">You can select intervals and take tests based on your chosen subjects — the system evaluates your answers and gives you a performance score. </p>
@@ -341,7 +340,8 @@ function Project2() {
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           E-Wallet
         </p>
-        <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-300 shadow-[#162040] ">
+        <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 
+         shadow-[#162040] ">
           <p>E-wallet is simple applicaion where you can create account and send Fake money
             i also implemented fake banking deposite and withdraw api  </p>
         </div>
@@ -377,7 +377,7 @@ function Project3() {
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           basusconsulting
         </p>
-        <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-300 shadow-[#162040] ">
+        <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 shadow-[#162040] ">
           Here's a polished and professional version of your request for a simple landing page for a consulting firm named Basus's consulting.
         </div>
         <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap">
