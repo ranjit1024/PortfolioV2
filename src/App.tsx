@@ -106,7 +106,7 @@ function App() {
             </div>
           </div>
 
-          <div id="about" className=" about mt-35 pl-5 flex justify-center flex-col ">
+          <div id="about" className=" about mt-35 pl-5 flex justify-center flex-col bg-primary h-[100%] ">
             <div className="flex items-center ">
               <p className="text-white">
                 <span className="mx-2  text-secondery text-[1.6rem] font-">
@@ -174,7 +174,7 @@ function App() {
             </div>
           </div>
 
-          <div id="skill" className=" about  mt-35 pl-5 flex justify-center flex-col ">
+          <div id="skill" className=" about  mt-35 pl-5 flex justify-center flex-col bg-primary ">
             <div className="flex items-center ">
               <p className="text-white">
                 <span className="mx-2  text-secondery text-[1.6rem] font-">
