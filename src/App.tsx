@@ -9,7 +9,7 @@ function App() {
   }
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
-      <div className="  py-3 px-10 w-[100vw] shadow-2xl shadow-cyan-300/3  fixed z-10  bg-primary   items-center">
+      <div className="  py-3 px-10 max-md:px-5 w-[100vw] shadow-2xl shadow-cyan-300/3  fixed z-10  bg-primary   items-center">
         <motion.header
           initial={{
             y: -20,
@@ -23,11 +23,11 @@ function App() {
             ease: "easeIn",
             duration: 0.6,
           }}
-          className="w-[100%] flex justify-between items-center    top-0"
+          className="w-[100%] flex justify-between items-center max-md:block top-0"
         >
-          <div>
+          <div className="max-md:size-20">
             {" "}
-            <img src={logo} height={50} width={45} />
+            <img src={logo} height={20} width={40} />
           </div>
           <ul className="flex gap-8 max-md:hidden">
             <Link to="about" smooth={true} duration={500}>
@@ -133,7 +133,7 @@ function App() {
           </motion.div>
         </div>
 
-        <div className="flex  max-md:mt-30 scroll-smooth text-white p-8 max-md:p-3 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
+        <div className="flex  max-md:mt-40 scroll-smooth text-white p-8 max-md:p-3 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
           <motion.div
             initial={{
               y: 20,
