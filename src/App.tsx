@@ -4,7 +4,9 @@ import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-scroll";
 function App() {
-
+  function open({link}:{link:string}){
+    window.open(link,"_black")
+  }
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
       <div className="  py-3 px-10 w-[100vw] shadow-2xl shadow-cyan-300/3  fixed z-10  bg-primary   items-center">
@@ -70,7 +72,9 @@ function App() {
             className="h-[100%] fixed top-[59vh] w-[7%]   "
           >
             <div className="flex  justify-center items-center flex-col gap-5">
-              <div className="hover:text-secondery hover:cursor-pointer">
+              <div  className="hover:text-secondery hover:cursor-pointer" onClick={()=>{
+                open({link:"https://github.com/ranjit1024"})
+              }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -87,7 +91,9 @@ function App() {
                   <path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
               </div>
-              <div className="hover:text-secondery hover:cursor-pointer">
+              <div className="hover:text-secondery hover:cursor-pointer" onClick={()=>{
+                open({link:"https://x.com/ranjitd18755665"})
+              }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -103,7 +109,8 @@ function App() {
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                 </svg>
               </div>
-              <div className="hover:text-secondery hover:cursor-pointer">
+              <div className="hover:text-secondery hover:cursor-pointer" onClick={() =>{
+                open({link:"https://www.linkedin.com/in/ranjit-das-31b866352/"})}}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -458,8 +465,12 @@ function Project1() {
           <p>CloudFlare workers</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github onClick={()=>{
+            open("https://github.com/ranjit1024/revision")
+          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight 
+          
+          className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
     </motion.div>
@@ -509,8 +520,12 @@ function Project2() {
           <p>Postgress</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github onClick={()=>{
+            open("https://github.com/ranjit1024/E-wallet")
+          }}  className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight onClick={()=>{
+            open("https://ewallet.ranjitdasproject.space")
+          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
       <div className="rounded-2xl  ">
@@ -559,8 +574,12 @@ function Project3() {
           <p>JavaScript</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github onClick={()=>{
+            open("https://github.com/ranjit1024/personal-project")
+          }}  className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight onClick={()=>{
+            open("https://basusconsulting.com/#")
+          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
     </motion.div>
@@ -598,8 +617,11 @@ function MobileProject(){
           <p>CloudFlare workers</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+           <Github onClick={()=>{
+            open("https://github.com/ranjit1024/E-wallet");
+           }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
           <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          
         </div>
       </div>
   </div>
@@ -628,8 +650,12 @@ function MobileProject2(){
           <p>Postgress</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github onClick={()=>{
+            open('https://github.com/ranjit1024/E-wallet')
+          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight onClick={()=>{
+            open("https://ewallet.ranjitdasproject.space/")
+           }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
   </div>
@@ -651,8 +677,12 @@ function MobileProject3(){
           <p>JavaScript</p>
         </div>
          <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github onClick={()=>{
+            open("https://github.com/ranjit1024/personal-project");
+          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight onClick={()=>{
+            open("https://basusconsulting.com/#")
+          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
   </div>
