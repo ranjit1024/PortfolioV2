@@ -27,7 +27,7 @@ function App() {
         >
           <div className="max-md:size-20">
             {" "}
-            <img src={logo} height={20} width={40} />
+            <img src={logo} height={20} width={45} />
           </div>
           <ul className="flex gap-8 max-md:hidden">
             <Link to="about" smooth={true} duration={500}>
@@ -148,7 +148,7 @@ function App() {
               duration: 0.6,
               delay: 0.8,
             }}
-            className="flex  justify-center flex-col pl-3   "
+            className="flex  justify-center flex-col pl-3 mt-10   "
           >
             <p className="text-secondery font-normal text-md font-pop ml-2 -mt-3 ">
               Hi, &nbsp; My name &nbsp; is &nbsp; ,
