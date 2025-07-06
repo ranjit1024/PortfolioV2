@@ -163,7 +163,7 @@ function App() {
               </p>
               <p className="w-[70%] mt-2 max-md:w-[100%] max-md:text-start max-md:mt-4 text-gray-300 text-[1.05rem]  leading-7">
                 I'm a full stack developer focused on delivering intuitive user
-                experiences and building robust, scalable backend systems.
+                experiences and building robust, scalable backend systems. Basically i add layer of abstraction
               </p>
             </div>
           </motion.div>
