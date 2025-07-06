@@ -90,13 +90,13 @@ function App() {
                     ></X>
                   </div>
 
-                  <ul className="flex gap-8 flex-col p-5 pt-20 ">
+                  <ul className="flex  flex-col p-5 h-[100%]  gap-15  justify-center items-stretch ">
                     <Link to="about" smooth={true} duration={500} >
                       <li
                        onClick={()=>{
                       setModalOpen(false);
                       
-                    }}  className="font-[250] text-[2.5rem] hover:cursor-pointer hover:text-secondery ">
+                    }}  className="font-semibold  text-[2.5rem]  hover:cursor-pointer hover:text-secondery ">
                         <span className="ml-1 text-secondery">#1 </span>
                         <a href="#about" className="transition">
                           About Me
@@ -107,7 +107,7 @@ function App() {
                       <li onClick={()=>{
                       setModalOpen(false);
                       
-                    }} className="font-[300] text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
+                    }} className="font-semibold text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
                         <span className="ml-1 text-secondery">#2 </span>
                         <span>Skills</span>
                       </li>
@@ -118,7 +118,7 @@ function App() {
                        onClick={()=>{
                       setModalOpen(false);
                       
-                    }} className="font-[300] text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
+                    }} className="font-semibold text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
                         <span className="ml-1 text-secondery">#3 </span>
                         <span>Projects</span>
                       </li>
