@@ -1,33 +1,132 @@
 import "./App.css";
 import logo from "./assets/Group 2.png";
-import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
+import {
+  
+  Github,
+  Menu,
+  SquareArrowOutUpRight,
+  Triangle,
+  X,
+} from "lucide-react";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 function App() {
-  function open({link}:{link:string}){
-    window.open(link,"_black")
+  function open({ link }: { link: string }) {
+    window.open(link, "_black");
   }
+  const [show, setShow] = useState<Boolean>(true);
+  const [lastScrollY, setLastScollY] = useState<number>(0);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = modalOpen ? "hidden" : "auto";
+  }, [modalOpen]);
+
+  useEffect(() => {
+    const handelScrollY = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShow(false); // Scrolling down — hide
+      } else {
+        setShow(true); // Scrolling up — show
+      }
+      setLastScollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handelScrollY);
+    return () => window.removeEventListener("scroll", handelScrollY);
+  }, [lastScrollY]);
+
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
-      <div className="  py-3 px-10 max-md:px-5 w-[100vw] shadow-2xl shadow-cyan-300/3  fixed z-10  bg-primary   items-center">
-        <motion.header
-          initial={{
-            y: -20,
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            ease: "easeIn",
-            duration: 0.6,
-          }}
-          className="w-[100%] flex justify-between items-center max-md:block top-0"
-        >
-          <div className="max-md:size-20">
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: show ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="  py-3 px-5  max-md:px-3 w-[100vw]  shadow-cyan-300/3  fixed z-10 bg-primary/10 backdrop-blur-sm max-md:h-18   items-center"
+      >
+        <motion.header className=" flex justify-between items-center ">
+          <div className="max-md:ml-2">
             {" "}
             <img src={logo} height={20} width={45} />
+          </div>
+          <div className="min-md:hidden">
+            <ul className="">
+              <Menu
+                className="size-10 text-secondery"
+                onClick={() => {
+                  setModalOpen(true);
+                  setShow(false);
+                }}
+              ></Menu>
+            </ul>
+            {modalOpen && (
+              <motion.div
+                initial={{
+                  left: "100vh",
+                  top: 10,
+                  opacity: 0,
+                }}
+                animate={{
+                  left: 0,
+                  opacity: 1,
+                  top: 100,
+                  transition: { type: "tween", duration: 0.3, damping: 15 },
+                  
+                }}
+                exit={{ left: "100vh", opacity: 0 }}
+                className="absolute left-0    h-[100vh] w-[100vw]  "
+              >
+                <div className=" relative  inset-0 bg-gray-950/80 backdrop-blur-lg h-full w-full ">
+                  <div className="absolute right-2 top-2">
+                    <X
+                      className="size-10 text-secondery  "
+                      onClick={() => {
+                        setShow((current) => !current);
+                        setModalOpen(false);
+                      }}
+                    ></X>
+                  </div>
+
+                  <ul className="flex gap-8 flex-col p-5 pt-20 ">
+                    <Link to="about" smooth={true} duration={500} >
+                      <li
+                       onClick={()=>{
+                      setModalOpen(false);
+                      
+                    }}  className="font-[250] text-[2.5rem] hover:cursor-pointer hover:text-secondery ">
+                        <span className="ml-1 text-secondery">#1 </span>
+                        <a href="#about" className="transition">
+                          About Me
+                        </a>
+                      </li>
+                    </Link>
+                    <Link to="skill" smooth={true} duration={500} >
+                      <li onClick={()=>{
+                      setModalOpen(false);
+                      
+                    }} className="font-[300] text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
+                        <span className="ml-1 text-secondery">#2 </span>
+                        <span>Skills</span>
+                      </li>
+                    </Link>
+                    <Link to="proj" smooth={true} duration={500}>
+                      <li 
+                      
+                       onClick={()=>{
+                      setModalOpen(false);
+                      
+                    }} className="font-[300] text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
+                        <span className="ml-1 text-secondery">#3 </span>
+                        <span>Projects</span>
+                      </li>
+                    </Link>
+                  </ul>
+                </div>
+              </motion.div>
+            )}
           </div>
           <ul className="flex gap-8 max-md:hidden">
             <Link to="about" smooth={true} duration={500}>
@@ -44,16 +143,15 @@ function App() {
                 <span>Skills</span>
               </li>
             </Link>
-            <Link to="proj"  smooth={true} duration={500}>
-           
-            <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
-              <span className="ml-1 text-secondery">#3 </span>
-              <span>Projects</span>
-            </li>
+            <Link to="proj" smooth={true} duration={500}>
+              <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
+                <span className="ml-1 text-secondery">#3 </span>
+                <span>Projects</span>
+              </li>
             </Link>
           </ul>
         </motion.header>
-      </div>
+      </motion.div>
       <div className="grid grid-cols-[10%_80%_10%] max-md:grid-cols-1 h-[100%]">
         <div className="w-[100%] h-[100%] mt-20 bg-primary max-md:hidden ">
           <motion.div
@@ -72,9 +170,12 @@ function App() {
             className="h-[100%] fixed top-[59vh] w-[7%]   "
           >
             <div className="flex  justify-center items-center flex-col gap-5">
-              <div  className="hover:text-secondery hover:cursor-pointer" onClick={()=>{
-                open({link:"https://github.com/ranjit1024"})
-              }}>
+              <div
+                className="hover:text-secondery hover:cursor-pointer"
+                onClick={() => {
+                  open({ link: "https://github.com/ranjit1024" });
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -91,9 +192,12 @@ function App() {
                   <path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
               </div>
-              <div className="hover:text-secondery hover:cursor-pointer" onClick={()=>{
-                open({link:"https://x.com/ranjitd18755665"})
-              }}>
+              <div
+                className="hover:text-secondery hover:cursor-pointer"
+                onClick={() => {
+                  open({ link: "https://x.com/ranjitd18755665" });
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -109,8 +213,14 @@ function App() {
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                 </svg>
               </div>
-              <div className="hover:text-secondery hover:cursor-pointer" onClick={() =>{
-                open({link:"https://www.linkedin.com/in/ranjit-das-31b866352/"})}}>
+              <div
+                className="hover:text-secondery hover:cursor-pointer"
+                onClick={() => {
+                  open({
+                    link: "https://www.linkedin.com/in/ranjit-das-31b866352/",
+                  });
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -161,9 +271,9 @@ function App() {
               <p className="text-[5rem] max-md:text-[2rem] max-md:mt-2 font-bold text-gray-400 -mt-3">
                 I Build things for web.{" "}
               </p>
-              <p className="w-[70%] mt-2 max-md:w-[100%] max-md:text-start max-md:mt-4 text-gray-300 text-[1.05rem]  leading-7">
+              <p className="w-[70%] mt-2 max-md:w-[100%] max-md:text-start max-md:mt-4 text-gray-300 text-[1.1rem]  leading-7">
                 I'm a full stack developer focused on delivering intuitive user
-                experiences and building robust, scalable backend systems. Basically i add layer of abstraction
+                experiences and building robust, scalable backend systems.
               </p>
             </div>
           </motion.div>
@@ -180,11 +290,10 @@ function App() {
             transition={{
               duration: 0.6,
               ease: "easeOut",
-              delay:0.2
+              delay: 0.2,
             }}
             viewport={{
               once: true,
-              
             }}
             id="about"
             className=" max-md:mt-30 about mt-35 pl-5 max-md:pl-1 flex justify-center  flex-col bg-primary h-[100%]  "
@@ -260,8 +369,10 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div className="h-[100%] w-[100%] -z-0 border-2 border-secondery  relative max-md:h-70 max-md:-mt-10
-               rounded-md max-md:border-none ">
+              <div
+                className="h-[100%] w-[100%] -z-0 border-2 border-secondery  relative max-md:h-70 max-md:-mt-10
+               rounded-md max-md:border-none "
+              >
                 <div className="h-[100%] w-[100%] relative left-4 max-md:left-0 max-md:bottom-0 bottom-4 z-2  ">
                   <div className=" bg-[url(./assets/profile.png)]    bg-center bg-cover  h-full rounded-md bg-blend-difference bg-secondery/30  bg-no-repeat "></div>
                 </div>
@@ -270,7 +381,7 @@ function App() {
           </motion.div>
 
           <motion.div
-              initial={{
+            initial={{
               y: 50,
               opacity: 0,
             }}
@@ -281,11 +392,11 @@ function App() {
             transition={{
               duration: 0.6,
               ease: "easeOut",
-              delay:0.2
+              delay: 0.2,
             }}
             viewport={{
               once: true,
-              amount:0.3
+              amount: 0.3,
             }}
             id="skill"
             className="max-md:mt-15 mt-35 pl-5 max-md:pl-2 flex justify-center flex-col bg-primary "
@@ -348,7 +459,6 @@ function App() {
             </div>
           </motion.div>
 
-
           <div
             id="proj"
             className="max-md:mt-25  mt-35 bg-primary max-md:pl-2   pl-5 flex justify-center flex-col "
@@ -369,9 +479,9 @@ function App() {
               <Project3 />
             </div>
             <div className="mt-4 ml-2 space-y-10 min-md:hidden  ">
-             <MobileProject/>
-             <MobileProject2/>
-             <MobileProject3/>
+              <MobileProject />
+              <MobileProject2 />
+              <MobileProject3 />
             </div>
           </div>
         </div>
@@ -415,24 +525,24 @@ function Badge({ skill }: { skill: string }) {
 function Project1() {
   return (
     <motion.div
-    initial={{
-              y: 50,
-              opacity: 0,
-            }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay:0.2
-            }}
-            viewport={{
-              once: true,
-              
-            }}
-    className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary">
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary"
+    >
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
@@ -465,12 +575,13 @@ function Project1() {
           <p>CloudFlare workers</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github onClick={()=>{
-            open("https://github.com/ranjit1024/revision")
-          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight 
-          
-          className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/revision");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
     </motion.div>
@@ -480,24 +591,24 @@ function Project1() {
 function Project2() {
   return (
     <motion.div
-    initial={{
-              y: 50,
-              opacity: 0,
-            }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay:0.2
-            }}
-            viewport={{
-              once: true,
-              
-            }}
-    className=" grid grid-cols-[40%_60%] h-100 gap-10 bg-primary">
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className=" grid grid-cols-[40%_60%] h-100 gap-10 bg-primary"
+    >
       <div className="flex flex-col h-100 justify-center items-start z-10">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
@@ -520,12 +631,18 @@ function Project2() {
           <p>Postgress</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github onClick={()=>{
-            open("https://github.com/ranjit1024/E-wallet")
-          }}  className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight onClick={()=>{
-            open("https://ewallet.ranjitdasproject.space")
-          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/E-wallet");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://ewallet.ranjitdasproject.space");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
         </div>
       </div>
       <div className="rounded-2xl  ">
@@ -539,23 +656,23 @@ function Project3() {
   return (
     <motion.div
       initial={{
-              y: 50,
-              opacity: 0,
-            }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay:0.2
-            }}
-            viewport={{
-              once: true,
-              
-            }}
-    className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary">
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary"
+    >
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/first.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
@@ -565,8 +682,8 @@ function Project3() {
           basusconsulting
         </p>
         <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 shadow-[#162040] ">
-          Here's a polished and professional version of your request for a
-          simple landing page for a consulting firm named Basus's consulting.
+          Here's a polished and professional version of simple landing page for
+          a consulting firm named Basus's consulting.
         </div>
         <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap">
           <p>Html</p>
@@ -574,21 +691,47 @@ function Project3() {
           <p>JavaScript</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github onClick={()=>{
-            open("https://github.com/ranjit1024/personal-project")
-          }}  className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight onClick={()=>{
-            open("https://basusconsulting.com/#")
-          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/personal-project");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://basusconsulting.com/#");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
         </div>
       </div>
     </motion.div>
   );
 }
 
-function MobileProject(){
-  return <div className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6">
-     <div className="">
+function MobileProject() {
+  return (
+    <motion.div
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.25,
+      }}
+      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
+    >
+      <div className="">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           Revisly
@@ -617,18 +760,41 @@ function MobileProject(){
           <p>CloudFlare workers</p>
         </div>
         <div className="mt-5 flex gap-5">
-           <Github onClick={()=>{
-            open("https://github.com/ranjit1024/E-wallet");
-           }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/E-wallet");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
           <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          
         </div>
       </div>
-  </div>
+    </motion.div>
+  );
 }
-function MobileProject2(){
-  return <div className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6">
-        <div className="">
+function MobileProject2() {
+  return (
+    <motion.div
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.25,
+      }}
+      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
+    >
+      <div className="">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           E-Wallet
@@ -650,19 +816,46 @@ function MobileProject2(){
           <p>Postgress</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github onClick={()=>{
-            open('https://github.com/ranjit1024/E-wallet')
-          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight onClick={()=>{
-            open("https://ewallet.ranjitdasproject.space/")
-           }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/E-wallet");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://ewallet.ranjitdasproject.space/");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
         </div>
       </div>
-  </div>
+    </motion.div>
+  );
 }
-function MobileProject3(){
-  return <div className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6">
-        <div className="">
+function MobileProject3() {
+  return (
+    <motion.div
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.25,
+      }}
+      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
+    >
+      <div className="">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           basusconsulting
@@ -671,20 +864,27 @@ function MobileProject3(){
           Here's a polished and professional version of your request for a
           simple landing page for a consulting firm named Basus's consulting.
         </div>
-        <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end justify-start  gap-3 flex-wrap">
+        <div className="mt-3 flex  font-light text-sm text-gray-300  gap-3 flex-wrap">
           <p>Html</p>
           <p>Css</p>
           <p>JavaScript</p>
         </div>
-         <div className="mt-5 flex gap-5">
-          <Github onClick={()=>{
-            open("https://github.com/ranjit1024/personal-project");
-          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
-          <SquareArrowOutUpRight onClick={()=>{
-            open("https://basusconsulting.com/#")
-          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+        <div className="mt-5 flex gap-5">
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/personal-project");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://basusconsulting.com/#");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
         </div>
       </div>
-  </div>
+    </motion.div>
+  );
 }
 export default App;
