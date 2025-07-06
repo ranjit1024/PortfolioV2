@@ -2,67 +2,70 @@ import "./App.css";
 import logo from "./assets/Group 2.png";
 import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-scroll";
 function App() {
- 
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
-      <div className="  py-3 px-10 w-[100vw]  fixed z-10  bg-primary   items-center">
-        <motion.header 
-        initial={{
-          y:-20,
-          opacity:0
-        }}
-        animate={{
-          y:0,
-          opacity:1
-        }}
-        transition={{
-          ease:'easeIn',
-          duration:0.6
-        }}
-        className="w-[100%] flex justify-between items-center    top-0">
+      <div className="  py-3 px-10 w-[100vw] shadow-2xl shadow-cyan-300/3  fixed z-10  bg-primary   items-center">
+        <motion.header
+          initial={{
+            y: -20,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            ease: "easeIn",
+            duration: 0.6,
+          }}
+          className="w-[100%] flex justify-between items-center    top-0"
+        >
           <div>
             {" "}
             <img src={logo} height={50} width={45} />
           </div>
-          <ul className="flex gap-8">
-            <li className="font-[250] text-[15px] hover:cursor-pointer hover:text-secondery ">
-              <span className="ml-1 text-secondery">#1 </span>
-              <a href="#about"  className="transition">
-                About
-              </a>
-            </li>
-            <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
-              <span className="ml-1 text-secondery">#2 </span>
-              <span>Skills</span>
-            </li>
+          <ul className="flex gap-8 max-md:hidden">
+            <Link to="about" smooth={true} duration={500}>
+              <li className="font-[250] text-[15px] hover:cursor-pointer hover:text-secondery ">
+                <span className="ml-1 text-secondery">#1 </span>
+                <a href="#about" className="transition">
+                  About Me
+                </a>
+              </li>
+            </Link>
+            <Link to="skill" smooth={true} duration={500}>
+              <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
+                <span className="ml-1 text-secondery">#2 </span>
+                <span>Skills</span>
+              </li>
+            </Link>
             <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
               <span className="ml-1 text-secondery">#3 </span>
               <span>Projects</span>
             </li>
           </ul>
         </motion.header>
-
       </div>
-      <div className="grid grid-cols-[10%_80%_10%] h-[100%]">
-        <div 
-       
-        className="w-[100%] h-[100%] mt-20 bg-primary">
-          <motion.div 
-                 initial={{
-          x:-20,
-          opacity:0
-        }}
-        animate={{
-          x:0,
-          opacity:1
-        }}
-        transition={{
-          ease:'easeIn',
-          duration:0.6
-        }}
-          className="h-[100%] fixed top-[59vh] w-[7%]   ">
-            <div className="flex justify-center items-center flex-col gap-5">
+      <div className="grid grid-cols-[10%_80%_10%] max-md:grid-cols-1 h-[100%]">
+        <div className="w-[100%] h-[100%] mt-20 bg-primary max-md:hidden ">
+          <motion.div
+            initial={{
+              x: -20,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              ease: "easeIn",
+              duration: 0.6,
+            }}
+            className="h-[100%] fixed top-[59vh] w-[7%]   "
+          >
+            <div className="flex  justify-center items-center flex-col gap-5">
               <div className="hover:text-secondery hover:cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -119,57 +122,75 @@ function App() {
           </motion.div>
         </div>
 
-        <div className="flex scroll-smooth text-white p-8 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
-          <motion.div 
-                           initial={{
-          y:20,
-          opacity:0
-        }}
-        animate={{
-          y:0,
-          opacity:1
-        }}
-        transition={{
-          ease:'easeIn',
-          duration:0.6,
-          delay:0.8
-        }}
-          className="flex  justify-center flex-col   ">
+        <div className="flex  max-md:mt-30 scroll-smooth text-white p-8 h-[100%] flex-col w-[100%] mt-20   bg-primary  ">
+          <motion.div
+            initial={{
+              y: 20,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              ease: "easeIn",
+              duration: 0.6,
+              delay: 0.8,
+            }}
+            className="flex  justify-center flex-col   "
+          >
             <p className="text-secondery font-normal text-md font-pop ml-2 -mt-3 ">
               Hi, &nbsp; My name &nbsp; is &nbsp; ,
             </p>
 
             <div className="pt-1 h-[100%] -mt-1">
-              <p className="text-[5.5rem] font-bold text-gray-200">
+              <p className="text-[5.5rem] max-md:text-[2.5rem] font-bold text-gray-200">
                 Ranjit Das.
               </p>
-              <p className="text-[5rem] font-bold text-gray-400 -mt-3">
+              <p className="text-[5rem] max-md:text-[2rem] max-md:mt-2 font-bold text-gray-400 -mt-3">
                 I Build things for web.{" "}
               </p>
-              <p className="w-[70%] mt-2 text-gray-300 text-[1.05rem]  leading-7">
+              <p className="w-[70%] mt-2 max-md:w-[100%] max-md:text-start max-md:mt-4 text-gray-300 text-[1.05rem]  leading-7">
                 I'm a full stack developer focused on delivering intuitive user
                 experiences and building robust, scalable backend systems.
               </p>
             </div>
           </motion.div>
 
-          <div
+          <motion.div
+            initial={{
+              y: 50,
+              opacity: 0,
+            }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              
+            }}
+            viewport={{
+              once: true,
+            
+            }}
             id="about"
-            className=" about mt-35 pl-5 flex justify-center flex-col bg-primary h-[100%] "
+            className=" about mt-35 pl-5 flex justify-center  flex-col bg-primary h-[100%]  "
           >
             <div className="flex items-center ">
               <p className="text-white">
-                <span className="mx-2  text-secondery text-[1.6rem] font-">
+                <span className="mx-2   text-secondery text-[1.6rem] ">
                   #1.
                 </span>
 
-                <span className="text-[1.6rem] text-gray-300 font-bold">
+                <span className="text-[1.6rem]  text-gray-300 font-bold">
                   About Me
                 </span>
               </p>
-              <div className="p-[0.5px] ml-3 w-80 bg-white/40 rounded-2xl"></div>
+              <div className="p-[0.5px] max-md:w-30 ml-3 w-80 bg-white/40 rounded-2xl"></div>
             </div>
-            <div className="mt-8 ml-2 grid grid-cols-[60%_40%] gap-5  w-[100%]">
+            <div className="mt-8 ml-2 grid grid-cols-[60%_40%] max-md:flex max-md:flex-wrap gap-5  h-[100%]">
               <div className=" w-[90%]">
                 <p className=" text-gray-400 text-[1.1rem] leading-8 ">
                   I'm Ranjit Das, a{" "}
@@ -228,17 +249,18 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div className="h-[100%] w-[100%] -z-0 border-2 border-secondery relative rounded-md ">
-                <div className="h-[100%] w-[100%] relative left-4  bottom-4 z-2  ">
-                  <div className=" bg-[url(./assets/profile.png)]   bg-center bg-cover  h-full rounded-md bg-blend-difference bg-secondery/30  bg-no-repeat "></div>
+              <div className="h-[100%] w-[100%] -z-0 border-2 border-secondery  relative max-md:h-70 max-md:-mt-10
+               rounded-md max-md:border-none ">
+                <div className="h-[100%] w-[100%] relative left-4 max-md:left-0 max-md:bottom-0 bottom-4 z-2  ">
+                  <div className=" bg-[url(./assets/profile.png)]    bg-center bg-cover  h-full rounded-md bg-blend-difference bg-secondery/30  bg-no-repeat "></div>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div
             id="skill"
-            className=" about  mt-35 pl-5 flex justify-center flex-col bg-primary "
+            className="   mt-35 pl-5 flex justify-center flex-col bg-primary "
           >
             <div className="flex items-center ">
               <p className="text-white">
@@ -257,7 +279,7 @@ function App() {
                 <p className="ml-1 mb-3 font-normal text-[1.2rem]">
                   Front-end:
                 </p>
-                <div className="flex gap-4">
+                <div className="flex gap-4  max-md:flex-wrap">
                   <Badge skill="html"></Badge>
                   <Badge skill="css"></Badge>
                   <Badge skill="javascript"></Badge>
@@ -270,9 +292,9 @@ function App() {
                 </div>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col ">
                 <p className="ml-1 mb-3 font-[500] text-[1.2rem]">Back-end:</p>
-                <div className="flex gap-4">
+                <div className="flex gap-4 max-md:flex-wrap">
                   <Badge skill="Express.js"></Badge>
                   <Badge skill="Hone.js"></Badge>
                   <Badge skill="Postgress"></Badge>
@@ -285,7 +307,7 @@ function App() {
                 <p className="ml-1 mb-3 font-[500] text-[1.2rem]">
                   Tools and Devops:
                 </p>
-                <div className="flex gap-4">
+                <div className="flex gap-4 max-md:flex-wrap">
                   <Badge skill="Git"></Badge>
                   <Badge skill="GitHub"></Badge>
                   <Badge skill="Docker"></Badge>
@@ -310,36 +332,37 @@ function App() {
                   Some Things I’ve Built
                 </span>
               </p>
-              <div className="p-[0.5px] ml-3 w-80  bg-white/40 rounded-2xl"></div>
+              <div className="p-[0.5px] ml-3 w-80 max-md:w-1 bg-white/40 rounded-2xl"></div>
             </div>
-            <div className="mt-15 ml-2 space-y-40 ">
+            <div className="mt-15 ml-2 space-y-40 max-md:hidden ">
               <Project1 />
-              <Project2/>
-              <Project3/>
+              <Project2 />
+              <Project3 />
             </div>
           </div>
         </div>
 
-        <div className="w-[100%] h-[100%] mt-20 bg-primary">
-          <motion.div 
-                           initial={{
-          x:20,
-          opacity:0
-        }}
-        animate={{
-          x:0,
-          opacity:1
-        }}
-        transition={{
-          ease:'easeIn',
-          duration:0.6,
-          delay:0.3
-        }}
-          className=" fixed top-[70vh] w-[13%] flex justify-center items-center flex-col">
+        <div className="w-[100%] h-[100%] mt-20 bg-primary max-md:hidden">
+          <motion.div
+            initial={{
+              x: 20,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              ease: "easeIn",
+              duration: 0.6,
+              delay: 0.3,
+            }}
+            className=" fixed top-[70vh] w-[13%] flex justify-center items-center flex-col"
+          >
             <p className="rotate-90 mb-10 text-gray-50/80 ">
               ranjitdas@gmail.com
             </p>
-            <div className="p-[0.5px] mt-10 bg-white/50 h-20"></div>
+            <div className="p-[0.5px] mt-10 bg-white/50 h-100"></div>
           </motion.div>
         </div>
       </div>
@@ -367,10 +390,18 @@ function Project1() {
           Revisly
         </p>
         <div className="mt-5 bg-[#162040] py-5 px-5 w-[180%] rounded-md shadow leading-7 text-gray-400 shadow-[#162040] ">
-          An AI-powered tool designed for smarter, faster revision.
-It automatically generates subject-specific notes using AI, and also lets you upload your own notes for personalized learning.
-        <p className="mt-2">You can select intervals and take tests based on your chosen subjects — the system evaluates your answers and gives you a performance score. </p>
-          <p className="mt-2">and on the basis of your  avarage test socre it will tell how much you have remember.</p>
+          An AI-powered tool designed for smarter, faster revision. It
+          automatically generates subject-specific notes using AI, and also lets
+          you upload your own notes for personalized learning.
+          <p className="mt-2">
+            You can select intervals and take tests based on your chosen
+            subjects — the system evaluates your answers and gives you a
+            performance score.{" "}
+          </p>
+          <p className="mt-2">
+            and on the basis of your avarage test socre it will tell how much
+            you have remember.
+          </p>
         </div>
         <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap">
           <p>Next.js</p>
@@ -382,8 +413,8 @@ It automatically generates subject-specific notes using AI, and also lets you up
           <p>CloudFlare workers</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"/>
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"/>
+          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
     </div>
@@ -393,16 +424,19 @@ It automatically generates subject-specific notes using AI, and also lets you up
 function Project2() {
   return (
     <div className=" grid grid-cols-[40%_60%] h-100 gap-10 bg-primary">
-    
       <div className="flex flex-col h-100 justify-center items-start z-10">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           E-Wallet
         </p>
-        <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 
-         shadow-[#162040] ">
-          <p>E-wallet is simple applicaion where you can create account and send Fake money
-            i also implemented fake banking deposite and withdraw api  </p>
+        <div
+          className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 
+         shadow-[#162040] "
+        >
+          <p>
+            E-wallet is simple applicaion where you can create account and send
+            Fake money i also implemented fake banking deposite and withdraw api{" "}
+          </p>
         </div>
         <div className="mt-3 flex w-[100%] font-light text-sm text-gray-300 justify-start gap-3 flex-wrap">
           <p>Next.js</p>
@@ -412,14 +446,12 @@ function Project2() {
           <p>Postgress</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"/>
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"/>
+          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
-        <div className="rounded-2xl  ">
-        <div className="bg-[url(./assets/ewallet.png)] bg-secondery/40 bg-blend-darken h-100  bg-cover rounded-md bg-left-top  bg-no-repeat ">
-        
-        </div>
+      <div className="rounded-2xl  ">
+        <div className="bg-[url(./assets/ewallet.png)] bg-secondery/40 bg-blend-darken h-100  bg-cover rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
     </div>
   );
@@ -437,7 +469,8 @@ function Project3() {
           basusconsulting
         </p>
         <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 shadow-[#162040] ">
-          Here's a polished and professional version of your request for a simple landing page for a consulting firm named Basus's consulting.
+          Here's a polished and professional version of your request for a
+          simple landing page for a consulting firm named Basus's consulting.
         </div>
         <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap">
           <p>Html</p>
@@ -445,8 +478,8 @@ function Project3() {
           <p>JavaScript</p>
         </div>
         <div className="mt-5 flex gap-5">
-          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"/>
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"/>
+          <Github className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
     </div>
