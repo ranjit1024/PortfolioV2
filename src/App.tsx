@@ -4,6 +4,7 @@ import { Github, SquareArrowOutUpRight, Triangle } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-scroll";
 function App() {
+
   return (
     <div className="bg-primary h-100 text-white font-mona scroll-smooth">
       <div className="  py-3 px-10 w-[100vw] shadow-2xl shadow-cyan-300/3  fixed z-10  bg-primary   items-center">
@@ -41,10 +42,13 @@ function App() {
                 <span>Skills</span>
               </li>
             </Link>
+            <Link to="proj"  smooth={true} duration={500}>
+           
             <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
               <span className="ml-1 text-secondery">#3 </span>
               <span>Projects</span>
             </li>
+            </Link>
           </ul>
         </motion.header>
       </div>
@@ -61,7 +65,7 @@ function App() {
             }}
             transition={{
               ease: "easeIn",
-              duration: 0.6,
+              duration: 0.3,
             }}
             className="h-[100%] fixed top-[59vh] w-[7%]   "
           >
@@ -169,7 +173,7 @@ function App() {
             transition={{
               duration: 0.6,
               ease: "easeOut",
-              delay:1
+              delay:0.2
             }}
             viewport={{
               once: true,
@@ -258,7 +262,24 @@ function App() {
             </div>
           </motion.div>
 
-          <div
+          <motion.div
+              initial={{
+              y: 50,
+              opacity: 0,
+            }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay:0.2
+            }}
+            viewport={{
+              once: true,
+              amount:0.3
+            }}
             id="skill"
             className="max-md:mt-15 mt-35 pl-5 max-md:pl-2 flex justify-center flex-col bg-primary "
           >
@@ -318,7 +339,8 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
+
 
           <div
             id="proj"
@@ -385,7 +407,25 @@ function Badge({ skill }: { skill: string }) {
 
 function Project1() {
   return (
-    <div className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary">
+    <motion.div
+    initial={{
+              y: 50,
+              opacity: 0,
+            }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay:0.2
+            }}
+            viewport={{
+              once: true,
+              
+            }}
+    className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary">
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
@@ -422,13 +462,31 @@ function Project1() {
           <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function Project2() {
   return (
-    <div className=" grid grid-cols-[40%_60%] h-100 gap-10 bg-primary">
+    <motion.div
+    initial={{
+              y: 50,
+              opacity: 0,
+            }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay:0.2
+            }}
+            viewport={{
+              once: true,
+              
+            }}
+    className=" grid grid-cols-[40%_60%] h-100 gap-10 bg-primary">
       <div className="flex flex-col h-100 justify-center items-start z-10">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
@@ -458,13 +516,31 @@ function Project2() {
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/ewallet.png)] bg-secondery/40 bg-blend-darken h-100  bg-cover rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function Project3() {
   return (
-    <div className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary">
+    <motion.div
+      initial={{
+              y: 50,
+              opacity: 0,
+            }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay:0.2
+            }}
+            viewport={{
+              once: true,
+              
+            }}
+    className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary">
       <div className="rounded-2xl  ">
         <div className="bg-[url(./assets/first.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
@@ -487,7 +563,7 @@ function Project3() {
           <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
