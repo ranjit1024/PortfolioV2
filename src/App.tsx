@@ -3,7 +3,7 @@ import logo from "./assets/Group 2.png";
 import { Github, Menu, SquareArrowOutUpRight, Triangle, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import {  Link } from "react-scroll";
+import { Link } from "react-scroll";
 function App() {
   function open({ link }: { link: string }) {
     window.open(link, "_black");
@@ -537,38 +537,44 @@ function App() {
               <MobileProject3 />
             </div>
             <motion.div
-                  
               initial={{
-                y:20,
-                opacity:0,
+                y: 20,
+                opacity: 0,
               }}
               whileInView={{
-                y:0,
-                opacity:1
+                y: 0,
+                opacity: 1,
               }}
               viewport={{
-                once:true,
-                amount:0.1
+                once: true,
+                amount: 0.1,
               }}
               transition={{
-                duration:0.6,
-                ease:"easeInOut"
+                duration: 0.6,
+                ease: "easeInOut",
               }}
-            className="flex mt-30 justify-center flex-col items-center">
+              className="flex mt-30 justify-center flex-col items-center"
+            >
               <p className="text-secondery font-[400] ">#4 What's Next</p>
               <p className="py-5 font-semibold text-[2.4rem] text-zinc-400">
                 Get In Touch
               </p>
               <p className="text-center w-[50%] max-md:w-[90%] text-zinc-400 leading-6 text-[1.06rem] ">
-                I’m  currently looking for any opportunities, my
-                inbox is always open. Whether you have a question or just want
-                to say hi, I’ll try my best to get back to you!
+                I’m currently looking for any opportunities, my inbox is always
+                open. Whether you have a question or just want to say hi, I’ll
+                try my best to get back to you!
               </p>
-              <motion.button whileHover={{
-                transform:'translate(-5px, -10%)'
-              }} onClick={()=>{
-                open({link:"https://mail.google.com/mail/u/0/#inbox?compose=new"})
-              }} className="mt-10 text-secondery border-secondery border px-8 py-4 hover:cursor-pointer ">
+              <motion.button
+                whileHover={{
+                  transform: "translate(-5px, -10%)",
+                }}
+                onClick={() => {
+                  open({
+                    link: "https://mail.google.com/mail/u/0/#inbox?compose=new",
+                  });
+                }}
+                className="mt-10 text-secondery border-secondery border px-8 py-4 hover:cursor-pointer "
+              >
                 Say Hello
               </motion.button>
             </motion.div>
@@ -858,7 +864,9 @@ function MobileProject() {
             }}
             className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
           />
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight onClick={()=>{
+            open("https://revision-xw93.vercel.app/")
+          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
         </div>
       </div>
     </motion.div>
