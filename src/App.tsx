@@ -599,7 +599,7 @@ function App() {
             className=" fixed top-[70vh] w-[13%] flex justify-center items-center flex-col"
           >
             <p className="rotate-90 mb-10 text-gray-50/80 ">
-              ranjitdas@gmail.com
+              ranjitdas2048@gmail.com
             </p>
             <div className="p-[0.5px] mt-10 bg-white/50 h-100"></div>
           </motion.div>
