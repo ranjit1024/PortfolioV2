@@ -1,16 +1,9 @@
 import "./App.css";
 import logo from "./assets/Group 2.png";
-import {
-  
-  Github,
-  Menu,
-  SquareArrowOutUpRight,
-  Triangle,
-  X,
-} from "lucide-react";
+import { Github, Menu, SquareArrowOutUpRight, Triangle, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { Button, Link } from "react-scroll";
 function App() {
   function open({ link }: { link: string }) {
     window.open(link, "_black");
@@ -48,10 +41,24 @@ function App() {
         className="  py-3 px-5  max-md:px-3 w-[100vw]  shadow-cyan-300/3  fixed z-10 bg-primary/10 backdrop-blur-sm max-md:h-18   items-center"
       >
         <motion.header className=" flex justify-between items-center ">
-          <div className="max-md:ml-2">
+          <motion.div
+            initial={{
+              y: -20,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+            className="max-md:ml-2"
+          >
             {" "}
-            <img src={logo} height={20} width={45} />
-          </div>
+            <img src={logo} height={20} width={41} />
+          </motion.div>
           <div className="min-md:hidden">
             <ul className="">
               <Menu
@@ -74,7 +81,6 @@ function App() {
                   opacity: 1,
                   top: 100,
                   transition: { type: "tween", duration: 0.3, damping: 15 },
-                  
                 }}
                 exit={{ left: "100vh", opacity: 0 }}
                 className="absolute left-0    h-[100vh] w-[100vw]  "
@@ -91,34 +97,37 @@ function App() {
                   </div>
 
                   <ul className="flex  flex-col p-5 h-[100%]  gap-15  justify-center items-stretch ">
-                    <Link to="about" smooth={true} duration={500} >
+                    <Link to="about" smooth={true} duration={500}>
                       <li
-                       onClick={()=>{
-                      setModalOpen(false);
-                      
-                    }}  className="font-semibold  text-[2.5rem]  hover:cursor-pointer hover:text-secondery ">
+                        onClick={() => {
+                          setModalOpen(false);
+                        }}
+                        className="font-semibold  text-[2.5rem]  hover:cursor-pointer hover:text-secondery "
+                      >
                         <span className="ml-1 text-secondery">#1 </span>
                         <a href="#about" className="transition">
                           About Me
                         </a>
                       </li>
                     </Link>
-                    <Link to="skill" smooth={true} duration={500} >
-                      <li onClick={()=>{
-                      setModalOpen(false);
-                      
-                    }} className="font-semibold text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
+                    <Link to="skill" smooth={true} duration={500}>
+                      <li
+                        onClick={() => {
+                          setModalOpen(false);
+                        }}
+                        className="font-semibold text-[2.5rem] hover:cursor-pointer hover:text-secondery  "
+                      >
                         <span className="ml-1 text-secondery">#2 </span>
                         <span>Skills</span>
                       </li>
                     </Link>
                     <Link to="proj" smooth={true} duration={500}>
-                      <li 
-                      
-                       onClick={()=>{
-                      setModalOpen(false);
-                      
-                    }} className="font-semibold text-[2.5rem] hover:cursor-pointer hover:text-secondery  ">
+                      <li
+                        onClick={() => {
+                          setModalOpen(false);
+                        }}
+                        className="font-semibold text-[2.5rem] hover:cursor-pointer hover:text-secondery  "
+                      >
                         <span className="ml-1 text-secondery">#3 </span>
                         <span>Projects</span>
                       </li>
@@ -130,24 +139,68 @@ function App() {
           </div>
           <ul className="flex gap-8 max-md:hidden">
             <Link to="about" smooth={true} duration={500}>
-              <li className="font-[250] text-[15px] hover:cursor-pointer hover:text-secondery ">
+              <motion.li
+                initial={{
+                  y: -20,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeInOut",
+                }}
+                className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery "
+              >
                 <span className="ml-1 text-secondery">#1 </span>
                 <a href="#about" className="transition">
                   About Me
                 </a>
-              </li>
+              </motion.li>
             </Link>
             <Link to="skill" smooth={true} duration={500}>
-              <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
+              <motion.li
+                initial={{
+                  y: -20,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeInOut",
+                  delay: 0.2,
+                }}
+                className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  "
+              >
                 <span className="ml-1 text-secondery">#2 </span>
                 <span>Skills</span>
-              </li>
+              </motion.li>
             </Link>
             <Link to="proj" smooth={true} duration={500}>
-              <li className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  ">
+              <motion.li
+                initial={{
+                  y: -20,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeInOut",
+                  delay: 0.4,
+                }}
+                className="font-[300] text-[15px] hover:cursor-pointer hover:text-secondery  "
+              >
                 <span className="ml-1 text-secondery">#3 </span>
                 <span>Projects</span>
-              </li>
+              </motion.li>
             </Link>
           </ul>
         </motion.header>
@@ -483,6 +536,42 @@ function App() {
               <MobileProject2 />
               <MobileProject3 />
             </div>
+            <motion.div
+                  
+              initial={{
+                y:20,
+                opacity:0,
+              }}
+              whileInView={{
+                y:0,
+                opacity:1
+              }}
+              viewport={{
+                once:true,
+                amount:0.1
+              }}
+              transition={{
+                duration:0.6,
+                ease:"easeInOut"
+              }}
+            className="flex mt-30 justify-center flex-col items-center">
+              <p className="text-secondery font-[400] ">#4 What's Next</p>
+              <p className="py-5 font-semibold text-[2.4rem] text-zinc-400">
+                Get In Touch
+              </p>
+              <p className="text-center w-[50%] max-md:w-[90%] text-zinc-400 leading-6 text-[1.06rem] ">
+                I’m  currently looking for any opportunities, my
+                inbox is always open. Whether you have a question or just want
+                to say hi, I’ll try my best to get back to you!
+              </p>
+              <motion.button whileHover={{
+                transform:'translate(-5px, -10%)'
+              }} onClick={()=>{
+                open({link:"https://mail.google.com/mail/u/0/#inbox?compose=new"})
+              }} className="mt-10 text-secondery border-secondery border px-8 py-4 hover:cursor-pointer ">
+                Say Hello
+              </motion.button>
+            </motion.div>
           </div>
         </div>
 
@@ -581,7 +670,12 @@ function Project1() {
             }}
             className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
           />
-          <SquareArrowOutUpRight className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://revision-xw93.vercel.app/");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
         </div>
       </div>
     </motion.div>
@@ -723,11 +817,9 @@ function MobileProject() {
       transition={{
         duration: 0.6,
         ease: "easeOut",
-        delay: 0.2,
       }}
       viewport={{
         once: true,
-        amount: 0.25,
       }}
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
     >
@@ -786,11 +878,10 @@ function MobileProject2() {
       transition={{
         duration: 0.6,
         ease: "easeOut",
-        delay: 0.2,
       }}
       viewport={{
         once: true,
-        amount: 0.25,
+        amount: 0.15,
       }}
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
     >
@@ -847,11 +938,10 @@ function MobileProject3() {
       transition={{
         duration: 0.6,
         ease: "easeOut",
-        delay: 0.2,
       }}
       viewport={{
         once: true,
-        amount: 0.25,
+        amount: 0.1,
       }}
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
     >
