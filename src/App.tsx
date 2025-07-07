@@ -570,7 +570,7 @@ function App() {
                 }}
                 onClick={() => {
                   open({
-                    link: "https://mail.google.com/mail/u/0/#inbox?compose=new",
+                    link: "https://mail.google.com/mail/u/0/#inbox?compose=jrjtXDzFszTxZQSptKZSHbLrwmKNcpLwKqnjXDmKCDpDzchxkVkXZqQvqlqCzlJGPGRMVbjx",
                   });
                 }}
                 className="mt-10 text-secondery border-secondery border px-8 py-4 hover:cursor-pointer "
@@ -864,9 +864,12 @@ function MobileProject() {
             }}
             className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
           />
-          <SquareArrowOutUpRight onClick={()=>{
-            open("https://revision-xw93.vercel.app/")
-          }} className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400" />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://revision-xw93.vercel.app/");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
         </div>
       </div>
     </motion.div>
