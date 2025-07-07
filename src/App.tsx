@@ -3,7 +3,7 @@ import logo from "./assets/Group 2.png";
 import { Github, Menu, SquareArrowOutUpRight, Triangle, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { Button, Link } from "react-scroll";
+import {  Link } from "react-scroll";
 function App() {
   function open({ link }: { link: string }) {
     window.open(link, "_black");
