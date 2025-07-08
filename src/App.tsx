@@ -565,9 +565,19 @@ function App() {
                 try my best to get back to you!
               </p>
               <motion.button
-                whileHover={{
-                  transform: "translate(-5px, -10%)",
-                }}
+              
+
+                 
+      whileHover={{
+        x: -5,
+        y: -5,
+        boxShadow: " 4px 4px lightgray",
+        scale: 1.02,
+      }}
+      transition={{ type: "spring", stiffness: 300, damping: 40 }}
+     
+    
+     
                 onClick={() => {
                   open({
                     link: "https://mail.google.com/mail/u/0/#inbox?compose=jrjtXDzFszTxZQSptKZSHbLrwmKNcpLwKqnjXDmKCDpDzchxkVkXZqQvqlqCzlJGPGRMVbjx",
@@ -638,7 +648,9 @@ function Project1() {
       }}
       className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary"
     >
-      <div className="rounded-2xl  ">
+      <div className="rounded-2xl  " onClick={() => {
+              open("https://github.com/ranjit1024/revision");
+            }}>
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
       <div className="flex flex-col h-100  justify-center items-end mr-2">
@@ -745,7 +757,9 @@ function Project2() {
           />
         </div>
       </div>
-      <div className="rounded-2xl  ">
+      <div className="rounded-2xl"  onClick={() => {
+              open("https://github.com/ranjit1024/E-wallet");
+            }}>
         <div className="bg-[url(./assets/ewallet.png)] bg-secondery/40 bg-blend-darken h-100  bg-cover rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
     </motion.div>
@@ -773,7 +787,9 @@ function Project3() {
       }}
       className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary"
     >
-      <div className="rounded-2xl  ">
+      <div className="rounded-2xl  "  onClick={() => {
+              open("https://basusconsulting.com/#");
+            }}>
         <div className="bg-[url(./assets/first.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
       <div className="flex flex-col h-100 justify-center items-end mr-2">
@@ -827,7 +843,11 @@ function MobileProject() {
       viewport={{
         once: true,
       }}
+
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
+       onClick={() => {
+              open("https://revision-xw93.vercel.app/");
+            }}
     >
       <div className="">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
@@ -895,6 +915,9 @@ function MobileProject2() {
         amount: 0.15,
       }}
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
+       onClick={() => {
+              open("https://ewallet.ranjitdasproject.space/");
+            }}
     >
       <div className="">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
@@ -954,6 +977,9 @@ function MobileProject3() {
         once: true,
         amount: 0.1,
       }}
+         onClick={() => {
+              open("https://basusconsulting.com/#");
+            }}
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
     >
       <div className="">
