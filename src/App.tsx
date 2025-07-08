@@ -649,7 +649,7 @@ function Project1() {
       className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary"
     >
       <div className="rounded-2xl  " onClick={() => {
-              open("https://github.com/ranjit1024/revision");
+              open("https://revision-xw93.vercel.app/");
             }}>
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
@@ -757,8 +757,8 @@ function Project2() {
           />
         </div>
       </div>
-      <div className="rounded-2xl"  onClick={() => {
-              open("https://github.com/ranjit1024/E-wallet");
+      <div className="rounded-2xl"   onClick={() => {
+              open("https://ewallet.ranjitdasproject.space");
             }}>
         <div className="bg-[url(./assets/ewallet.png)] bg-secondery/40 bg-blend-darken h-100  bg-cover rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
