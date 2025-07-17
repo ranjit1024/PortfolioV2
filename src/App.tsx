@@ -528,13 +528,11 @@ function App() {
             </div>
             <div className="mt-15 ml-2 space-y-40 max-md:hidden ">
               <Project1 />
-              <Project2 />
-              <Project3 />
+         
             </div>
             <div className="mt-4 ml-2 space-y-10 min-md:hidden  ">
               <MobileProject />
-              <MobileProject2 />
-              <MobileProject3 />
+          
             </div>
             <motion.div
               initial={{
@@ -700,130 +698,9 @@ function Project1() {
   );
 }
 
-function Project2() {
-  return (
-    <motion.div
-      initial={{
-        y: 50,
-        opacity: 0,
-      }}
-      whileInView={{
-        y: 0,
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.2,
-      }}
-      viewport={{
-        once: true,
-      }}
-      className=" grid grid-cols-[40%_60%] h-100 gap-10 bg-primary"
-    >
-      <div className="flex flex-col h-100 justify-center items-start z-10">
-        <p className="text-secondery  text-sm font-medium">Featured Project</p>
-        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
-          E-Wallet
-        </p>
-        <div
-          className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 
-         shadow-[#162040] "
-        >
-          <p>
-            E-wallet is simple applicaion where you can create account and send
-            Fake money i also implemented fake banking deposite and withdraw api{" "}
-          </p>
-        </div>
-        <div className="mt-3 flex w-[100%] font-light text-sm text-gray-300 justify-start gap-3 flex-wrap">
-          <p>Next.js</p>
-          <p>TurboRepo</p>
-          <p>TailwindCss</p>
-          <p>Prisma</p>
-          <p>Postgress</p>
-        </div>
-        <div className="mt-5 flex gap-5">
-          <Github
-            onClick={() => {
-              open("https://github.com/ranjit1024/E-wallet");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-          <SquareArrowOutUpRight
-            onClick={() => {
-              open("https://ewallet.ranjitdasproject.space");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-        </div>
-      </div>
-      <div className="rounded-2xl"   onClick={() => {
-              open("https://ewallet.ranjitdasproject.space");
-            }}>
-        <div className="bg-[url(./assets/ewallet.png)] bg-secondery/40 bg-blend-darken h-100  bg-cover rounded-md bg-left-top  bg-no-repeat "></div>
-      </div>
-    </motion.div>
-  );
-}
 
-function Project3() {
-  return (
-    <motion.div
-      initial={{
-        y: 50,
-        opacity: 0,
-      }}
-      whileInView={{
-        y: 0,
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.2,
-      }}
-      viewport={{
-        once: true,
-      }}
-      className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary"
-    >
-      <div className="rounded-2xl  "  onClick={() => {
-              open("https://basusconsulting.com/#");
-            }}>
-        <div className="bg-[url(./assets/first.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
-      </div>
-      <div className="flex flex-col h-100 justify-center items-end mr-2">
-        <p className="text-secondery  text-sm font-medium">Featured Project</p>
-        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
-          basusconsulting
-        </p>
-        <div className="mt-5 bg-[#162040] py-5 px-5 w-[130%] rounded-md shadow leading-6 text-gray-400 shadow-[#162040] ">
-          Here's a polished and professional version of simple landing page for
-          a consulting firm named Basus's consulting.
-        </div>
-        <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap">
-          <p>Html</p>
-          <p>Css</p>
-          <p>JavaScript</p>
-        </div>
-        <div className="mt-5 flex gap-5">
-          <Github
-            onClick={() => {
-              open("https://github.com/ranjit1024/personal-project");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-          <SquareArrowOutUpRight
-            onClick={() => {
-              open("https://basusconsulting.com/#");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+
+
 
 function MobileProject() {
   return (
@@ -895,123 +772,6 @@ function MobileProject() {
     </motion.div>
   );
 }
-function MobileProject2() {
-  return (
-    <motion.div
-      initial={{
-        y: 50,
-        opacity: 0,
-      }}
-      whileInView={{
-        y: 0,
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-      }}
-      viewport={{
-        once: true,
-        amount: 0.15,
-      }}
-      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
-       onClick={() => {
-              open("https://ewallet.ranjitdasproject.space/");
-            }}
-    >
-      <div className="">
-        <p className="text-secondery  text-sm font-medium">Featured Project</p>
-        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
-          E-Wallet
-        </p>
-        <div
-          className="mt-5 bg-[#162040] rounded-md shadow leading-6 text-gray-400 
-         shadow-[#162040] "
-        >
-          <p>
-            E-wallet is simple applicaion where you can create account and send
-            Fake money i also implemented fake banking deposite and withdraw api{" "}
-          </p>
-        </div>
-        <div className="mt-3 flex w-[100%] font-light text-sm text-gray-300 justify-start gap-3 flex-wrap">
-          <p>Next.js</p>
-          <p>TurboRepo</p>
-          <p>TailwindCss</p>
-          <p>Prisma</p>
-          <p>Postgress</p>
-        </div>
-        <div className="mt-5 flex gap-5">
-          <Github
-            onClick={() => {
-              open("https://github.com/ranjit1024/E-wallet");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-          <SquareArrowOutUpRight
-            onClick={() => {
-              open("https://ewallet.ranjitdasproject.space/");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-function MobileProject3() {
-  return (
-    <motion.div
-      initial={{
-        y: 50,
-        opacity: 0,
-      }}
-      whileInView={{
-        y: 0,
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-      }}
-      viewport={{
-        once: true,
-        amount: 0.1,
-      }}
-         onClick={() => {
-              open("https://basusconsulting.com/#");
-            }}
-      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
-    >
-      <div className="">
-        <p className="text-secondery  text-sm font-medium">Featured Project</p>
-        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
-          basusconsulting
-        </p>
-        <div className="mt-5 bg-[#162040] py-5  rounded-md shadow leading-6 text-gray-400 shadow-[#162040] ">
-          Here's a polished and professional version of your request for a
-          simple landing page for a consulting firm named Basus's consulting.
-        </div>
-        <div className="mt-3 flex  font-light text-sm text-gray-300  gap-3 flex-wrap">
-          <p>Html</p>
-          <p>Css</p>
-          <p>JavaScript</p>
-        </div>
-        <div className="mt-5 flex gap-5">
-          <Github
-            onClick={() => {
-              open("https://github.com/ranjit1024/personal-project");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-          <SquareArrowOutUpRight
-            onClick={() => {
-              open("https://basusconsulting.com/#");
-            }}
-            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-          />
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+
+
 export default App;
