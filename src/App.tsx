@@ -481,8 +481,8 @@ function App() {
                   <Badge skill="React.js"></Badge>
                   <Badge skill="Next.js"></Badge>
                   <Badge skill="TailwindCss"></Badge>
-                  <Badge skill="Framer"></Badge>
-                  <Badge skill="Framer"></Badge>
+                  <Badge skill="Framer Motion"></Badge>
+                  <Badge skill="redux toolkit"></Badge>
                 </div>
               </div>
 
@@ -490,11 +490,11 @@ function App() {
                 <p className="ml-1 mb-3 font-[500] text-[1.2rem]">Back-end:</p>
                 <div className="flex gap-4 max-md:flex-wrap">
                   <Badge skill="Express.js"></Badge>
-                  <Badge skill="Hone.js"></Badge>
-                  <Badge skill="Postgress"></Badge>
-                  <Badge skill="Prisma"></Badge>
+                  <Badge skill="Hono.js"></Badge>
+                  <Badge skill="Postgresql"></Badge>
+                  <Badge skill="Prisma ORM"></Badge>
                   <Badge skill="websocket"></Badge>
-                  <Badge skill="Mongo"></Badge>
+                  <Badge skill="mongodb"></Badge>
                 </div>
               </div>
               <div className="flex flex-col">
