@@ -495,6 +495,7 @@ function App() {
                   <Badge skill="Prisma ORM"></Badge>
                   <Badge skill="websocket"></Badge>
                   <Badge skill="mongodb"></Badge>
+                  <Badge skill="Redis"></Badge>
                 </div>
               </div>
               <div className="flex flex-col">
