@@ -369,11 +369,11 @@ function App() {
                   I'm Ranjit Das, a{" "}
                   <span className="text-secondery"> full-stack developer</span>{" "}
                   focused on building clean, scalable, and user-centric digital
-                  products. I don’t follow hobbies-my passion is solving
-                  real-world problems through thoughtful code and simple design.
-                  Whether it’s crafting seamless user experiences or
-                  architecting robust backends, I build with clarity, purpose,
-                  and impact.
+                  products.
+                </p>
+                <p className="mt-4 text-gray-400 text-[1.1rem]">I don't have any personal life, no hobbies,
+ I need three things in my life that I want to build products, 2 Hours for exercise and 7 Hours of sleep.
+ The rest of the time, I want to build, I want to work..
                 </p>
 
                 <p className="mt-4 text-gray-400 text-[1.1rem]">
