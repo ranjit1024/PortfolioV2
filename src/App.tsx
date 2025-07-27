@@ -371,9 +371,11 @@ function App() {
                   focused on building clean, scalable, and user-centric digital
                   products.
                 </p>
-                <p className="mt-4 text-gray-400 text-[1.1rem]">I don't have any personal life, no hobbies,
- I need three things in my life that I want to build products, 2 Hours for exercise and 7 Hours of sleep.
- The rest of the time, I want to build, I want to work..
+                <p className="mt-4 text-gray-400 text-[1.1rem]">
+                  I don't have any personal life, no hobbies, I need three
+                  things in my life that I want to build products, 2 Hours for
+                  exercise and 7 Hours of sleep. The rest of the time, I want to
+                  build, I want to work..
                 </p>
 
                 <p className="mt-4 text-gray-400 text-[1.1rem]">
@@ -528,11 +530,9 @@ function App() {
             </div>
             <div className="mt-15 ml-2 space-y-40 max-md:hidden ">
               <Project1 />
-         
             </div>
             <div className="mt-4 ml-2 space-y-10 min-md:hidden  ">
               <MobileProject />
-          
             </div>
             <motion.div
               initial={{
@@ -563,19 +563,13 @@ function App() {
                 try my best to get back to you!
               </p>
               <motion.button
-              
-
-                 
-      whileHover={{
-        x: -5,
-        y: -5,
-        boxShadow: " 4px 4px lightgray",
-        scale: 1.02,
-      }}
-      transition={{ type: "spring", stiffness: 300, damping: 40 }}
-     
-    
-     
+                whileHover={{
+                  x: -5,
+                  y: -5,
+                  boxShadow: " 4px 4px lightgray",
+                  scale: 1.02,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 40 }}
                 onClick={() => {
                   open({
                     link: "https://mail.google.com/mail/u/0/#inbox?compose=jrjtXDzFszTxZQSptKZSHbLrwmKNcpLwKqnjXDmKCDpDzchxkVkXZqQvqlqCzlJGPGRMVbjx",
@@ -646,9 +640,12 @@ function Project1() {
       }}
       className=" grid grid-cols-[60%_40%] h-100 gap-10 bg-primary"
     >
-      <div className="rounded-2xl  " onClick={() => {
-              open("https://revision-xw93.vercel.app/");
-            }}>
+      <div
+        className="rounded-2xl  "
+        onClick={() => {
+          open("https://revision-xw93.vercel.app/");
+        }}
+      >
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
       <div className="flex flex-col h-100  justify-center items-end mr-2">
@@ -698,10 +695,6 @@ function Project1() {
   );
 }
 
-
-
-
-
 function MobileProject() {
   return (
     <motion.div
@@ -720,11 +713,10 @@ function MobileProject() {
       viewport={{
         once: true,
       }}
-
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
-       onClick={() => {
-              open("https://revision-xw93.vercel.app/");
-            }}
+      onClick={() => {
+        open("https://revision-xw93.vercel.app/");
+      }}
     >
       <div className="">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
@@ -772,6 +764,5 @@ function MobileProject() {
     </motion.div>
   );
 }
-
 
 export default App;
