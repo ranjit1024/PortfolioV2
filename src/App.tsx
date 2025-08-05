@@ -482,7 +482,7 @@ function App() {
                   <Badge skill="Next.js"></Badge>
                   <Badge skill="TailwindCss"></Badge>
                   <Badge skill="Framer Motion"></Badge>
-                  <Badge skill="redux toolkit"></Badge>
+                  <Badge skill="Recoil"></Badge>
                 </div>
               </div>
 
@@ -671,7 +671,8 @@ function Project1() {
         <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap">
           <p>Next.js</p>
           <p>NextAuth</p>
-          <p>TailwindCss </p>
+          <p>TailwindCss</p>
+          <p>Recoil</p>
           <p>Prisma</p>
           <p>Postgress</p>
           <p>Redis</p>
