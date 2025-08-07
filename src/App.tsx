@@ -482,7 +482,7 @@ function App() {
                   <Badge skill="Next.js"></Badge>
                   <Badge skill="TailwindCss"></Badge>
                   <Badge skill="Framer Motion"></Badge>
-                  <Badge skill="Recoil"></Badge>
+                  <Badge skill="Redux-tookkit"></Badge>
                 </div>
               </div>
 
