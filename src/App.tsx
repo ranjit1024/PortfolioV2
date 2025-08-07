@@ -672,7 +672,7 @@ function Project1() {
           <p>Next.js</p>
           <p>NextAuth</p>
           <p>TailwindCss</p>
-          <p>Recoil</p>
+          <p>Redux Toolkit</p>
           <p>Prisma</p>
           <p>Postgress</p>
           <p>Redis</p>
