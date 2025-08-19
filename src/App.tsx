@@ -668,7 +668,7 @@ function Project1() {
             you have remember.
           </p>
         </div>
-        <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap">
+        <div className="mt-10 flex  font-normal mr-1 text-sm text-gray-400 justify-end  gap-3 flex-wrap ">
           <p>Next.js</p>
           <p>NextAuth</p>
           <p>TailwindCss</p>
@@ -677,6 +677,7 @@ function Project1() {
           <p>Postgress</p>
           <p>Redis</p>
           <p>CloudFlare workers</p>
+          <p>AWS S3</p>
         </div>
         <div className="mt-5 flex gap-5">
           <Github
@@ -747,6 +748,7 @@ function MobileProject() {
           <p>Postgress</p>
           <p>Redis</p>
           <p>CloudFlare workers</p>
+           <p>AWS S3</p>
         </div>
         <div className="mt-5 flex gap-5">
           <Github
@@ -766,5 +768,4 @@ function MobileProject() {
     </motion.div>
   );
 }
-
 export default App;
