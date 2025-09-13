@@ -650,16 +650,14 @@ function Project1() {
           open("https://revision-xw93.vercel.app/");
         }}
       >
-        <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/20 bg-blend-darken h-100 bg-size-[auto_300px] rounded-md bg-center  bg-no-repeat  "></div>
+        <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
-      <div className="flex flex-col h-100  justify-center items-end mr-2 ">
+      <div className="flex flex-col h-100  justify-center items-end mr-2">
         <p className="text-secondery  text-sm font-medium">Featured Project</p>
         <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
           Revisly
         </p>
-        <div className="mt-5 bg-[#071236] py-5 px-5 w-[200%] rounded-md leading-7 text-gray-300 
-        shadow
-        ">
+        <div className="mt-5 bg-[#162040] py-5 px-5 w-[180%] rounded-md shadow leading-7 text-gray-400 shadow-[#162040] ">
           An AI-powered tool designed for smarter, faster revision. It
           automatically generates subject-specific notes using AI, and also lets
           you upload your own notes for personalized learning.
@@ -725,30 +723,30 @@ function Project2() {
       className="  grid grid-cols-[40%_60%] h-100 gap-10 bg-primary mt-20"
     >
       <div className="relative">
-        <div className="flex flex-col h-100  justify-center items-start  left-30 w-full  ">
-          <p className="text-secondery  text-sm font-medium">Featured Project</p>
-          <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
-            basus consulting
-          </p>
-          <div className="mt-5 bg-[#071236] py-5 px-5 w-[140%]  rounded-md shadow leading-7 text-gray-300 shadow-[#162040] ">
-            The consulting website is designed for clients and keeps things simple by using HTML, CSS, and JavaScript. It also uses EmailJS to send emails to clients.
-          </div>
-          <div className="mt-10 flex  font-normal mr-1 text-sm text-gray-400 justify-start  gap-3 flex-wrap ">
-            <p>Html</p>
-            <p>CSS</p>
-            <p>JavaScript</p>
-
-          </div>
-          <div className="mt-5 flex gap-5">
-
-            <SquareArrowOutUpRight
-              onClick={() => {
-                open("https://basusconsulting.com/#");
-              }}
-              className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
-            />
-          </div>
+      <div className="flex flex-col h-100  justify-center items-start  left-30 w-full  ">
+        <p className="text-secondery  text-sm font-medium">Featured Project</p>
+        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
+          basus consulting
+        </p>
+        <div className="mt-5 bg-[#162040] py-5 px-5 w-[140%]  rounded-md shadow leading-7 text-gray-400 shadow-[#162040] ">
+          The consulting website is designed for clients and keeps things simple by using HTML, CSS, and JavaScript. It also uses EmailJS to send emails to clients.
         </div>
+        <div className="mt-10 flex  font-normal mr-1 text-sm text-gray-400 justify-start  gap-3 flex-wrap ">
+          <p>Html</p>
+          <p>CSS</p>
+          <p>JavaScript</p>
+          
+        </div>
+        <div className="mt-5 flex gap-5">
+          
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://basusconsulting.com/#");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+        </div>
+      </div>
       </div>
       <div
         className="rounded-2xl  "
@@ -756,7 +754,7 @@ function Project2() {
           open("https://basusconsulting.com/#");
         }}
       >
-        <div className="bg-[url(./assets/logo.png)]  bg-[#367E7E]/10 bg-blend-darken h-100 bg-size-[auto_300px] rounded-md bg-no-repeat bg-center "></div>
+        <div className="bg-[url(./assets/first.png)]  bg-[#367E7E]/60 bg-blend-darken h-100 bg-size-[auto_600px] rounded-md bg-left-top  bg-no-repeat "></div>
       </div>
     </motion.div>
   );
