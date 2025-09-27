@@ -647,7 +647,7 @@ function Project1() {
       <div
         className="rounded-2xl  "
         onClick={() => {
-          open("https://revision-xw93.vercel.app/");
+          open("https://revisly.in");
         }}
       >
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/20 bg-blend-darken h-100 bg-size-[auto_300px] rounded-md bg-center  bg-no-repeat  "></div>
@@ -693,7 +693,7 @@ function Project1() {
           />
           <SquareArrowOutUpRight
             onClick={() => {
-              open("https://revision-xw93.vercel.app/");
+              open("https://revisly.in");
             }}
             className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
           />
@@ -782,7 +782,7 @@ function MobileProject() {
       }}
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
       onClick={() => {
-        open("https://revision-xw93.vercel.app/");
+        open("https://www.revisly.in/");
       }}
     >
       <div className="">
@@ -823,7 +823,7 @@ function MobileProject() {
           />
           <SquareArrowOutUpRight
             onClick={() => {
-              open("https://revision-xw93.vercel.app/");
+              open("https://www.revisly.in/");
             }}
             className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
           />
