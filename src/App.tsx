@@ -791,17 +791,12 @@ function MobileProject() {
           Revisly
         </p>
         <div className="mt-5  py-5 px-5 max-md:px-1 w-fit rounded-md shadow leading-7 text-gray-400 ] ">
-          An AI-powered tool designed for smarter, faster revision. It
-          automatically generates subject-specific notes using AI, and also lets
-          you upload your own notes for personalized learning.
+         An AI-powered tool designed for smarter, faster revision. It automatically generates subject-specific notes using AI and also allows you to upload your own notes for personalized learning.
           <p className="mt-2">
-            You can select intervals and take tests based on your chosen
-            subjects — the system evaluates your answers and gives you a
-            performance score.{" "}
+           You can select intervals and take tests based on your chosen subjects — the system evaluates your answers and gives you a performance score.
           </p>
           <p className="mt-2">
-            and on the basis of your avarage test socre it will tell how much
-            you have remember.
+           And based on your average test score, it will tell how much you have remembered.
           </p>
         </div>
         <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap max-md:justify-start">
