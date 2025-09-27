@@ -647,7 +647,7 @@ function Project1() {
       <div
         className="rounded-2xl  "
         onClick={() => {
-          open("https://revisly.in");
+          open("https://www.revisly.in/");
         }}
       >
         <div className="bg-[url(./assets/revisly.png)]  bg-[#367E7E]/20 bg-blend-darken h-100 bg-size-[auto_300px] rounded-md bg-center  bg-no-repeat  "></div>
@@ -693,7 +693,7 @@ function Project1() {
           />
           <SquareArrowOutUpRight
             onClick={() => {
-              open("https://revisly.in");
+              open("https://www.revisly.in/");
             }}
             className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
           />
