@@ -532,11 +532,20 @@ function App() {
             <div className="mt-15 ml-2 space-y-40 max-md:hidden ">
               <Project1 />
             </div>
+            <div className="mt-30 ml-2 space-y-40 max-md:hidden ">
+              <Project3 />
+            </div>
             <div className="mt-15 ml-2 space-y-40 max-md:hidden ">
               <Project2 />
             </div>
             <div className="mt-4 ml-2 space-y-10 min-md:hidden  ">
               <MobileProject />
+            </div>
+            <div className="mt-6 ml-2 space-y-10 min-md:hidden  ">
+              <MobileProject1 />
+            </div>
+            <div className="mt-6 ml-2 space-y-10 min-md:hidden  ">
+              <MobileProject2 />
             </div>
             <motion.div
               initial={{
@@ -703,6 +712,81 @@ function Project1() {
   );
 }
 
+function Project3() {
+  return (
+    <motion.div
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className=" grid grid-cols-[40%_60%] h-100 gap-10 bg-primary"
+    >
+   
+      <div className="flex flex-col h-100  shadow w-full   justify-center items-start mr-2 ">
+        <p className="text-secondery  text-sm font-medium">Featured Project</p>
+        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
+          medvisit
+        </p>
+      <div className="w-[200%]  z-20 bg-[#071236] mt-5">
+        
+        <div className="mt-5  py-5 px-5 max-md:px-1 w-fit rounded-md shadow leading-7 text-gray-400 ] ">
+         A localized doctor appointment booking platform designed specifically for [Client Name]'s practice, serving the local community with seamless online scheduling.
+          <p className="mt-2">
+           Schedule your appointment online in just a few clicks. You'll receive an instant SMS confirmation with your booking details. Simply show this confirmation message to your doctor during your visit.
+          </p>
+          <p className="mt-2">
+           on enery day doctor will receive list of patient for today
+          </p>
+        </div>
+        </div>
+        <div className="mt-10 flex  font-normal mr-1 text-sm text-gray-400 justify-start  gap-3 flex-wrap ">
+          <p>Next.js</p>
+          <p>NextAuth</p>
+          <p>TailwindCss</p>
+          <p>Redux Toolkit</p>
+          <p>Prisma</p>
+          <p>Postgress</p>       
+          <p>AWS SNS</p>
+        </div>
+        <div className="mt-5 flex gap-5">
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/doctor");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://doctor-ten-nu.vercel.app/");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+        </div>
+      </div>
+         <div
+        className="rounded-2xl  "
+        onClick={() => {
+          open("");
+        }}
+      >
+        <div className="bg-[url(./assets/filalogo.webp)]  bg-[#367E7E]/20 bg-blend-darken h-100 bg-size-[auto_300px] rounded-md bg-center  bg-no-repeat  "></div>
+      </div>
+    </motion.div>
+  );
+}
+
 function Project2() {
   return (
     <motion.div
@@ -812,7 +896,7 @@ function MobileProject() {
         <div className="mt-5 flex gap-5">
           <Github
             onClick={() => {
-              open("https://github.com/ranjit1024/E-wallet");
+              open("https://github.com/ranjit1024/revisly");
             }}
             className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
           />
@@ -827,4 +911,127 @@ function MobileProject() {
     </motion.div>
   );
 }
+
+function MobileProject1() {
+  return (
+    <motion.div
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+      viewport={{
+        once: true,
+      }}
+      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md  max-md:p-6"
+      onClick={() => {
+        open("https://basusconsulting.com/#");
+      }}
+    >
+      <div>
+       <p className="text-secondery  text-sm font-medium">Featured Project</p>
+        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
+          Basus Consulting
+        </p>
+        <div>
+          <div className="mt-5  py-2 px-1 w-fit  rounded-md shadow leading-7 text-gray-300 shadow-[#162040] ">
+            The consulting website is designed for clients and keeps things simple by using HTML, CSS, and JavaScript. It also uses EmailJS to send emails to clients.
+          </div>
+          <div className="mt-10 flex  font-normal mr-1 text-sm text-gray-400 justify-start  gap-3 flex-wrap ">
+            <p>Html</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+
+          </div>
+          <div className="mt-5 flex gap-5">
+
+            <SquareArrowOutUpRight
+              onClick={() => {
+                open("https://basusconsulting.com/#");
+              }}
+              className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+            />
+          </div>
+        </div>
+      </div>
+     
+    </motion.div>
+  );
+}
+
+
+function MobileProject2() {
+  return (
+    <motion.div
+      initial={{
+        y: 50,
+        opacity: 0,
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+      viewport={{
+        once: true,
+      }}
+      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
+      onClick={() => {
+        open("https://doctor-ten-nu.vercel.app/");
+      }}
+    >
+      <div className="">
+        <p className="text-secondery  text-sm font-medium">Featured Project</p>
+        <p className="text-gray-100 text-[1.5rem] mt-1 font-semibold">
+          medvisit.in
+        </p>
+        <div className="mt-5  py-5 px-5 max-md:px-1 w-fit rounded-md shadow leading-7 text-gray-400 ] ">
+         A localized doctor appointment booking platform designed specifically for [Client Name]'s practice, serving the local community with seamless online scheduling.
+          <p className="mt-2">
+           Schedule your appointment online in just a few clicks. You'll receive an instant SMS confirmation with your booking details. Simply show this confirmation message to your doctor during your visit.
+          </p>
+          <p className="mt-2">
+           on enery day doctor will receive list of patient for today
+          </p>
+        </div>
+        <div className="mt-3 flex  font-light text-sm text-gray-300 justify-end  gap-3 flex-wrap max-md:justify-start">
+          <p>Next.js</p>
+          <p>NextAuth</p>
+          <p>TailwindCss </p>
+          <p>Prisma</p>
+          <p>Postgress</p>
+          <p>Redis</p>
+          <p>Docker</p>
+          <p>AWS EC2</p>
+          <p>AWS SNS</p>
+        </div>
+        <div className="mt-5 flex gap-5">
+          <Github
+            onClick={() => {
+              open("https://github.com/ranjit1024/doctor");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+          <SquareArrowOutUpRight
+            onClick={() => {
+              open("https://doctor-ten-nu.vercel.app/");
+            }}
+            className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
+          />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default App;
