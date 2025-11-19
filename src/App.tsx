@@ -750,7 +750,7 @@ function Project2() {
 
             <SquareArrowOutUpRight
               onClick={() => {
-                open("https://basusconsulting.com/#");
+                open("https://basusconsulting.netlify.app/");
               }}
               className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
             />
@@ -760,7 +760,7 @@ function Project2() {
       <div
         className="rounded-2xl  "
         onClick={() => {
-          open("https://basusconsulting.com/#");
+          open("https://basusconsulting.netlify.app/");
         }}
       >
         <div className="bg-[url(./assets/logo.png)]  bg-[#367E7E]/10 bg-blend-darken h-100 bg-size-[auto_300px] rounded-md bg-no-repeat bg-center "></div>
@@ -855,7 +855,7 @@ function MobileProject1() {
       }}
       className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md  max-md:p-6"
       onClick={() => {
-        open("https://basusconsulting.com/#");
+        open("https://basusconsulting.netlify.app/");
       }}
     >
       <div>
@@ -877,7 +877,7 @@ function MobileProject1() {
 
             <SquareArrowOutUpRight
               onClick={() => {
-                open("https://basusconsulting.com/#");
+                open("https://basusconsulting.netlify.app/");
               }}
               className="hover:text-secondery hover:cursor-pointer size-6 text-gray-400"
             />
