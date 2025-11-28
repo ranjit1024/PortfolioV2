@@ -372,10 +372,8 @@ function App() {
                   products.
                 </p>
                 <p className="mt-4 text-gray-400 text-[1.1rem]">
-                  I don't have any personal life, no hobbies, I need three
-                  things in my life that I want to build products, 2 Hours for
-                  exercise and 7 Hours of sleep. The rest of the time, I want to
-                  build, I want to work..
+                <span className="text-secondery font-medium opacity-80 "> I don’t just write code, I ship products, </span>
+                If you have a vision and need someone who can take that abstract idea and turn it into a deployed, real-time application, I am the engineer you are looking for.
                 </p>
 
                 <p className="mt-4 text-gray-400 text-[1.1rem]">
@@ -462,11 +460,11 @@ function App() {
                   #2.
                 </span>
 
-                <span className="text-[1.6rem] font-bold">
+                <span className="text-[1.6rem] max-md:text-[1.2rem] font-bold">
                   skills & Technologies
                 </span>
               </p>
-              <div className="p-[0.5px] ml-3 w-80 mt-2 bg-white/40 rounded-2xl"></div>
+              <div className="p-[0.5px] ml-3 w-80  max-md:w-20  mt-2 bg-white/40 rounded-2xl"></div>
             </div>
             <div className="pt-10 ml-2 flex-col   shadow rounded-2xl flex gap-9  text-white ">
               <div className="flex flex-col">
@@ -496,6 +494,7 @@ function App() {
                   <Badge skill="websocket"></Badge>
                   <Badge skill="mongodb"></Badge>
                   <Badge skill="Redis"></Badge>
+                  <Badge skill="gRPC"></Badge>
                 </div>
               </div>
               <div className="flex flex-col">
@@ -510,6 +509,7 @@ function App() {
                   <Badge skill="Docker Compose"></Badge>
                   <Badge skill="CI/CD"></Badge>
                   <Badge skill="AWS"></Badge>
+                  <Badge skill="vitest"></Badge>
                 </div>
               </div>
             </div>
@@ -519,27 +519,27 @@ function App() {
             id="proj"
             className="max-md:mt-25  mt-35 bg-primary max-md:pl-2   pl-5 flex justify-center flex-col "
           >
-            <div className="flex items-center  ">
+            <div className="flex items-center h-full  ">
               <p className="text-white">
                 <span className="mx-2  text-secondery text-[1.6rem] ">#3.</span>
 
-                <span className="text-[1.6rem] font-bold text-gray-300">
-                  Some Things I’ve Built
+                <span className="text-[1.6rem] max-md:text-[1.2rem] font-bold text-gray-300">
+                  Some Things I’ve <span className="">Build</span>
                 </span>
               </p>
-              <div className="p-[0.5px] ml-3 w-80 max-md:w-10 bg-white/40 rounded-2xl"></div>
+              <div className="p-[0.8px]  max-md:w-10 w-80 ml-2 mt-2 text-center bg-white/40 rounded-2xl"></div>
             </div>
-            <div className="mt-15 ml-2 space-y-40 max-md:hidden ">
+            <div className="mt-15 ml-2 space-y-40 max-md:hidden  ">
               <Project1 />
             </div>
            
             <div className="mt-15 ml-2 space-y-40 max-md:hidden ">
               <Project2 />
             </div>
-            <div className="mt-4 ml-2 space-y-10 min-md:hidden  ">
+            <div className="mt-4 ml-2  space-y-10 min-md:hidden  ">
               <MobileProject />
             </div>
-            <div className="mt-6 ml-2 space-y-10 min-md:hidden  ">
+            <div className="mt-6 ml-2  space-y-10 min-md:hidden  ">
               <MobileProject1 />
             </div>
           
@@ -787,7 +787,7 @@ function MobileProject() {
       viewport={{
         once: true,
       }}
-      className="bg-[#162040] shadow-2xl flex w-[95%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
+      className="bg-[#162040] shadow-2xl flex w-[100%] justify-center items-center opacity-90 rounded-md p-10 max-md:p-6"
       onClick={() => {
         open("https://www.revisly.in/");
       }}
