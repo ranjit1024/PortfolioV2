@@ -2,14 +2,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   Code2, 
-  Terminal, 
-  Cpu, 
-  Globe, 
-  GitBranch, 
-  Database,
+  Terminal,
   ExternalLink,
   Moon,
-  Zap
+
 } from "lucide-react";
 
 // --- DATA: Easy to update ---
