@@ -13,10 +13,18 @@ const PROJECTS = [
   {
     title: "Revisly",
     desc: "Quiz & Revision Platform. Automated PDF-to-Quiz generation.",
-    tags: ["React", "PostgreSQL", "AWS S3", "AWS EC2", "Redis", "TailwindCss", "Next Js","Docker"],
+    tags: ["Next Js", "PostgreSQL", "AWS S3", "AWS EC2", "Redis", "TailwindCss","Docker"],
     status: "Live",
     link: "https://www.revisly.in/"
   },
+  {
+  title: "ChessMate",
+  desc: "Multiplayer chess with live video calling between opponents using WebRTC.",
+  tags: ["React", "WebRTC", "WebSocket", "TailwindCSS", "Node.js", "Express"],
+  status: "In Development",
+  link: "" // Add your deployed link when ready
+}
+
 ];
 
 const TECH_STACK = {
@@ -92,7 +100,10 @@ function App() {
                 <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
                   {project.title}
                 </h3>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs border border-gray-800 px-3 py-1 rounded-2xl">{project.status}</span>
                 <ExternalLink className="w-5 h-5 text-neutral-600 group-hover:text-white" />
+                </div>
               </div>
               
               <p className="text-neutral-400 text-sm mb-6">{project.desc}</p>
