@@ -1,31 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --font-mona: 'Mona Sans', sans-serif;
-  --font-inc: "Inconsolata", sans-serif;
-  --font-pop: 'Poppins', sans-serif;
-  --animate-wiggle: wiggle 100s linear infinite;
-  --animate-bounceslow: bounceslow 8s  linear infinite;
-  --color-primary: #0A192F;
-  --color-secondery: #64FFDA;
-  @keyframes wiggle {
-        100% {
-          rotate: 360deg;
-        }
-      
 
-  }
-  @keyframes bounceslow {
-    0%, 100% {
-      transform: translateY(-10%);
-      /* animation-timing-function: cubic-bezier(0.8, 0, 1, 1); */
-    }
-    50% {
-      transform: none;
-      /* animation-timing-function: cubic-bezier(0, 0, 0.2, 1); */
-    }
-  }
+:root {
+  background-color: #0a0a0a;
+  color: #d4d4d4;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar to match the dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
