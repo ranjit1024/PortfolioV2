@@ -43,7 +43,7 @@ function App() {
   if (!mounted) return null;
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20 selection:bg-white selection:text-black">
+    <div className="max-w-3xl mx-auto px-6 py-20 selection:bg-white selection:text-black">
       
       {/* 1. HERO: The "No Life" Declaration */}
       <header className="mb-24">
