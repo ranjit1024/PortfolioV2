@@ -17,8 +17,6 @@ const PROJECTS = [
     status: "Live",
     link: "https://www.revisly.in/"
   },
- 
- 
 ];
 
 const TECH_STACK = {
@@ -112,7 +110,7 @@ function App() {
       </section>
 
       {/* 3. STACK: The Tools */}
-      <section className="mb-24">
+      <section className="mb-20 ">
         <SectionHeader title="02_Arsenal" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {Object.entries(TECH_STACK).map(([category, techs]) => (
