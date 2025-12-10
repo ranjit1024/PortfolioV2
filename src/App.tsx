@@ -20,7 +20,7 @@ const PROJECTS = [
   {
   title: "ChessMate",
   desc: "Multiplayer chess with live video calling between opponents using WebRTC.",
-  tags: ["React", "WebRTC", "WebSocket", "TailwindCSS", "Node.js", "Express"],
+  tags: ["React.js", "WebRTC", "WebSocket", "TailwindCSS", "Node.js", "gRPC", "Express.js"],
   status: "In Development",
   link: "" // Add your deployed link when ready
 }
