@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
-  Code2, 
   Terminal,
   ExternalLink,
-  Moon,
-
+  LinkedinIcon,
+  LucideInstagram,
+  LucideTwitter,
 } from "lucide-react";
+
 
 // --- DATA: Easy to update ---
 const PROJECTS = [
@@ -21,7 +22,7 @@ const PROJECTS = [
   title: "ChessMate",
   desc: "Multiplayer chess with live video calling between opponents using WebRTC.",
   tags: ["React.js", "WebRTC", "WebSocket", "TailwindCSS", "Node.js", "gRPC", "Express.js"],
-  status: "In Development",
+  status: "Development",
   link: "" // Add your deployed link when ready
 }
 
@@ -70,13 +71,17 @@ function App() {
         </p>
 
         {/* The Intensity Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+        <div className="flex  max-md:grid max-md:grid-cols-1 gap-3 mt-10">
+         
           {[
-            { icon: Moon, label: "7h Sleep" },
-            { icon: Code2, label: "15h Build" },
+            { icon: LucideTwitter, label: "X", link:"https://x.com/ranjitd18755665" },
+            { icon: LinkedinIcon, label: "Linkedin", link:"https://www.linkedin.com/in/ranjit-das-31b866352/"},
+            { icon: LucideInstagram, label: "Instagram",link:"https://www.instagram.com/dev_ranjit1024/" },
           ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2 text-xs font-bold text-neutral-500 border border-neutral-800 p-3 rounded bg-neutral-900/50">
-              <item.icon className="w-4 h-4 text-white" />
+            <div key={item.label} onClick={()=>{
+              window.open(item.link, '_blank')
+            }} className="flex hover:cursor-pointer hover:scale-101 transition-all items-center gap-2 text-md font-bold text-neutral-500 border border-neutral-800 px-5 py-1.5 w-fit rounded-xl bg-gradient-to-bl to-neutral-950 from-neutral-800 ">
+              <item.icon className=" text-white" />
               {item.label}
             </div>
           ))}
@@ -94,14 +99,14 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="block group p-6 border border-neutral-800 bg-neutral-900/30 rounded-lg hover:border-neutral-600 transition-all hover:bg-neutral-900"
+              className="block group p-6 border border-neutral-800  bg-neutral-900/30 rounded-lg hover:border-neutral-600 transition-all hover:bg-neutral-900"
             >
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
                   {project.title}
                 </h3>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs border border-gray-800 px-3 py-1 rounded-2xl">{project.status}</span>
+                  <span className={`${project.status === "Live" ? "bg-green-500 p-1 rounded-2xl animate-pulse": "bg-amber-500 p-1 rounded-2xl animate-pulse"}`}></span>
                 <ExternalLink className="w-5 h-5 text-neutral-600 group-hover:text-white" />
                 </div>
               </div>
