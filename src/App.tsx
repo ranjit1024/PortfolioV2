@@ -6,6 +6,7 @@ import {
   LinkedinIcon,
   LucideInstagram,
   LucideTwitter,
+  LucideGithub,
 } from "lucide-react";
 
 
@@ -74,13 +75,14 @@ function App() {
         <div className="flex  max-md:grid max-md:grid-cols-1 gap-3 mt-10">
          
           {[
+            { icon: LucideGithub, label: "Github",link:"https://github.com/ranjit1024" },
             { icon: LucideTwitter, label: "X", link:"https://x.com/ranjitd18755665" },
             { icon: LinkedinIcon, label: "Linkedin", link:"https://www.linkedin.com/in/ranjit-das-31b866352/"},
             { icon: LucideInstagram, label: "Instagram",link:"https://www.instagram.com/dev_ranjit1024/" },
           ].map((item) => (
             <div key={item.label} onClick={()=>{
               window.open(item.link, '_blank')
-            }} className="flex hover:cursor-pointer hover:scale-101 transition-all items-center gap-2 text-md font-bold text-neutral-500 border border-neutral-800 px-5 py-1.5 w-fit rounded-xl bg-gradient-to-bl to-neutral-950 from-neutral-800 ">
+            }} className="flex hover:cursor-pointer hover:scale-101 transition-all items-center gap-3 text-md font-bold text-neutral-500 border border-neutral-600 px-3 py-1.5 w-fit rounded-lg bg-gradient-to-bl to-neutral-950 from-neutral-700 pr-5 ">
               <item.icon className=" text-white" />
               {item.label}
             </div>
