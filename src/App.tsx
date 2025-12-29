@@ -19,7 +19,7 @@ const PROJECTS = [
     role: "Founder & Lead Dev",
     desc: "AI-powered revision platform converting PDFs into interactive quizzes automatically.",
     metrics: "100+ Active Users • Automated Pipeline",
-    tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker",  ],
+    tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker", "Certbot", "Nginx"],
     status: "Production",
     link: "https://www.revisly.in/",
 
