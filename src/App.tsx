@@ -1,169 +1,253 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
-  Terminal,
-  ExternalLink,
-  LinkedinIcon,
-  LucideInstagram,
-  LucideTwitter,
-  LucideGithub,
+  Terminal, 
+  ArrowUpRight, 
+  Github, 
+  Twitter, 
+  Linkedin, 
+  Instagram, 
+  Cpu, 
+  Server,
+
 } from "lucide-react";
 
-
-// --- DATA: Easy to update ---
+// --- DATA ---
 const PROJECTS = [
   {
     title: "Revisly",
-    desc: "Quiz & Revision Platform. Automated PDF-to-Quiz generation.",
-    tags: ["Next Js", "PostgreSQL", "AWS S3", "AWS EC2", "Redis", "TailwindCss","Docker"],
-    status: "Live",
-    link: "https://www.revisly.in/"
+    role: "Founder & Lead Dev",
+    desc: "AI-powered revision platform converting PDFs into interactive quizzes automatically.",
+    metrics: "100+ Active Users • Automated Pipeline",
+    tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker",  ],
+    status: "Production",
+    link: "https://www.revisly.in/",
+    highlight: "Built custom PDF parsing engine to reduce token usage by 40%."
   },
   {
-  title: "ChessMate",
-  desc: "Multiplayer chess with live video calling between opponents using WebRTC.",
-  tags: ["React.js", "WebRTC", "WebSocket", "TailwindCSS", "Node.js", "gRPC", "Express.js"],
-  status: "Development",
-  link: "" // Add your deployed link when ready
-}
-
+    title: "ChessMate",
+    role: "Full Stack Engineer",
+    desc: "Real-time multiplayer chess platform with integrated video calling.",
+    metrics: "< 50ms Latency • WebRTC P2P",
+    tags: ["WebRTC", "Websocket", "React", "Node.js", "Tailwind"],
+    status: "Beta",
+    link: "#", 
+    highlight: "Optimized WebSocket payloads for stable gameplay on 3G networks."
+  },
+  
 ];
 
-const TECH_STACK = {
-  "Core": ["React", "TypeScript", "Next.js", "Tailwind", "Vitest"],
-  "Backend": ["Node.js", "Express", "gRPC", "Prisma"],
-  "Infra": ["Docker", "AWS EC2", "Redis", "Postgres", "Prometheus", "Grafana"],
+const STACK = {
+  "Frontend": ["Next.js 14", "React", "TypeScript", "Tailwind", "Framer Motion"],
+  "Backend": ["Node.js", "Express", "gRPC", "WebSockets", "Hono"],
+  "Infra": ["Docker", "Kubernetes", "AWS (EC2, S3)", "Nginx", "CI/CD", "ASG"],
+  "Data": ["PostgreSQL", "Redis", "Prisma", "ProtoBuf", "Grafana",]
 };
 
 // --- COMPONENTS ---
 
-const SectionHeader = ({ title }: { title: string }) => (
-  <h2 className="text-sm font-bold text-neutral-500 mb-6 tracking-wider uppercase">
-    {title}
-  </h2>
+const SectionHeader = ({ title, icon: Icon }:any) => (
+  <div className="flex items-center gap-2 mb-8 border-b border-zinc-800 pb-2">
+    {Icon && <Icon className="w-4 h-4 text-emerald-500" />}
+    <h2 className="text-xs font-mono font-bold text-zinc-400 tracking-widest uppercase">
+      {title}
+    </h2>
+  </div>
+);
+
+const Badge = ({ children, color = "emerald" }:any) => (
+  <span className={`px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded border ${
+    color === "emerald" 
+      ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" 
+      : "bg-amber-500/10 text-amber-400 border-amber-500/20"
+  }`}>
+    {children}
+  </span>
 );
 
 function App() {
-  // Simple "on mount" animation trigger
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20 selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-zinc-950 text-zinc-200 selection:bg-emerald-500/30 selection:text-emerald-200 font-sans">
       
-      {/* 1. HERO: The "No Life" Declaration */}
-      <header className="mb-24">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-          <span className="text-green-500 text-xs font-mono font-bold tracking-widest ">ONLINE</span>
-        </div>
+      {/* BACKGROUND GRID */}
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+      <main className="max-w-3xl mx-auto px-6 py-24 relative z-10">
         
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-          Ranjit Das
-        </h1>
-        
-        <p className="text-lg text-neutral-400 leading-relaxed max-w-lg">
-          Full-stack developer architecting scalable digital products.
-          <span className="block mt-6 text-white font-medium border-l-2 border-green-500 pl-4 ">
-             "I don't have hobbies. I build Product."
-          </span>
-        </p>
-
-        {/* The Intensity Grid */}
-        <div className="flex  max-md:grid max-md:grid-cols-1 gap-3 mt-10">
-         
-          {[
-            { icon: LucideGithub, label: "Github",link:"https://github.com/ranjit1024" },
-            { icon: LucideTwitter, label: "X", link:"https://x.com/ranjitd18755665" },
-            { icon: LinkedinIcon, label: "Linkedin", link:"https://www.linkedin.com/in/ranjit-das-31b866352/"},
-            { icon: LucideInstagram, label: "Instagram",link:"https://www.instagram.com/dev_ranjit1024/" },
-          ].map((item) => (
-            <div key={item.label} onClick={()=>{
-              window.open(item.link, '_blank')
-            }} className="flex hover:cursor-pointer hover:scale-101 transition-all items-center gap-3 text-md font-bold text-neutral-500 border border-neutral-600 px-3 py-1.5 w-fit rounded-lg bg-gradient-to-bl to-neutral-950 from-neutral-700 pr-5 ">
-              <item.icon className=" text-white" />
-              {item.label}
-            </div>
-          ))}
-        </div>
-      </header>
-
-      {/* 2. WORK: The Evidence */}
-      <section className="mb-24">
-        <SectionHeader title="01_Deployments" />
-        <div className="space-y-6">
-          {PROJECTS.map((project, i) => (
-            <motion.a
-              href={project.link}
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="block group p-6 border border-neutral-800  bg-neutral-900/30 rounded-lg hover:border-neutral-600 transition-all hover:bg-neutral-900"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
-                  {project.title}
-                </h3>
-                <div className="flex items-center gap-3">
-                  <span className={`${project.status === "Live" ? "bg-green-500 p-1 rounded-2xl animate-pulse": "bg-amber-500 p-1 rounded-2xl animate-pulse"}`}></span>
-                <ExternalLink className="w-5 h-5 text-neutral-600 group-hover:text-white" />
-                </div>
-              </div>
-              
-              <p className="text-neutral-400 text-sm mb-6">{project.desc}</p>
-              
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-xs font-mono px-2 py-1 bg-neutral-800 text-neutral-300 rounded border border-neutral-700">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.a>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. STACK: The Tools */}
-      <section className="mb-20 ">
-        <SectionHeader title="02_Arsenal" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {Object.entries(TECH_STACK).map(([category, techs]) => (
-            <div key={category}>
-              <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-green-500" /> {category}
-              </h4>
-              <ul className="space-y-2">
-                {techs.map((tech) => (
-                  <li key={tech} className="text-sm text-neutral-500 hover:text-white transition-colors cursor-default">
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. FOOTER: Direct Action */}
-      <footer className="pt-12 border-t border-neutral-900">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <div>
-            <h2 className="text-white font-bold mb-2">Ready to ship?</h2>
-            <p className="text-neutral-500 text-sm">Open for high-intensity product roles.</p>
-          </div>
-          <a 
-            href="mailto:ranjit@example.com" 
-            className="px-6 py-3 bg-white text-black font-bold text-sm hover:bg-neutral-200 transition-colors rounded"
+        {/* 1. HERO SECTION */}
+        <header className="mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            className="flex items-center gap-2 mb-6"
           >
-            Start a Project
-          </a>
-        </div>
-      </footer>
+            <div className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </div>
+            <span className="text-xs font-mono text-emerald-500 tracking-wider">SYSTEM ONLINE • PUNE, IN</span>
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-6xl font-bold text-zinc-100 tracking-tight mb-6"
+          >
+            Ranjit Das
+          </motion.h1>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="space-y-6"
+          >
+            <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl">
+           
+         
+              Obsessed with <span className="text-zinc-100 font-medium">high-performance systems</span> and <span className="text-zinc-100 font-medium">product velocity</span>.
+            </p>
 
+            {/* THE MANIFESTO: Reframed "No Life" */}
+            
+          </motion.div>
+
+          {/* SOCIAL LINKS */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="flex gap-4 mt-10"
+          >
+            {[
+              { Icon: Github, href: "https://github.com/ranjit1024" },
+              { Icon: Twitter, href: "https://x.com/ranjitd18755665" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/ranjit-das-31b866352/" },
+              { Icon: Instagram, href: "https://www.instagram.com/dev_ranjit1024/" },
+            ].map(({ Icon, href }, i) => (
+              <a
+                key={i}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-zinc-500 hover:text-emerald-400 transition-colors p-2 hover:bg-zinc-900 rounded-lg -ml-2"
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
+          </motion.div>
+        </header>
+
+        {/* 2. PROJECTS SECTION */}
+        <section className="mb-24">
+          <SectionHeader title="Selected Deployments" icon={Server} />
+          <div className="grid grid-cols-1 gap-6">
+            {PROJECTS.map((project, i) => (
+              <motion.a
+                key={i}
+                href={project.link}
+                target="_blank"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + i * 0.1 }}
+                className="group block relative bg-zinc-900/20 border border-zinc-800 hover:border-zinc-600 rounded-xl overflow-hidden transition-all hover:bg-zinc-900/40"
+              >
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-3">
+                        <h3 className="text-lg font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+                          {project.title}
+                        </h3>
+                        <Badge color={project.status === "Production" ? "emerald" : "amber"}>
+                          {project.status}
+                        </Badge>
+                      </div>
+                      <p className="text-xs font-mono text-zinc-500">{project.role}</p>
+                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-emerald-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                  </div>
+                  
+                  <p className="text-zinc-400 text-sm mb-4 leading-relaxed">
+                    {project.desc}
+                  </p>
+
+                  <div className="mb-4 py-2 px-3 bg-zinc-950/50 border border-zinc-800/50 rounded flex items-start gap-2">
+                    <Terminal className="w-4 h-4 text-emerald-500/80 mt-0.5 shrink-0" />
+                    <span className="text-xs text-zinc-300 font-mono">
+                      <span className="text-zinc-500">&gt;</span> {project.highlight}
+                    </span>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="text-[11px] font-mono text-zinc-500 border border-zinc-800 px-2 py-1 rounded bg-zinc-950/30">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </section>
+
+        {/* 3. ARSENAL (TECH STACK) */}
+        <section className="mb-24">
+          <SectionHeader title="Infrastructure & Arsenal" icon={Cpu} />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Object.entries(STACK).map(([category, techs], i) => (
+              <motion.div 
+                key={category}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 + i * 0.1 }}
+                className="p-4 border border-zinc-800 rounded-lg bg-zinc-900/10 hover:border-zinc-700 transition-colors"
+              >
+                <h4 className="text-xs font-bold text-zinc-300 mb-3 uppercase tracking-wider flex items-center gap-2">
+                  {category}
+                </h4>
+                <ul className="space-y-1.5">
+                  {techs.map((tech) => (
+                    <li key={tech} className="text-xs text-zinc-500 font-mono hover:text-emerald-400 transition-colors cursor-default">
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* 4. FOOTER */}
+        <footer className="border-t border-zinc-900 pt-12 pb-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <h3 className="text-zinc-100 font-bold mb-1">Ready to scale?</h3>
+              <p className="text-zinc-500 text-sm">Open for high-impact engineering roles.</p>
+            </div>
+            
+            <a 
+              href="mailto:ranjit@example.com"
+              className="group flex items-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-950 font-bold text-sm rounded hover:bg-emerald-400 hover:text-zinc-950 transition-all"
+            >
+              <Terminal className="w-4 h-4" />
+              <span>Initialize_Protocol</span>
+            </a>
+          </div>
+          
+          <div className="mt-12 text-center text-[10px] font-mono text-zinc-700">
+            © 2025 RANJIT DAS • SYSTEM NORMAL • 127.0.0.1
+          </div>
+        </footer>
+
+      </main>
     </div>
   );
 }
