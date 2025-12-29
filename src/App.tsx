@@ -22,7 +22,7 @@ const PROJECTS = [
     tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker",  ],
     status: "Production",
     link: "https://www.revisly.in/",
-    highlight: "Built custom PDF parsing engine to reduce token usage by 40%."
+
   },
   {
     title: "ChessMate",
@@ -32,7 +32,6 @@ const PROJECTS = [
     tags: ["WebRTC", "Websocket", "React", "Node.js", "Tailwind"],
     status: "Beta",
     link: "#", 
-    highlight: "Optimized WebSocket payloads for stable gameplay on 3G networks."
   },
   
 ];
@@ -178,12 +177,6 @@ function App() {
                     {project.desc}
                   </p>
 
-                  <div className="mb-4 py-2 px-3 bg-zinc-950/50 border border-zinc-800/50 rounded flex items-start gap-2">
-                    <Terminal className="w-4 h-4 text-emerald-500/80 mt-0.5 shrink-0" />
-                    <span className="text-xs text-zinc-300 font-mono">
-                      <span className="text-zinc-500">&gt;</span> {project.highlight}
-                    </span>
-                  </div>
                   
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map((tag) => (
