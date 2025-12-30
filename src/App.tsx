@@ -185,7 +185,7 @@ function App() {
                   
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="text-[11px] font-mono text-zinc-500 border border-zinc-800 px-2 py-1 rounded bg-zinc-950/30">
+                      <span key={tag} className="text-[11px] font-mono text-zinc-400 font-medium border border-zinc-800 px-2 py-1 rounded bg-zinc-950/30">
                         {tag}
                       </span>
                     ))}
