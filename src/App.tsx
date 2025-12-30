@@ -110,7 +110,12 @@ function App() {
             <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl">
            
          
-              Obsessed with <span className="text-zinc-100 font-medium">high-performance systems</span> and <span className="text-zinc-100 font-medium">product velocity</span>.
+               <span className="text-zinc-100 font-medium">Build Products</span> Not <span className="text-emerald-400 font-medium">Just Code</span>.
+            </p>
+            <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl">
+             
+           
+         
             </p>
 
             {/* THE MANIFESTO: Reframed "No Life" */}
