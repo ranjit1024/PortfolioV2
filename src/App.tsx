@@ -29,7 +29,7 @@ const PROJECTS = [
     role: "Full Stack Engineer",
     desc: "Real-time multiplayer chess platform with integrated video calling.",
     metrics: "< 50ms Latency • WebRTC P2P",
-    tags: ["WebRTC", "Websocket", "React", "Node.js", "Tailwind"],
+    tags: ["React", "Tailwind", "WebRTC", "Websocket", "Node.js", "CI/CD", "AWS EC2" ],
     status: "Beta",
     link: "#", 
   },
@@ -110,7 +110,7 @@ function App() {
             <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl">
            
          
-               <span className="text-zinc-100 font-medium">Build Products</span> Not <span className="text-emerald-400 font-medium">Just Code</span>.
+               <span className="text-zinc-100 font-medium">Build </span> Not <span className="text-emerald-400 font-medium"> Code</span>.
             </p>
             <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl">
              
