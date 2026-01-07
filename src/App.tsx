@@ -30,7 +30,7 @@ const PROJECTS = [
     desc: "Real-time multiplayer chess platform with integrated video calling.",
     metrics: "< 50ms Latency • WebRTC P2P",
     tags: ["React", "Tailwind", "WebRTC", "Websocket", "Node.js", "CI/CD", "AWS EC2" ],
-    status: "Beta",
+    status: "Production",
     link: "https://chess-lime-eta.vercel.app/", 
   },
   
