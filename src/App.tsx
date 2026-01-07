@@ -31,7 +31,7 @@ const PROJECTS = [
     metrics: "< 50ms Latency • WebRTC P2P",
     tags: ["React", "Tailwind", "WebRTC", "Websocket", "Node.js", "CI/CD", "AWS EC2" ],
     status: "Beta",
-    link: "#", 
+    link: "https://chess-lime-eta.vercel.app/", 
   },
   
 ];
@@ -113,9 +113,6 @@ function App() {
                <span className="text-zinc-100 font-medium">Build </span> Not <span className="text-emerald-400 font-medium"> Code</span>.
             </p>
             <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl">
-             
-           
-         
             </p>
 
             {/* THE MANIFESTO: Reframed "No Life" */}
