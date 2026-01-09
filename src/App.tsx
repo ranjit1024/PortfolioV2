@@ -15,9 +15,9 @@ import {
 // --- DATA ---
 const PROJECTS = [
   {
-    title: "Revisly",
+    title: "Revisly ",
     role: "Founder & Lead Dev",
-    desc: "AI-powered revision platform converting PDFs into interactive quizzes automatically.",
+    desc: "An AI-powered revision platform that allows you to set your comfort level in a subject, generate notes accordingly, and choose a quiz interval. Quizzes link will be sent to your email, and your score will be generated.",
     metrics: "100+ Active Users • Automated Pipeline",
     tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker", "Certbot", "Nginx"],
     status: "Production",
