@@ -29,7 +29,7 @@ const PROJECTS = [
     role: "Full Stack Engineer",
     desc: "Real-time multiplayer chess platform with integrated video calling.",
     metrics: "< 50ms Latency • WebRTC P2P",
-    tags: ["React", "Tailwind", "WebRTC", "Websocket", "Node.js", "CI/CD", "Docker", "AWS EC2" ],
+    tags: ["React", "Tailwind", "WebRTC", "Websocket", "Node.js","GitHub Actions", "CI/CD", "Docker", "AWS EC2" ],
     status: "Production",
     link: "https://chess-lime-eta.vercel.app/", 
   },
@@ -39,7 +39,7 @@ const PROJECTS = [
 const STACK = {
   "Frontend": ["Next.js 14", "React", "TypeScript", "Tailwind", "Framer Motion"],
   "Backend": ["Node.js", "Express", "gRPC", "WebSockets", "Hono"],
-  "Infra": ["Docker","GitHub Actions", "Kubernetes", "AWS (EC2, S3)", "Nginx", "CI/CD", "ASG"],
+  "Infra": ["Docker","GitHub Actions", "Kubernetes", "AWS (EC2, S3)", "ASG", "EKS", "Nginx", "CI/CD", "ASG"],
   "Data": ["PostgreSQL", "Redis", "Prisma", "ProtoBuf", "Grafana",]
 };
 
