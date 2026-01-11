@@ -39,7 +39,7 @@ const PROJECTS = [
 const STACK = {
   "Frontend": ["Next.js 14", "React", "TypeScript", "Tailwind", "Framer Motion"],
   "Backend": ["Node.js", "Express", "gRPC", "WebSockets", "Hono"],
-  "Infra": ["Docker", "Kubernetes", "AWS (EC2, S3)", "Nginx", "CI/CD", "ASG"],
+  "Infra": ["Docker","GitHub Actions", "Kubernetes", "AWS (EC2, S3)", "Nginx", "CI/CD", "ASG"],
   "Data": ["PostgreSQL", "Redis", "Prisma", "ProtoBuf", "Grafana",]
 };
 
