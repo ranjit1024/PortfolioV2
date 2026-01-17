@@ -19,7 +19,7 @@ const PROJECTS = [
     role: "Founder & Lead Dev",
     desc: "An AI-powered revision platform that allows you to set your comfort level in a subject, generate notes accordingly, and choose a quiz interval. Quizzes link will be sent to your email according to intervel, and your score will be generated.",
     metrics: "100+ Active Users • Automated Pipeline",
-    tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker", "Certbot", "Nginx"],
+    tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Zod", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker", "Certbot", "Nginx"],
     status: "Production",
     link: "https://www.revisly.in/",
 
@@ -38,7 +38,7 @@ const PROJECTS = [
 
 const STACK = {
   "Frontend": ["Next.js 14", "React", "TypeScript", "Tailwind", "Framer Motion"],
-  "Backend": ["Node.js", "Express", "gRPC", "WebSockets", "Hono"],
+  "Backend": ["Node.js", "Zod", "Express", "gRPC", "WebSockets", "webRTC", "Cloudflare Workers", "Hono"],
   "Infra": ["Docker","GitHub Actions", "Kubernetes", "AWS (EC2, S3)", "ASG", "EKS", "Nginx", "CI/CD", "ASG"],
   "Data": ["PostgreSQL", "Redis", "Prisma", "ProtoBuf", "Grafana",]
 };
