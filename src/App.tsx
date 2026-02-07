@@ -17,22 +17,14 @@ const PROJECTS = [
   {
     title: "Revisly ",
     role: "Founder & Lead Dev",
-    desc: "An AI-powered revision platform that allows you to set your comfort level in a subject, generate notes accordingly, and choose a quiz interval. Quizzes link will be sent to your email according to intervel, and your score will be generated.",
+    desc: "An intelligent revision platform that enables HR teams to evaluate how well employees understand company policies. HRs can upload policy PDFs, automatically generate assessments, import employee email lists via CSV or other supported formats, and send tests directly to employees.",
     metrics: "100+ Active Users • Automated Pipeline",
     tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Zod", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker", "Certbot", "Nginx"],
-    status: "Production",
+    status: "Dev",
     link: "https://www.revisly.in/",
 
   },
-  {
-    title: "ChessMate",
-    role: "Full Stack Engineer",
-    desc: "Real-time multiplayer chess platform with integrated video calling.",
-    metrics: "< 50ms Latency • WebRTC P2P",
-    tags: ["React", "Tailwind", "WebRTC", "Websocket", "Node.js","GitHub Actions", "PM2", "CI/CD", "Docker", "AWS EC2" ],
-    status: "Production",
-    link: "https://chess-lime-eta.vercel.app/", 
-  },
+
   
 ];
 
