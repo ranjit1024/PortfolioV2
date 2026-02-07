@@ -22,7 +22,6 @@ const PROJECTS = [
     tags: ["Next.js", "Tailwind Css","framer motion", "redux toolkit", "Express", "Zod", "Postgress", "Prisma Orm",  "Redis", "OpenAI API", "AWS S3/EC2", "Docker", "Certbot", "Nginx"],
     status: "Dev",
     link: "https://www.revisly.in/",
-
   },
 
   
