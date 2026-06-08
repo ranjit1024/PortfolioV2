@@ -1,8 +1,42 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const NAV_LINKS = ["About", "Experience", "Projects", "Skills", "Contact"];
+// --- Types & Interfaces ---
 
-const SKILLS = {
+interface Experience {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  bullets: string[];
+}
+
+interface Project {
+  name: string;
+  desc: string;
+  problem: string;
+  stack: string[];
+  bullets: string[];
+  link: string;
+  accent: string;
+}
+
+interface SocialLink {
+  label: string;
+  href: string;
+  icon: string;
+}
+
+interface FadeInProps {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}
+
+// --- Data Constants ---
+
+const NAV_LINKS: string[] = ["About", "Experience", "Projects", "Skills", "Contact"];
+
+const SKILLS: Record<string, string[]> = {
   Frontend: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion"],
   Backend: ["Bun", "Fastify", "Effect-TS", "Express", "Hono", "gRPC", "WebSockets", "WebRTC"],
   Infrastructure: ["Kubernetes (AKS)", "Docker", "KEDA", "Prometheus", "Grafana", "OpenTelemetry", "Nginx", "GitHub Actions"],
@@ -10,7 +44,7 @@ const SKILLS = {
   Other: ["XState", "GetStream", "Effect Cluster", "RBAC", "CI/CD", "StatefulSets"],
 };
 
-const EXPERIENCE = [
+const EXPERIENCE: Experience[] = [
   {
     title: "Full Stack Engineer Intern",
     company: "DeepEcom",
@@ -28,7 +62,7 @@ const EXPERIENCE = [
   },
 ];
 
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     name: "CompliQ",
     desc: "Policy-aware quiz platform for large organisations",
@@ -56,25 +90,34 @@ const PROJECTS = [
   },
 ];
 
-const SOCIAL = [
+const SOCIAL: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/ranjit1024", icon: "M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ranjit-das-31b866352/", icon: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z" },
   { label: "Twitter", href: "https://x.com/ranjitd18755665", icon: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" },
   { label: "Portfolio", href: "https://ranjitdas.in/", icon: "M12 2a10 10 0 100 20A10 10 0 0012 2zm0 2c.55 0 1.217.392 1.854 1.328C14.51 6.299 15 7.993 15 10h-6c0-2.007.49-3.701 1.146-4.672C10.783 4.392 11.45 4 12 4zm-4.9 6h2.9v1h-2.9A7.96 7.96 0 017 10zm9.9 1H14v-1h2.9a7.96 7.96 0 01.1 1zM8.13 15.5A5.99 5.99 0 0112 20a5.99 5.99 0 013.87-4.5 7.03 7.03 0 01-3.87 1.5 7.03 7.03 0 01-3.87-1.5z" },
 ];
 
-function useInView(threshold = 0.15) {
-  const ref = useRef(null);
-  const [inView, setInView] = useState(false);
+// --- Custom Hooks & Components ---
+
+function useInView(threshold: number = 0.15): [React.RefObject<HTMLDivElement | null>, boolean] {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState<boolean>(false);
+
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setInView(true);
+      },
+      { threshold }
+    );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
-  }, []);
+  }, [threshold]);
+
   return [ref, inView];
 }
 
-function FadeIn({ children, delay = 0, className = "" }) {
+function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
   const [ref, inView] = useInView();
   return (
     <div
@@ -92,20 +135,35 @@ function FadeIn({ children, delay = 0, className = "" }) {
 }
 
 function Cursor() {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
-  const [big, setBig] = useState(false);
+  const [pos, setPos] = useState<{ x: number; y: number }>({ x: -100, y: -100 });
+  const [big, setBig] = useState<boolean>(false);
+
   useEffect(() => {
-    const move = (e) => setPos({ x: e.clientX, y: e.clientY });
-    const over = (e) => setBig(!!e.target.closest("a,button,[data-hover]"));
+    const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
+    const over = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      setBig(!!target.closest?.("a,button,[data-hover]"));
+    };
+
     window.addEventListener("mousemove", move);
     window.addEventListener("mouseover", over);
-    return () => { window.removeEventListener("mousemove", move); window.removeEventListener("mouseover", over); };
+    
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseover", over);
+    };
   }, []);
+
   return (
     <div
       style={{
-        position: "fixed", left: pos.x, top: pos.y, pointerEvents: "none", zIndex: 9999,
-        width: big ? 40 : 12, height: big ? 40 : 12,
+        position: "fixed",
+        left: pos.x,
+        top: pos.y,
+        pointerEvents: "none",
+        zIndex: 9999,
+        width: big ? 40 : 12,
+        height: big ? 40 : 12,
         borderRadius: "50%",
         background: big ? "rgba(99,102,241,0.15)" : "rgba(99,102,241,0.8)",
         border: big ? "1.5px solid rgba(99,102,241,0.6)" : "none",
@@ -116,11 +174,13 @@ function Cursor() {
   );
 }
 
+// --- Main Page Component ---
+
 export default function Portfolio() {
-  const [active, setActive] = useState("About");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [expandedProject, setExpandedProject] = useState(null);
+  const [active, setActive] = useState<string>("About");
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  // Optional: Typed for unused local state left over from your original snippet 
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -128,7 +188,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
     setActive(id);
     setMenuOpen(false);
@@ -218,19 +278,19 @@ export default function Portfolio() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <button onClick={() => scrollTo("Projects")}
-                  data-hover
+                  data-hover="true"
                   className="px-6 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-all">
                   View Projects
                 </button>
                 <a href="mailto:ranjitdas2048@gmail.com"
-                  data-hover
+                  data-hover="true"
                   className="px-6 py-2.5 rounded-full border border-white/15 text-white/70 hover:text-white hover:border-white/30 text-sm font-medium transition-all">
                   Get in touch
                 </a>
               </div>
               <div className="flex items-center gap-5 mt-10">
                 {SOCIAL.map(s => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noreferrer" data-hover
+                  <a key={s.label} href={s.href} target="_blank" rel="noreferrer" data-hover="true"
                     className="text-white/30 hover:text-indigo-400 transition-colors" title={s.label}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                       <path d={s.icon} />
@@ -310,7 +370,7 @@ export default function Portfolio() {
                       <h3 className="text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{p.name}</h3>
                       <p className="text-white/50 text-sm mt-0.5">{p.desc}</p>
                     </div>
-                    <a href={p.link} target="_blank" rel="noreferrer" data-hover
+                    <a href={p.link} target="_blank" rel="noreferrer" data-hover="true"
                       className="text-white/30 hover:text-indigo-400 transition-colors ml-3 shrink-0 mt-1">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
@@ -373,7 +433,7 @@ export default function Portfolio() {
               { label: "100xDevs Cohort", sub: "Full-stack & Systems Engineering", href: "https://app.100xdevs.com/certificate/verify/Y80IQ59P" },
               { label: "Scaler JavaScript", sub: "Certificate of completion", href: "https://moonshot.scaler.com/s/sl/nin-Jm30KW" },
             ].map(c => (
-              <a key={c.label} href={c.href} target="_blank" rel="noreferrer" data-hover
+              <a key={c.label} href={c.href} target="_blank" rel="noreferrer" data-hover="true"
                 className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/8 bg-white/[0.02] hover:border-indigo-500/40 transition-colors group">
                 <div className="w-8 h-8 rounded-lg bg-indigo-600/20 flex items-center justify-center">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#818cf8" strokeWidth="2">
@@ -405,7 +465,7 @@ export default function Portfolio() {
             <p className="text-white/50 leading-relaxed mb-10">
               I'm actively looking for SDE-1 roles. My internship wraps up soon — if you're building something interesting, let's talk.
             </p>
-            <a href="mailto:ranjitdas2048@gmail.com" data-hover
+            <a href="mailto:ranjitdas2048@gmail.com" data-hover="true"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all text-sm glow">
               ranjitdas2048@gmail.com
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
