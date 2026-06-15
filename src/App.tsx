@@ -87,7 +87,7 @@ const PROJECTS: Project[] = [
       "Real-time multiplayer chess with WebSocket-based game sync and peer-to-peer video calling via WebRTC",
       "CI/CD pipeline via GitHub Actions; deployed on AWS EC2 behind Nginx reverse proxy",
     ],
-    link: "https://chess-lime-eta.vercel.app/",
+    link: "http://chess-nt9u.vercel.app/",
   },
 ];
 
