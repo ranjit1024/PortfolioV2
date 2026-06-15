@@ -1,16 +1,54 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, type ReactNode } from "react";
 
-const NAV_LINKS = ["About", "Experience", "Projects", "Skills", "Contact"];
+// --- Types & Interfaces ---
 
-const SKILLS = {
+type NavLink = "About" | "Experience" | "Projects" | "Skills" | "Contact";
+
+interface JobExperience {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  bullets: string[];
+}
+
+interface Project {
+  name: string;
+  desc: string;
+  problem: string;
+  stack: string[];
+  bullets: string[];
+  link: string;
+}
+
+interface SocialLink {
+  label: string;
+  href: string;
+}
+
+interface FadeInProps {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}
+
+interface ArrowUpRightProps {
+  size?: number;
+}
+
+// --- Data ---
+
+const NAV_LINKS: NavLink[] = ["About", "Experience", "Projects", "Skills", "Contact"];
+
+const SKILLS: Record<string, string[]> = {
   Frontend: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion"],
-  Backend: ["Bun", "Elysia",, "Hono", "gRPC", "WebSockets", "WebRTC"],
+  Backend: ["Bun", "Elysia", "Hono", "gRPC", "WebSockets", "WebRTC"],
   Infrastructure: ["Kubernetes (AKS)", "Docker", "KEDA", "Prometheus", "Grafana", "OpenTelemetry", "Nginx", "GitHub Actions"],
-  "Cloud & Data": ["Azure", "AWS (EC2, S3, EKS)", "PostgreSQL", "Redis", "Prisma ORM", ],
+  "Cloud & Data": ["Azure", "AWS (EC2, S3, EKS)", "PostgreSQL", "Redis", "Prisma ORM"],
   Other: ["XState", "GetStream", "Effect Cluster", "RBAC", "CI/CD", "StatefulSets"],
 };
 
-const EXPERIENCE = [
+const EXPERIENCE: JobExperience[] = [
   {
     title: "Full Stack Engineer Intern",
     company: "DeepEcom",
@@ -20,16 +58,14 @@ const EXPERIENCE = [
       "Built reconciliation and reporting dashboards in Next.js — server components, dynamic data tables, and real-time status views for Amazon and Flipkart order pipelines",
       "Designed and built REST APIs using Bun and Fastify, handling ecommerce data ingestion, transformation, and reconciliation logic with PostgreSQL and Prisma ORM",
       "Deployed distributed workflow orchestration on Kubernetes StatefulSets (Azure AKS) four-stage import/build/write/export pipeline running in production",
-     
       "Implemented KEDA autoscaling watching PostgreSQL messages table to dynamically scale worker pods based on real-time queue depth",
       "Architected Maruti, a Kubernetes orchestrator using XState v5 parallel state machines with Effect Queue/Ref primitives, responding to GetStream events in real time",
-      "Configured Kubernetes RBAC, headless services for stable DNS-based pod registration, and CI/CD pipelines for a multi-service Bun monorepo",
       "Configured Kubernetes RBAC, headless services for stable DNS-based pod registration, and CI/CD pipelines for a multi-service Bun monorepo",
     ],
   },
 ];
 
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     name: "coregrasp",
     desc: "Policy-aware quiz platform for large organisations",
@@ -55,38 +91,54 @@ const PROJECTS = [
   },
 ];
 
-const SOCIAL = [
+const SOCIAL: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/ranjit1024" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ranjit-das-31b866352/" },
   { label: "Twitter", href: "https://x.com/ranjitd18755665" },
   { label: "Portfolio", href: "https://ranjitdas.in/" },
 ];
 
-function useInView(threshold = 0.12) {
-  const ref = useRef(null);
-  const [inView, setInView] = useState(false);
+// --- Hooks & Utility Components ---
+
+function useInView(threshold: number = 0.12): [React.RefObject<HTMLDivElement | null>, boolean] {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState<boolean>(false);
+
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
+    const obs = new IntersectionObserver(
+      ([e]: IntersectionObserverEntry[]) => {
+        if (e.isIntersecting) setInView(true);
+      },
+      { threshold }
+    );
+    
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, [threshold]);
-  return [ref, inView];
+ 
+  
+    return [ref , inView];
+  
 }
 
-function FadeIn({ children, delay = 0, className = "" }) {
+function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
   const [ref, inView] = useInView();
   return (
-    <div ref={ref} className={className} style={{
-      opacity: inView ? 1 : 0,
-      transform: inView ? "translateY(0)" : "translateY(20px)",
-      transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
-    }}>
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(20px)",
+        transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
+      }}
+    >
       {children}
     </div>
   );
 }
 
-function ArrowUpRight({ size = 14 }) {
+function ArrowUpRight({ size = 14 }: ArrowUpRightProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M7 17L17 7M17 7H7M17 7v10" />
@@ -94,10 +146,12 @@ function ArrowUpRight({ size = 14 }) {
   );
 }
 
+// --- Main Portfolio Component ---
+
 export default function Portfolio() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("About");
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [active, setActive] = useState<string>("About");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -105,7 +159,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
     setActive(id);
     setMenuOpen(false);
@@ -133,29 +187,45 @@ export default function Portfolio() {
             ranjit.dev
           </span>
           <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map(l => (
-              <button key={l} onClick={() => scrollTo(l)}
-                className={`text-xs tracking-widest uppercase transition-colors ${active === l ? "text-white" : "text-zinc-500 hover:text-zinc-200"}`}>
+            {NAV_LINKS.map((l) => (
+              <button
+                key={l}
+                onClick={() => scrollTo(l)}
+                className={`text-xs tracking-widest uppercase transition-colors ${active === l ? "text-white" : "text-zinc-500 hover:text-zinc-200"}`}
+              >
                 {l}
               </button>
             ))}
-            <a href="mailto:ranjitdas2048@gmail.com"
-              className="text-xs px-4 py-2 border border-white/20 text-zinc-300 hover:bg-white hover:text-black transition-all tracking-wide rounded-sm">
+            <a
+              href="mailto:ranjitdas2048@gmail.com"
+              className="text-xs px-4 py-2 border border-white/20 text-zinc-300 hover:bg-white hover:text-black transition-all tracking-wide rounded-sm"
+            >
               Hire me
             </a>
           </div>
-          <button className="md:hidden text-zinc-300 hover:text-white transition-colors" onClick={() => setMenuOpen(o => !o)}>
+          <button className="md:hidden text-zinc-300 hover:text-white transition-colors" onClick={() => setMenuOpen((o) => !o)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              {menuOpen
-                ? <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>
-                : <><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></>}
+              {menuOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </>
+              )}
             </svg>
           </button>
         </div>
         {menuOpen && (
           <div className="md:hidden bg-[#09090b] border-t border-white/10 px-6 py-6 flex flex-col gap-6 shadow-2xl">
-            {NAV_LINKS.map(l => (
-              <button key={l} onClick={() => scrollTo(l)} className="text-left text-sm uppercase tracking-widest text-zinc-400 hover:text-white">{l}</button>
+            {NAV_LINKS.map((l) => (
+              <button key={l} onClick={() => scrollTo(l)} className="text-left text-sm uppercase tracking-widest text-zinc-400 hover:text-white">
+                {l}
+              </button>
             ))}
           </div>
         )}
@@ -179,33 +249,43 @@ export default function Portfolio() {
                 </h1>
               </FadeIn>
               <FadeIn delay={0.14}>
-                <p className="text-sm tracking-widest uppercase text-zinc-500 mb-10 mt-6">
-                  Full Stack Engineer · Pune, India
-                </p>
+                <p className="text-sm tracking-widest uppercase text-zinc-500 mb-10 mt-6">Full Stack Engineer · Pune, India</p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-base text-zinc-400 leading-relaxed max-w-md mb-10 font-light">
-                  I build end-to-end systems — from Next.js dashboards to Kubernetes orchestrators running in production.
-                  Currently shipping ecommerce reconciliation infra at DeepEcom and building{" "}
-                  <span className="text-zinc-100 font-medium">coregrasp</span>, a policy compliance platform powered by Claude API.
+                  I build end-to-end systems — from Next.js dashboards to Kubernetes orchestrators running in production. Currently shipping ecommerce
+                  reconciliation infra at DeepEcom and building <span className="text-zinc-100 font-medium">coregrasp</span>, a policy compliance
+                  platform powered by Claude API.
                 </p>
               </FadeIn>
               <FadeIn delay={0.26}>
                 <div className="flex flex-wrap gap-4 mb-12">
-                  <button onClick={() => scrollTo("Projects")}
-                    className="px-7 py-3 bg-white text-black text-xs font-medium tracking-widest uppercase hover:bg-zinc-200 transition-colors rounded-sm shadow-lg shadow-white/5">
+                  <button
+                    onClick={() => scrollTo("Projects")}
+                    className="px-7 py-3 bg-white text-black text-xs font-medium tracking-widest uppercase hover:bg-zinc-200 transition-colors rounded-sm shadow-lg shadow-white/5"
+                  >
                     View projects
                   </button>
-                  <a href="mailto:ranjitdas2048@gmail.com"
-                    className="px-7 py-3 border border-white/20 text-zinc-300 text-xs tracking-widest uppercase hover:border-white hover:text-white transition-colors rounded-sm">
+                  <a
+                    href="mailto:ranjitdas2048@gmail.com"
+                    className="px-7 py-3 border border-white/20 text-zinc-300 text-xs tracking-widest uppercase hover:border-white hover:text-white transition-colors rounded-sm"
+                  >
                     Get in touch
                   </a>
                 </div>
                 <div className="flex items-center gap-6">
-                  {SOCIAL.map(s => (
-                    <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
-                      className="text-xs tracking-wide text-zinc-500 hover:text-white transition-colors flex items-center gap-1 group">
-                      {s.label} <span className="opacity-50 group-hover:opacity-100 transition-opacity"><ArrowUpRight size={12} /></span>
+                  {SOCIAL.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs tracking-wide text-zinc-500 hover:text-white transition-colors flex items-center gap-1 group"
+                    >
+                      {s.label}{" "}
+                      <span className="opacity-50 group-hover:opacity-100 transition-opacity">
+                        <ArrowUpRight size={12} />
+                      </span>
                     </a>
                   ))}
                 </div>
@@ -216,14 +296,14 @@ export default function Portfolio() {
             <FadeIn delay={0.1} className="md:col-span-2 hidden md:block">
               <div className="border border-white/10 bg-[#09090b]/50 backdrop-blur-sm rounded-sm overflow-hidden shadow-2xl">
                 <div className="aspect-square flex items-center justify-center relative overflow-hidden bg-white/[0.02]">
-                  <span className="text-[10rem] font-light text-white/[0.03] select-none" style={{ letterSpacing: "-0.05em", fontFamily: "'Inter', sans-serif" }}>RD</span>
+                  <span className="text-[10rem] font-light text-white/[0.03] select-none" style={{ letterSpacing: "-0.05em", fontFamily: "'Inter', sans-serif" }}>
+                    RD
+                  </span>
                   <div className="absolute inset-0 flex items-end p-6">
                     <pre className="text-xs leading-relaxed text-zinc-400 font-mono">
-                      <span className="text-purple-400">const</span> <span className="text-blue-400">dev</span> <span className="text-zinc-300">=</span> {'{\n'}
-                      {'  '}role: <span className="text-emerald-400">"fullstack"</span>,\n
-                      {'  '}infra: <span className="text-emerald-400">"k8s"</span>,\n
-                      {'  '}open: <span className="text-orange-400">true</span>,\n
-                      {'}'}
+                      <span className="text-purple-400">const</span> <span className="text-blue-400">dev</span> <span className="text-zinc-300">=</span> {"{\n"}
+                      {"  "}role: <span className="text-emerald-400">"fullstack"</span>,\n{"  "}infra: <span className="text-emerald-400">"k8s"</span>,\n
+                      {"  "}open: <span className="text-orange-400">true</span>,\n{"}"}
                     </pre>
                   </div>
                 </div>
@@ -291,8 +371,7 @@ export default function Portfolio() {
                       <h3 className="text-xl font-medium tracking-tight text-white group-hover:text-emerald-400 transition-colors">{p.name}</h3>
                       <p className="text-sm text-zinc-500 mt-2 font-light">{p.desc}</p>
                     </div>
-                    <a href={p.link} target="_blank" rel="noreferrer"
-                      className="text-zinc-600 hover:text-white transition-colors mt-1 shrink-0 ml-4">
+                    <a href={p.link} target="_blank" rel="noreferrer" className="text-zinc-600 hover:text-white transition-colors mt-1 shrink-0 ml-4">
                       <ArrowUpRight size={18} />
                     </a>
                   </div>
@@ -311,7 +390,7 @@ export default function Portfolio() {
                   </ul>
 
                   <div className="flex flex-wrap gap-2 mt-auto">
-                    {p.stack.map(s => (
+                    {p.stack.map((s) => (
                       <span key={s} className="text-[11px] px-2.5 py-1 border border-white/10 text-zinc-400 tracking-wide rounded-sm bg-white/[0.02]">
                         {s}
                       </span>
@@ -339,8 +418,11 @@ export default function Portfolio() {
                 <div className="bg-[#09090b] p-8 h-full hover:bg-[#0f0f11] transition-colors">
                   <p className="text-xs font-mono tracking-widest uppercase text-zinc-500 mb-6">{cat}</p>
                   <div className="flex flex-wrap gap-2">
-                    {items.map(s => (
-                      <span key={s} className="text-xs px-3 py-1.5 bg-white/5 text-zinc-300 hover:bg-white hover:text-black transition-colors cursor-default border border-white/5 rounded-sm">
+                    {items.map((s) => (
+                      <span
+                        key={s}
+                        className="text-xs px-3 py-1.5 bg-white/5 text-zinc-300 hover:bg-white hover:text-black transition-colors cursor-default border border-white/5 rounded-sm"
+                      >
                         {s}
                       </span>
                     ))}
@@ -360,11 +442,17 @@ export default function Portfolio() {
               {[
                 { label: "100xDevs Cohort", sub: "Full-stack & Systems Engineering", href: "https://app.100xdevs.com/certificate/verify/Y80IQ59P" },
                 { label: "Scaler JavaScript", sub: "Certificate of completion", href: "https://moonshot.scaler.com/s/sl/nin-Jm30KW" },
-              ].map(c => (
-                <a key={c.label} href={c.href} target="_blank" rel="noreferrer"
-                  className="flex items-center gap-4 px-6 py-4 border border-white/10 hover:border-white/30 bg-[#09090b] transition-colors group rounded-sm shadow-sm">
+              ].map((c) => (
+                <a
+                  key={c.label}
+                  href={c.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-4 px-6 py-4 border border-white/10 hover:border-white/30 bg-[#09090b] transition-colors group rounded-sm shadow-sm"
+                >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-zinc-600 group-hover:text-emerald-400 transition-colors">
-                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <div>
                     <p className="text-sm font-medium text-zinc-300 group-hover:text-white transition-colors">{c.label}</p>
@@ -389,8 +477,10 @@ export default function Portfolio() {
               <p className="text-base text-zinc-400 leading-relaxed mb-12 font-light">
                 I'm actively looking for SDE-1 roles. My internship wraps up soon — if you're building something interesting, let's talk.
               </p>
-              <a href="mailto:ranjitdas2048@gmail.com"
-                className="inline-flex items-center gap-3 text-lg font-medium text-white hover:text-emerald-400 hover:underline underline-offset-8 transition-all group">
+              <a
+                href="mailto:ranjitdas2048@gmail.com"
+                className="inline-flex items-center gap-3 text-lg font-medium text-white hover:text-emerald-400 hover:underline underline-offset-8 transition-all group"
+              >
                 ranjitdas2048@gmail.com
                 <ArrowUpRight size={18} />
               </a>
