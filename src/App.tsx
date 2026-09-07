@@ -50,7 +50,7 @@ const EXPERIENCE: JobExperience[] = [
     title: "Software Engineer Intern",
     company: "DeepEcom",
     location: "Pune, India",
-    period: "2026-01 — 2026-07",
+    period: "2026-01 — Present",
     bullets: [
       "Migrated cloud infrastructure from Azure to DigitalOcean, deploying self-hosted CloudNativePG and a Prometheus/Grafana/Loki observability stack on Kubernetes, reducing upfront infrastructure costs by 40%",
       "Engineered 'Maruti Machine,' a distributed queue-processing system (TypeScript, XState v5) coordinating data ingestion and synchronization across Amazon and Flipkart, scaling via KEDA to process 200+ daily reports",
@@ -218,9 +218,8 @@ export default function Portfolio() {
 
       {/* Nav */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 font-mono text-[13px] ${
-          scrolled ? "bg-[#0A0C10]/90 backdrop-blur-md border-b border-[#1E232B]" : "border-b border-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 font-mono text-[13px] ${scrolled ? "bg-[#0A0C10]/90 backdrop-blur-md border-b border-[#1E232B]" : "border-b border-transparent"
+          }`}
       >
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
           <button onClick={() => scrollTo("About")} className="flex items-center gap-2 text-[#D8DCE3]">
@@ -249,9 +248,8 @@ export default function Portfolio() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 bg-[#0A0C10]/97 backdrop-blur-lg z-30 transition-opacity duration-300 flex flex-col items-center justify-center md:hidden font-mono ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-[#0A0C10]/97 backdrop-blur-lg z-30 transition-opacity duration-300 flex flex-col items-center justify-center md:hidden font-mono ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
       >
         <div className="flex flex-col items-center gap-7">
           {NAV_LINKS.map((l) => (
@@ -289,7 +287,7 @@ export default function Portfolio() {
                   </div>
                   <div className="kv-row">
                     <span className="text-[#6B7280]">last_role</span>
-                    <span className="text-[#D8DCE3]">DeepEcom — Jan – Jul 2026</span>
+                    <span className="text-[#D8DCE3]">DeepEcom — Jan 2026 – Present</span>
                   </div>
                   <div className="kv-row">
                     <span className="text-[#6B7280]">building</span>
@@ -450,8 +448,8 @@ export default function Portfolio() {
           <FadeIn>
             <p className="font-mono text-[13px] text-[#6B7280] mb-6">~/contact</p>
             <p className="text-xl text-[#D8DCE3] leading-relaxed max-w-xl mb-10">
-              Internship at DeepEcom wrapped up in July 2026. Open to full-time backend / full-stack roles —
-              happy to talk through distributed systems or infra.
+              Currently working as a Software Engineer Intern at DeepEcom — happy to talk
+              through distributed systems, infra, or backend work.
             </p>
             <a
               href="mailto:ranjitdas2048@gmail.com"
