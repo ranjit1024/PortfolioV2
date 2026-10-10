@@ -16,6 +16,7 @@ export interface Project {
   status: string;
   problem: string;
   approach: string;
+  architecture: string;
   decisions: string[];
   learnings: string[];
   stack: string[];
@@ -84,6 +85,8 @@ export const PROJECTS: Project[] = [
       "Organizations had no reliable way to confirm that employees actually understood an internal policy. Compliance was checked with manual sign-offs or generic quizzes that could not reason about the content of a specific document.",
     approach:
       "A serverless pipeline ingests a policy PDF, extracts its clauses, and generates multiple-choice assessments from them. Each organization is an isolated tenant. Candidates are onboarded by tokenized link or CSV, submissions are scored automatically, and results stream into a live dashboard.",
+    architecture:
+      "Next.js app → Cloudflare Worker API → hibernatable Durable Object for real-time notifications → PostgreSQL via Prisma. Ingestion, question generation, and scoring run in the Worker.",
     decisions: [
       "Used hibernatable Cloudflare Durable Objects for real-time WebSocket notifications, so always-on connections cost nothing while a tenant is idle.",
       "Modeled Postgres with composite unique constraints so duplicate concurrent submissions are impossible at the database level rather than in application code.",
@@ -118,6 +121,8 @@ export const PROJECTS: Project[] = [
       "Playing chess online is usually silent and impersonal. I wanted a match where you can see and talk to your opponent without standing up a media server.",
     approach:
       "A Bun WebSocket server synchronizes moves and doubles as the WebRTC signaling channel. Once peers negotiate, video flows directly between browsers. The backend is containerized and deployed to AWS EC2 through a GitHub Actions pipeline.",
+    architecture:
+      "React client ⇄ Bun WebSocket server (move sync + WebRTC signaling); media flows peer-to-peer over WebRTC and never through the server. Docker image deployed to EC2 via GitHub Actions.",
     decisions: [
       "Used WebRTC peer connections for media and a single WebSocket channel for move sync and signaling, so no video ever touches the server.",
       "Containerized the server with Docker for a reproducible build and parity between local development and EC2.",

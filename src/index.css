@@ -13,8 +13,8 @@
   --line-strong: #2b333f;
   --ink: #eef1f5;
   --body-color: #a7aeb9;
-  --muted-color: #727b87;
-  --faint-color: #4b545f;
+  --muted-color: #8a929e;
+  --faint-color: #717b88;
   --accent: #e9a23b;
   --accent-soft: #f2b968;
   --ok: #5aa878;
@@ -29,8 +29,8 @@
   --line-strong: #cfcbc1;
   --ink: #16181c;
   --body-color: #3f444d;
-  --muted-color: #6a7079;
-  --faint-color: #9aa1aa;
+  --muted-color: #565c65;
+  --faint-color: #6a707a;
   --accent: #95590b;
   --accent-soft: #7a4905;
   --ok: #2f7d4f;
@@ -72,7 +72,8 @@
   }
 
   /* Anchored sections clear the fixed header. */
-  section[id] {
+  section[id],
+  main[id] {
     scroll-margin-top: 5.5rem;
   }
 

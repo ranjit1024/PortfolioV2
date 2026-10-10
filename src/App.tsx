@@ -64,16 +64,17 @@ function Nav() {
           aria-label="Ranjit Das — back to top"
         >
           <img
-            src="/logo-64.png"
+            src="/favicon.svg"
             alt=""
-            width={28}
-            height={28}
-            className="h-7 w-7 border border-line transition-colors group-hover:border-line-strong"
+            width={32}
+            height={32}
+            draggable={false}
+            className="h-8 w-8 select-none transition-transform duration-200 ease-out group-hover:-translate-y-0.5"
           />
-          <span>ranjit.das</span>
+          <span className="transition-colors group-hover:text-accent">ranjit.das</span>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {NAV.map((item) => {
             const isActive = active === item.id;
             return (
@@ -100,7 +101,7 @@ function Nav() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="flex h-9 w-9 items-center justify-center border border-line font-mono text-xs text-ink md:hidden"
+            className="flex h-10 w-10 items-center justify-center border border-line font-mono text-xs text-ink lg:hidden"
           >
             {open ? "esc" : "≡"}
           </button>
@@ -109,7 +110,9 @@ function Nav() {
 
       <div
         id="mobile-menu"
-        className={`fixed inset-0 top-16 z-30 flex flex-col bg-canvas transition-opacity duration-200 md:hidden ${
+        inert={!open}
+        aria-hidden={!open}
+        className={`fixed inset-0 top-16 z-30 flex flex-col bg-canvas transition-opacity duration-200 lg:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -145,21 +148,21 @@ function KRow({ label, children }: { label: string; children: ReactNode }) {
 function Hero() {
   return (
     <section id="top" className="pt-16">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-12 md:py-28">
+      <div className="mx-auto grid max-w-6xl items-start gap-10 px-6 py-14 md:grid-cols-12 md:gap-12 md:py-20">
         <div className="md:col-span-7">
           <FadeIn>
             <p className="font-mono text-xs text-muted">Software Engineer · Pune, India</p>
-            <h1 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
+            <h1 className="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
               I build <span className="text-accent">backend systems</span> and real-world products.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-body sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-body sm:text-lg">
               Software engineer focused on backend engineering, distributed workflows, and production
               infrastructure — with the full-stack range to ship the product on top.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.08}>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="#work"
                 className="group inline-flex items-center gap-2 bg-accent px-5 py-3 font-mono text-sm font-medium text-canvas transition-colors hover:bg-accent-soft"
@@ -198,12 +201,15 @@ function Hero() {
                 </span>
               </div>
               <dl className="divide-y divide-line px-5 font-mono text-[13px]">
-                <KRow label="role">software engineer, backend</KRow>
-                <KRow label="focus">distributed systems & infra</KRow>
+                <KRow label="role">software engineer</KRow>
+                <KRow label="focus">backend · distributed systems</KRow>
                 <KRow label="currently">DeepEcom — backend & infra</KRow>
                 <KRow label="location">Pune, India · IST</KRow>
                 <KRow label="status">open to full-time roles</KRow>
               </dl>
+              <div className="border-t border-line px-5 py-3.5 font-mono text-[11px] text-muted">
+                kubernetes · postgres · typescript
+              </div>
             </div>
           </FadeIn>
         </div>
@@ -216,7 +222,7 @@ function Hero() {
 
 function CaseBlock({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <div className="grid gap-3 sm:grid-cols-[140px_minmax(0,1fr)] sm:gap-6">
+    <div className="grid gap-3 sm:grid-cols-[168px_minmax(0,1fr)] sm:gap-6">
       <h4 className="font-mono text-[11px] uppercase tracking-wider text-accent sm:pt-0.5">{label}</h4>
       <div className="text-sm leading-relaxed text-body">{children}</div>
     </div>
@@ -265,7 +271,12 @@ function ProjectCase({ project }: { project: Project }) {
       <div className="space-y-8">
         <CaseBlock label="Problem">{project.problem}</CaseBlock>
         <CaseBlock label="Approach">{project.approach}</CaseBlock>
-        <CaseBlock label="Key decisions">
+        <CaseBlock label="Architecture">
+          <span className="font-mono text-[12.5px] leading-relaxed text-muted">
+            {project.architecture}
+          </span>
+        </CaseBlock>
+        <CaseBlock label="Decisions & trade-offs">
           <ul className="space-y-3">
             {project.decisions.map((decision) => (
               <li key={decision} className="flex gap-3">
@@ -275,7 +286,7 @@ function ProjectCase({ project }: { project: Project }) {
             ))}
           </ul>
         </CaseBlock>
-        <CaseBlock label="Learnings">
+        <CaseBlock label="Challenges & learnings">
           <ul className="space-y-3">
             {project.learnings.map((learning) => (
               <li key={learning} className="flex gap-3">
@@ -293,7 +304,7 @@ function ProjectCase({ project }: { project: Project }) {
 function Work() {
   return (
     <section id="work" className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <FadeIn>
           <SectionHeader
             index="01"
@@ -327,7 +338,7 @@ function Work() {
 function Engineering() {
   return (
     <section id="engineering" className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <FadeIn>
           <SectionHeader
             index="02"
@@ -373,7 +384,7 @@ function Engineering() {
 function Experience() {
   return (
     <section id="experience" className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <FadeIn>
           <SectionHeader index="03" title="Experience" />
         </FadeIn>
@@ -411,7 +422,7 @@ function Experience() {
 function Skills() {
   return (
     <section id="skills" className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <FadeIn>
           <SectionHeader
             index="04"
@@ -446,7 +457,7 @@ function Skills() {
 function About() {
   return (
     <section id="about" className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <FadeIn>
           <SectionHeader index="05" title="About" />
         </FadeIn>
@@ -499,7 +510,7 @@ function About() {
 function Contact() {
   return (
     <section id="contact" className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <FadeIn>
           <SectionHeader
             index="06"
@@ -540,13 +551,13 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-canvas">
       <div className="grain pointer-events-none fixed inset-0 z-50" aria-hidden="true" />
-      <a href="#work" className="skip-link">
+      <a href="#main" className="skip-link">
         Skip to content
       </a>
 
       <Nav />
 
-      <main>
+      <main id="main">
         <Hero />
         <Work />
         <Engineering />
