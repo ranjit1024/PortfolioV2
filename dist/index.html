@@ -1,14 +1,84 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>prortfolio</title>
-    <script type="module" crossorigin src="/assets/index-ZsuUwHO5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BAcjV1vw.css">
+    <meta name="color-scheme" content="dark light" />
+
+    <title>Ranjit Das — Software Engineer</title>
+    <meta
+      name="description"
+      content="Ranjit Das is a software engineer building backend systems, distributed workflows, and production infrastructure — with the full-stack range to ship the product on top."
+    />
+    <meta name="author" content="Ranjit Das" />
+    <link rel="canonical" href="https://ranjitdas.in/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ranjitdas.in/" />
+    <meta property="og:site_name" content="Ranjit Das" />
+    <meta property="og:title" content="Ranjit Das — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Backend engineering, distributed workflows, and production infrastructure — with the full-stack range to ship the product on top."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://ranjitdas.in/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ranjit Das — Software Engineer" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ranjit Das — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Backend engineering, distributed workflows, and production infrastructure — with the full-stack range to ship the product on top."
+    />
+    <meta name="twitter:creator" content="@ranjitd18755665" />
+    <meta name="twitter:image" content="https://ranjitdas.in/og.png" />
+
+    <meta name="theme-color" content="#090b0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme =
+            stored ||
+            (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-Bsz6FokW.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D4x0O798.css">
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; font-family: system-ui">
+        <h1>Ranjit Das — Software Engineer</h1>
+        <p>
+          I build backend systems, distributed workflows, and production infrastructure. Enable
+          JavaScript to view the full portfolio, or reach me at
+          <a href="mailto:ranjitdas2048@gmail.com">ranjitdas2048@gmail.com</a>.
+        </p>
+      </div>
+    </noscript>
   </body>
 </html>

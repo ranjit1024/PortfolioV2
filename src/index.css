@@ -1,1 +1,155 @@
 @import "tailwindcss";
+
+/*
+  Design tokens.
+  Semantic naming so components never hard-code a raw hex value.
+  Dark is the default; [data-theme="light"] overrides the same variables.
+*/
+:root {
+  --canvas: #090b0f;
+  --surface: #0e1117;
+  --panel: #10141b;
+  --line: #1b212b;
+  --line-strong: #2b333f;
+  --ink: #eef1f5;
+  --body-color: #a7aeb9;
+  --muted-color: #727b87;
+  --faint-color: #4b545f;
+  --accent: #e9a23b;
+  --accent-soft: #f2b968;
+  --ok: #5aa878;
+  --grain-opacity: 0.035;
+}
+
+[data-theme="light"] {
+  --canvas: #f6f5f2;
+  --surface: #ffffff;
+  --panel: #ffffff;
+  --line: #e5e2db;
+  --line-strong: #cfcbc1;
+  --ink: #16181c;
+  --body-color: #3f444d;
+  --muted-color: #6a7079;
+  --faint-color: #9aa1aa;
+  --accent: #95590b;
+  --accent-soft: #7a4905;
+  --ok: #2f7d4f;
+  --grain-opacity: 0;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-body: var(--body-color);
+  --color-muted: var(--muted-color);
+  --color-faint: var(--faint-color);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--body-color);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: hidden;
+  }
+
+  /* Anchored sections clear the fixed header. */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--canvas);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--canvas);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border: 2px solid var(--canvas);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--faint-color);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    transform: translateY(-160%);
+    background: var(--accent);
+    color: var(--canvas);
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    transition: transform 0.15s ease;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    mix-blend-mode: overlay;
+  }
+
+  /* Hairline grid: gap-px on the parent, surface cells inside. */
+  .hairline-grid {
+    display: grid;
+    gap: 1px;
+    background-color: var(--line);
+    border: 1px solid var(--line);
+  }
+  .hairline-grid > * {
+    background-color: var(--canvas);
+  }
+}
